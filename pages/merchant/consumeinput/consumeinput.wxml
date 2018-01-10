@@ -1,0 +1,40 @@
+<!--pages/merchant/consumeinput/consumeinput.wxml-->
+<view class='span_height_30'></view>
+<view class='menu_item'>              
+    <view class='menu_img'>
+      <image src='/resource/member/cash_point.png'></image>           
+    </view>  
+    <text style='color: #C40000;'>现金积分总额</text> 
+    <text style='float:left;padding-left:80rpx;font-size:36rpx;color: #C40000;'>32432</text> 
+</view>
+
+<view class='span_height'></view>
+
+<view class="section input_view">
+  <input class='input' value='13677778888' placeholder="请输入消费会员手机号" auto-focus/>
+  <text>张三</text>
+</view>
+
+<view class='span_height'></view>
+
+<view class="section input_view">
+  <input class='input' type='number' placeholder="请输入消费金额" auto-focus/>
+</view>
+
+<view class='span_height'></view>
+<view class="section input_view">
+  <input class='input' type='number' placeholder="请输入商品明细" auto-focus/>
+</view>
+
+<view class='span_height'></view>
+
+<view class="section input_view">
+  <input class='input' password='true' placeholder="请输入交易密码" auto-focus/>
+</view>
+<view class='span_height'></view>
+
+
+<view style='float: left;width: 98%;padding:20rpx 10rpx;'>
+    <button class="weui-btn" type="warn">消费录入</button>
+</view>
+

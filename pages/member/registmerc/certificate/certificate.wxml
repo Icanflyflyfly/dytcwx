@@ -1,0 +1,26 @@
+<view style='display:block;' class="weui">
+  <view style="float: left;padding: 40rpx 20rpx;width:50%;text-align:center;">
+    <text style='display:block'>点击右侧按钮</text>
+    <text style='display:block'>上传{{desc}}</text>
+  </view>
+  
+  <view class="weui-uploader__input-box" style='margin:20rpx;'>    
+    <view class="weui-uploader__input" bindtap="chooseImage"></view>
+  </view>
+
+  <view class="weui-uploader">
+      <view class="weui-uploader__files">
+        <block wx:for="{{imageList}}" wx:for-item="image" wx:for-index='idx'>
+        <div style="text-align:center">
+          <view class="weui-uploader__file" style='width:100%;text-align:center;'>
+            <image style='margin:0 auto;width:300px;height:200px;'  class="weui-uploader__img" src="{{image}}" data-id="{{idx}}" data-src="{{image}}" bindtap="previewImage"></image>
+          </view>
+          </div>
+        </block>
+      </view>      
+  </view>
+</view>
+
+<view style='float: left;width: 98%;padding:10rpx;'>
+    <button class="weui-btn" type="warn">上传</button>
+</view>

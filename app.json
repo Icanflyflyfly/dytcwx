@@ -1,0 +1,76 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/index/merchantDetail/merchant_detail",
+    "pages/member/member",
+    "pages/member/setting/setting",
+    "pages/member/wallet/wallet",    
+    "pages/member/wallet/withdraw/withdraw",
+    "pages/member/wallet/switch/switch",
+    "pages/member/wallet/repeat/repeat",
+    "pages/member/wallet/guidance/guidance",
+    "pages/member/alldetaillist/alldetaillist",
+    "pages/member/alldetaillist/bonus/bonus",
+    "pages/member/alldetaillist/consume/consume",
+    "pages/member/alldetaillist/giftlist/giftlist",
+    "pages/member/alldetaillist/guidancelist/guidancelist",
+    "pages/member/alldetaillist/recievelist/recievelist",
+    "pages/member/alldetaillist/repeatlist/repeatlist",
+    "pages/member/alldetaillist/return/return",
+    "pages/member/alldetaillist/withdrawlist/withdrawlist",
+    "pages/member/alldetaillist/fans/fans",    
+    "pages/member/alldetaillist/recommend/recommend",
+    "pages/member/qr/qr",
+    "pages/member/applymgr/applymgr",
+    "pages/member/registmerc/registmerc",
+    "pages/member/registmerc/certificate/certificate",
+    "pages/merchant/merchant",
+    "pages/merchant/consumeinput/consumeinput",
+    "pages/merchant/consumeinputlist/consumeinputlist",
+    "pages/merchant/recharge/recharge",
+    "pages/merchant/rechargelist/rechargelist",
+    "pages/merchant/integral/integral",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "益德天成",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color":"#0F0F0F",
+    "selectedColor":"#c40000",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath":"resource/home/main1.png",
+        "selectedIconPath":"resource/home/main2.png"
+      },
+      {
+        "pagePath": "pages/member/member",
+        "text": "会员中心",
+        "iconPath": "resource/home/member1.png",
+        "selectedIconPath": "resource/home/member2.png"
+      },
+      {
+        "pagePath": "pages/merchant/merchant",
+        "text": "商家中心",
+        "iconPath": "resource/home/merchant1.png",
+        "selectedIconPath": "resource/home/merchant2.png"
+      },
+      {
+        "pagePath": "pages/merchant/merchant",
+        "text": "购物商城",
+        "iconPath": "resource/home/mall1.png",
+        "selectedIconPath": "resource/home/mall2.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

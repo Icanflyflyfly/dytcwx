@@ -1,0 +1,102 @@
+<view class='page'>
+    <view class='span_height_30'></view>
+      <view class='menu_item'>              
+          <view class='menu_img'>
+            <image src='/resource/common/tel.png'></image>           
+          </view>  
+          <text >账号</text> 
+          <text style='float:right' class='menu_text'>135****2222</text>          
+      </view>    
+
+      <view class='menu_item'>              
+          <view class='menu_img'>
+            <image src='/resource/member/bank.png'></image>                        
+          </view>  
+          <text>开户行</text>
+          <image class='arrow' src='/resource/common/right_gray.png'></image>
+          <text style='float:right;'>建设银行承德分行</text>         
+      </view>  
+      <view class='span_height'></view>
+
+      <view class='menu_item'>              
+          <view class='menu_img'>
+            <image src='/resource/member/card.png'></image>                        
+          </view>  
+          <text>银行卡号</text>
+          <image class='arrow' src='/resource/common/right_gray.png'></image>
+          <text style='float:right;'>3457894357984379****</text>         
+      </view>  
+      <view class='span_height'></view>
+
+      <view class='span_height_30'></view>
+      <view class='menu_item'>              
+          <view class='menu_img'>
+            <image src='/resource/common/ava.png'></image>                        
+          </view>  
+          <text>头像</text>
+          <image class='arrow' src='/resource/common/right_gray.png'></image>
+          <image class='ava' src='/resource/temp/ava.jpg'></image>          
+      </view>  
+      <view class='span_height'></view>
+
+      <view class='menu_item'>              
+          <view class='menu_img'>
+            <image src='/resource/common/nic.png'></image>                        
+          </view>  
+          <text>昵称</text>
+          <image class='arrow' src='/resource/common/right_gray.png'></image>
+          <text style='float:right;'>挑大梁</text>          
+      </view>  
+      <view class='span_height'></view>
+
+      <view class='menu_item'>              
+          <view class='menu_img'>
+            <image src='/resource/common/pwd.png'></image>                        
+          </view>  
+          <text>密码</text>
+          <image class='arrow' src='/resource/common/right_gray.png'></image>
+          <text style='float:right;'>******</text>          
+      </view>  
+      <view class='span_height'></view>
+
+      <view class='menu_item'>              
+          <view class='menu_img'>
+            <image src='/resource/common/sex.png'></image>                        
+          </view>  
+          <text>性别</text>
+          <image class='arrow' src='/resource/common/right_gray.png'></image>
+          <text style='float:right;'>男</text>          
+      </view>  
+      <view class='span_height'></view>
+
+
+      <view class='menu_item'>              
+          <view class='menu_img'>
+            <image src='/resource/common/bir.png'></image>                        
+          </view>  
+          <text>生日</text>
+          <image class='arrow' src='/resource/common/right_gray.png'></image>
+          <text style='float:right;'>1999-09-09</text>          
+      </view>  
+      <view class='span_height_30'></view>
+      
+      <view class='menu_item'>              
+          <view class='menu_img'>
+            <image src='/resource/common/help.png'></image>                        
+          </view>  
+          <text>帮助中心</text>
+          <image class='arrow' src='/resource/common/right_gray.png'></image>                    
+      </view> 
+
+      <view class='span_height'></view>
+
+      <view class='menu_item'>              
+          <view class='menu_img'>
+            <image src='/resource/common/ver.png'></image>                        
+          </view>  
+          <text>版本信息</text>
+          <image class='arrow' src='/resource/common/right_gray.png'></image>                    
+      </view>  
+
+      <view class='span_height_30'></view>
+</view>

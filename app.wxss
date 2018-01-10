@@ -1,0 +1,50 @@
+/**app.wxss**/
+@import 'weui.wxss';
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+.span_height{
+  height: 2rpx;
+  width: 100%;
+  background-color: #efefef;
+}
+
+.span_height_10{
+  height: 10rpx;
+  width: 100%;
+  background-color: #efefef;
+}
+.span_height_20{
+  height: 20rpx;
+  width: 100%;
+  background-color: #efefef;
+}
+.span_height_30{
+  height: 30rpx;
+  width: 100%;
+  background-color: #efefef;
+}
+.span_height_1{
+  height: 1rpx;
+  width: 100%;
+  background-color: #efefef;
+}
+.span_height_2_pl{
+  height: 2rpx;
+  margin-left:20rpx;
+  background-color: #efefef;
+}
+.right_arrow{  
+  height: 40rpx;
+  width: 40rpx;
+  float: right;
+  padding:40rpx 20rpx;
+}

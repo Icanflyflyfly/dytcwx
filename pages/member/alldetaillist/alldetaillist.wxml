@@ -1,0 +1,132 @@
+<!--pages/member/alldetaillist/alldetaillist.wxml-->
+<view class="page">
+
+  <view>       
+      <view class='span_height_30'></view>
+
+      <navigator url="/pages/member/alldetaillist/consume/consume" hover-class="navigator-hover">
+      <view class='menu_item'>              
+            <view class='menu_img'>
+              <image src='/resource/member/consume.png'></image>           
+            </view>  
+            <text>消费明细</text> 
+            <image class='right_arrow' src='/resource/common/right.png'></image> 
+        </view>
+      </navigator>
+
+        <view class='span_height_2_pl'></view>
+        <navigator url="/pages/member/alldetaillist/return/return" hover-class="navigator-hover">
+          <view class='menu_item'>              
+              <view class='menu_img'>
+                <image src='/resource/member/return.png'></image>           
+              </view>  
+              <text>分红明细</text> 
+              <image class='right_arrow' src='/resource/common/right.png'></image> 
+          </view>
+        </navigator>
+
+        <view class='span_height_2_pl'></view>
+
+      <navigator url="/pages/member/alldetaillist/bonus/bonus" hover-class="navigator-hover">
+        <view class='menu_item'>              
+            <view class='menu_img'>
+              <image src='/resource/member/bonus.png'></image>           
+            </view>  
+            <text>奖金明细</text> 
+            <image class='right_arrow' src='/resource/common/right.png'></image> 
+        </view>
+      </navigator>
+
+        <view class='span_height_2_pl'></view>
+
+        <navigator url="/pages/member/alldetaillist/withdrawlist/withdrawlist" hover-class="navigator-hover">
+          <view class='menu_item'>              
+              <view class='menu_img'>
+                <image src='/resource/member/withdraw.png'></image>           
+              </view>  
+              <text>提现明细</text> 
+              <image class='right_arrow' src='/resource/common/right.png'></image> 
+          </view>
+        </navigator>
+
+        <view class='span_height_30'></view>       
+        
+          <navigator url="/pages/member/alldetaillist/repeatlist/repeatlist" hover-class="navigator-hover">
+      <view class='menu_item'>              
+          <view class='menu_img'>
+            <image src='/resource/member/repeatlist.png'></image>                        
+          </view>  
+          <text>重复消费明细</text>
+          <image class='arrow' src='/resource/common/right_gray.png'></image>         
+      </view>  
+      </navigator>
+
+      <view class='span_height'></view>
+
+      <navigator url="/pages/member/alldetaillist/guidancelist/guidancelist" hover-class="navigator-hover">
+      <view class='menu_item'>              
+          <view class='menu_img'>
+            <image src='/resource/member/guidancelist.png'></image>                        
+          </view>  
+          <text>引流积分明细</text>
+          <image class='arrow' src='/resource/common/right_gray.png'></image>       
+      </view>  
+      </navigator>
+
+      <view class='span_height'></view>
+
+      <navigator url="/pages/member/alldetaillist/recievelist/recievelist" hover-class="navigator-hover">
+      <view class='menu_item'>              
+          <view class='menu_img'>
+            <image src='/resource/member/rec_detail.png'></image>                        
+          </view>  
+          <text>接收明细</text>
+          <image class='arrow' src='/resource/common/right_gray.png'></image>
+          <text style='float:right;'>别人转给我的积分</text>          
+      </view>  
+      </navigator>
+
+      <view class='span_height'></view>
+  
+    <navigator url="/pages/member/alldetaillist/giftlist/giftlist" hover-class="navigator-hover">
+      <view class='menu_item'>              
+          <view class='menu_img'>
+            <image src='/resource/member/tra_detail.png'></image>                        
+          </view>  
+          <text>转赠明细</text>
+          <image class='arrow' src='/resource/common/right_gray.png'></image>
+          <text style='float:right;'>我转给别人的积分</text>          
+      </view>  
+    </navigator> 
+  
+      <view class='span_height_30'></view>  
+
+        <navigator url="/pages/member/recommend/recommend" hover-class="navigator-hover">
+          <view class='menu_item'>              
+              <view class='menu_img'>
+                <image src='/resource/member/recommend.png'></image>           
+              </view>  
+              <text>推荐商家</text>             
+              <image  style='float:right' class='right_arrow' src='/resource/common/right.png'></image> 
+              <text style='float:right;font-size:30rpx;color: #C40000;'>消费总额:324325</text> 
+          </view>
+        </navigator>
+
+ <view class='span_height_2_pl'></view>
+       
+        <navigator url="/pages/member/alldetaillist/fans/fans" hover-class="navigator-hover">
+          <view class='menu_item'>              
+              <view class='menu_img'>
+                <image src='/resource/member/fans.png'></image>           
+              </view>  
+              <text>我的粉丝</text> 
+              <image style='float:right' class='right_arrow' src='/resource/common/right.png'></image> 
+              <text style='float:right;font-size:30rpx;color: #C40000;'>总数:325</text> 
+          </view>
+        </navigator>
+        <view class='span_height_30'></view>
+  </view>
+
+
+</view>
+

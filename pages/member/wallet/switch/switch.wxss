@@ -1,0 +1,31 @@
+/* pages/member/wallet/switch/switch.wxss */
+.menu_item{
+  height: 120rpx;
+  line-height: 120rpx;
+}
+.menu_item .menu_img{
+  padding:33rpx 20rpx;
+  float: left;
+}
+.menu_item .menu_img image{  
+  height: 50rpx;
+  width: 50rpx;
+  float: left;
+}
+.menu_item text{
+  float: left;
+  color: #0f0f0f;
+  font-size: 36rpx;
+}
+.input_view{
+  font-size:36rpx;
+  margin:0rpx 20rpx;
+  height:80rpx;
+  line-height:80rpx;
+}
+.input{
+  font-size:36rpx;
+  height:80rpx;
+  line-height:80rpx;
+  float:left;
+}

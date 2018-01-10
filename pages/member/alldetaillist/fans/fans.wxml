@@ -1,0 +1,178 @@
+<!--pages/member/fans/fans.wxml-->
+<view class='span_height_20'></view>
+<view style='font-size:30rpx;width:100%;padding:10rpx;color: #886aea;'>
+      
+      <view style='width:45%;float:left;'>
+        <text style='display:block;'>会员名：张大鹏</text>
+        <text  style='display:block;'>手机号：13466665555</text>
+      </view>
+      <view style='width:54%;float:left;'>
+        <text  style='display:block;'>注册时间：2017-11-30 12:30:30</text>
+      </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;width:100%;padding:10rpx 0rpx 10rpx 30rpx;color: #444;'>
+      
+      <view style='width:45%;float:left;'>
+        <text style='display:block;'>会员名：李刚</text>
+        <text  style='display:block;'>手机号：13934578344</text>
+      </view>
+      <view style='width:54%;float:left;'>
+        <text  style='display:block;'>注册时间：2017-12-30 12:30:30</text>
+      </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;width:100%;padding:10rpx 0rpx 10rpx 30rpx;color: #444;'>
+      
+      <view style='width:45%;float:left;'>
+        <text style='display:block;'>会员名：李刚</text>
+        <text  style='display:block;'>手机号：13934578344</text>
+      </view>
+      <view style='width:54%;float:left;'>
+        <text  style='display:block;'>注册时间：2017-12-30 12:30:30</text>
+      </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;width:100%;padding:10rpx 0rpx 10rpx 30rpx;color: #444;'>
+      
+      <view style='width:45%;float:left;'>
+        <text style='display:block;'>会员名：李刚</text>
+        <text  style='display:block;'>手机号：13934578344</text>
+      </view>
+      <view style='width:54%;float:left;'>
+        <text  style='display:block;'>注册时间：2017-12-30 12:30:30</text>
+      </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;width:100%;padding:10rpx 0rpx 10rpx 30rpx;color: #444;'>
+      
+      <view style='width:45%;float:left;'>
+        <text style='display:block;'>会员名：李刚</text>
+        <text  style='display:block;'>手机号：13934578344</text>
+      </view>
+      <view style='width:54%;float:left;'>
+        <text  style='display:block;'>注册时间：2017-12-30 12:30:30</text>
+      </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;width:100%;padding:10rpx 0rpx 10rpx 30rpx;color: #444;'>
+      
+      <view style='width:45%;float:left;'>
+        <text style='display:block;'>会员名：李刚</text>
+        <text  style='display:block;'>手机号：13934578344</text>
+      </view>
+      <view style='width:54%;float:left;'>
+        <text  style='display:block;'>注册时间：2017-12-30 12:30:30</text>
+      </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;width:100%;padding:10rpx 0rpx 10rpx 30rpx;color: #444;'>
+      
+      <view style='width:45%;float:left;'>
+        <text style='display:block;'>会员名：李刚</text>
+        <text  style='display:block;'>手机号：13934578344</text>
+      </view>
+      <view style='width:54%;float:left;'>
+        <text  style='display:block;'>注册时间：2017-12-30 12:30:30</text>
+      </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;width:100%;padding:10rpx 0rpx 10rpx 30rpx;color: #444;'>
+      
+      <view style='width:45%;float:left;'>
+        <text style='display:block;'>会员名：李刚</text>
+        <text  style='display:block;'>手机号：13934578344</text>
+      </view>
+      <view style='width:54%;float:left;'>
+        <text  style='display:block;'>注册时间：2017-12-30 12:30:30</text>
+      </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;width:100%;padding:10rpx 0rpx 10rpx 30rpx;color: #444;'>
+      
+      <view style='width:45%;float:left;'>
+        <text style='display:block;'>会员名：李刚</text>
+        <text  style='display:block;'>手机号：13934578344</text>
+      </view>
+      <view style='width:54%;float:left;'>
+        <text  style='display:block;'>注册时间：2017-12-30 12:30:30</text>
+      </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;width:100%;padding:10rpx 0rpx 10rpx 30rpx;color: #444;'>
+      
+      <view style='width:45%;float:left;'>
+        <text style='display:block;'>会员名：李刚</text>
+        <text  style='display:block;'>手机号：13934578344</text>
+      </view>
+      <view style='width:54%;float:left;'>
+        <text  style='display:block;'>注册时间：2017-12-30 12:30:30</text>
+      </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;width:100%;padding:10rpx 0rpx 10rpx 30rpx;color: #444;'>
+      
+      <view style='width:45%;float:left;'>
+        <text style='display:block;'>会员名：李刚</text>
+        <text  style='display:block;'>手机号：13934578344</text>
+      </view>
+      <view style='width:54%;float:left;'>
+        <text  style='display:block;'>注册时间：2017-12-30 12:30:30</text>
+      </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;width:100%;padding:10rpx 0rpx 10rpx 30rpx;color: #444;'>
+      
+      <view style='width:45%;float:left;'>
+        <text style='display:block;'>会员名：李刚</text>
+        <text  style='display:block;'>手机号：13934578344</text>
+      </view>
+      <view style='width:54%;float:left;'>
+        <text  style='display:block;'>注册时间：2017-12-30 12:30:30</text>
+      </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;width:100%;padding:10rpx 0rpx 10rpx 30rpx;color: #444;'>
+      
+      <view style='width:45%;float:left;'>
+        <text style='display:block;'>会员名：李刚</text>
+        <text  style='display:block;'>手机号：13934578344</text>
+      </view>
+      <view style='width:54%;float:left;'>
+        <text  style='display:block;'>注册时间：2017-12-30 12:30:30</text>
+      </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;width:100%;padding:10rpx 0rpx 10rpx 30rpx;color: #444;'>
+      
+      <view style='width:45%;float:left;'>
+        <text style='display:block;'>会员名：李刚</text>
+        <text  style='display:block;'>手机号：13934578344</text>
+      </view>
+      <view style='width:54%;float:left;'>
+        <text  style='display:block;'>注册时间：2017-12-30 12:30:30</text>
+      </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;width:100%;padding:10rpx 0rpx 10rpx 30rpx;color: #444;'>
+      
+      <view style='width:45%;float:left;'>
+        <text style='display:block;'>会员名：李刚</text>
+        <text  style='display:block;'>手机号：13934578344</text>
+      </view>
+      <view style='width:54%;float:left;'>
+        <text  style='display:block;'>注册时间：2017-12-30 12:30:30</text>
+      </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;width:100%;padding:10rpx 0rpx 10rpx 30rpx;color: #444;'>
+      
+      <view style='width:45%;float:left;'>
+        <text style='display:block;'>会员名：李刚</text>
+        <text  style='display:block;'>手机号：13934578344</text>
+      </view>
+      <view style='width:54%;float:left;'>
+        <text  style='display:block;'>注册时间：2017-12-30 12:30:30</text>
+      </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>

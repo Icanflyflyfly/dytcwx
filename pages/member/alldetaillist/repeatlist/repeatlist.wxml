@@ -1,0 +1,149 @@
+<!--pages/member/wallet/repeatlist/repeatlist.wxml-->
+<view class='span_height_20'></view>
+<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #886aea;'>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>购买消费积分：100</text>
+      <text  style='display:block;'>时间：2017-10-30 15:30:30</text>
+    </view>   
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text>所用现金积分：10</text>
+    </view> 
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+
+<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #387ef5;'>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>购买消费积分：220</text>
+      <text  style='display:block;'>时间：2017-12-01 12:00:30</text>
+    </view>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text>所用现金积分：22</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #886aea;'>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>购买消费积分：100</text>
+      <text  style='display:block;'>时间：2017-10-30 15:30:30</text>
+    </view>   
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text>所用现金积分：10</text>
+    </view> 
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+
+<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #387ef5;'>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>购买消费积分：220</text>
+      <text  style='display:block;'>时间：2017-12-01 12:00:30</text>
+    </view>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text>所用现金积分：22</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #886aea;'>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>购买消费积分：100</text>
+      <text  style='display:block;'>时间：2017-10-30 15:30:30</text>
+    </view>   
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text>所用现金积分：10</text>
+    </view> 
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+
+<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #387ef5;'>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>购买消费积分：220</text>
+      <text  style='display:block;'>时间：2017-12-01 12:00:30</text>
+    </view>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text>所用现金积分：22</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #886aea;'>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>购买消费积分：100</text>
+      <text  style='display:block;'>时间：2017-10-30 15:30:30</text>
+    </view>   
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text>所用现金积分：10</text>
+    </view> 
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+
+<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #387ef5;'>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>购买消费积分：220</text>
+      <text  style='display:block;'>时间：2017-12-01 12:00:30</text>
+    </view>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text>所用现金积分：22</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #886aea;'>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>购买消费积分：100</text>
+      <text  style='display:block;'>时间：2017-10-30 15:30:30</text>
+    </view>   
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text>所用现金积分：10</text>
+    </view> 
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+
+<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #387ef5;'>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>购买消费积分：220</text>
+      <text  style='display:block;'>时间：2017-12-01 12:00:30</text>
+    </view>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text>所用现金积分：22</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #886aea;'>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>购买消费积分：100</text>
+      <text  style='display:block;'>时间：2017-10-30 15:30:30</text>
+    </view>   
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text>所用现金积分：10</text>
+    </view> 
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+
+<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #387ef5;'>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>购买消费积分：220</text>
+      <text  style='display:block;'>时间：2017-12-01 12:00:30</text>
+    </view>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text>所用现金积分：22</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #886aea;'>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>购买消费积分：100</text>
+      <text  style='display:block;'>时间：2017-10-30 15:30:30</text>
+    </view>   
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text>所用现金积分：10</text>
+    </view> 
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+
+<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #387ef5;'>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>购买消费积分：220</text>
+      <text  style='display:block;'>时间：2017-12-01 12:00:30</text>
+    </view>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text>所用现金积分：22</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>

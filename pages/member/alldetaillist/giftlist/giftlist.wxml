@@ -1,0 +1,128 @@
+<!--pages/member/wallet/gift/giftlist.wxml-->
+<view class='span_height_20'></view>
+<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #886aea;'>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>积分金额：100</text>
+      <text  style='display:block;'>时间：2017-12-30 10:30:30</text>
+    </view>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text>受赠人：李四</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+
+<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #387ef5;'>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>积分金额：220</text>
+      <text  style='display:block;'>时间：2017-12-01 12:00:30</text>
+    </view>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text>受赠人：张三</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #886aea;'>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>积分金额：100</text>
+      <text  style='display:block;'>时间：2017-12-30 10:30:30</text>
+    </view>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text>受赠人：李四</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+
+<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #387ef5;'>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>积分金额：220</text>
+      <text  style='display:block;'>时间：2017-12-01 12:00:30</text>
+    </view>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text>受赠人：张三</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #886aea;'>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>积分金额：100</text>
+      <text  style='display:block;'>时间：2017-12-30 10:30:30</text>
+    </view>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text>受赠人：李四</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+
+<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #387ef5;'>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>积分金额：220</text>
+      <text  style='display:block;'>时间：2017-12-01 12:00:30</text>
+    </view>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text>受赠人：张三</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #886aea;'>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>积分金额：100</text>
+      <text  style='display:block;'>时间：2017-12-30 10:30:30</text>
+    </view>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text>受赠人：李四</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+
+<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #387ef5;'>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>积分金额：220</text>
+      <text  style='display:block;'>时间：2017-12-01 12:00:30</text>
+    </view>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text>受赠人：张三</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #886aea;'>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>积分金额：100</text>
+      <text  style='display:block;'>时间：2017-12-30 10:30:30</text>
+    </view>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text>受赠人：李四</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+
+<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #387ef5;'>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>积分金额：220</text>
+      <text  style='display:block;'>时间：2017-12-01 12:00:30</text>
+    </view>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text>受赠人：张三</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #886aea;'>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>积分金额：100</text>
+      <text  style='display:block;'>时间：2017-12-30 10:30:30</text>
+    </view>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text>受赠人：李四</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+
+<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #387ef5;'>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>积分金额：220</text>
+      <text  style='display:block;'>时间：2017-12-01 12:00:30</text>
+    </view>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text>受赠人：张三</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>

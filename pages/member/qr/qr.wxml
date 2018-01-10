@@ -1,0 +1,7 @@
+<!--pages/member/qr/qr.wxml-->
+<view style="text-align: center;">
+  <image style="width: 700rpx;height: 600rpx;" src="/resource/temp/qr.jpeg"></image>
+  <view style='margin:0rpx 20rpx'>
+    <button class="weui-btn" type="warn">分享我的二维码</button>
+  </view>
+</view>

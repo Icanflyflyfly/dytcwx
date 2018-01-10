@@ -1,0 +1,49 @@
+<!--pages/member/applymgr/applymgr.wxml-->
+<view class='span_height_30'></view>
+<view class="section input_view">
+  <input class='input' placeholder="请输入姓名" auto-focus/>
+</view>
+<view class='span_height'></view>
+<view class="section input_view">
+  <input class='input' placeholder="请输入身份证号" auto-focus/>
+</view>
+<view class='span_height'></view>
+<view class="section input_view">
+  <input class='input' placeholder="请输入家庭住址" auto-focus/>
+</view>
+<view class='span_height'></view>
+<view class="section" >
+  <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+    <view class="picker">
+      <text class='select_text'>申请区域：{{region[0]}}，{{region[1]}}，{{region[2]}}</text>
+    </view>
+  </picker>
+</view>
+<view class='span_height' style='float:left'></view>
+
+<view style='display:block;' class="weui">
+  <view style="float: left;padding: 40rpx 20rpx;width:50%;text-align:center;">
+    <text style='display:block'>点击右侧按钮</text>
+    <text style='display:block'>上传身份证正反面</text>
+  </view>
+  
+  <view class="weui-uploader__input-box" style='margin:20rpx;'>    
+    <view class="weui-uploader__input" bindtap="chooseImage"></view>
+  </view>
+
+  <view class="weui-uploader">
+      <view class="weui-uploader__files">
+        <block wx:for="{{imageList}}" wx:for-item="image" wx:for-index='idx'>
+        <div style="text-align:center">
+          <view class="weui-uploader__file" style='width:100%;text-align:center;'>
+            <image style='margin:0 auto;width:300px;height:200px;'  class="weui-uploader__img" src="{{image}}" data-id="{{idx}}" data-src="{{image}}" bindtap="previewImage"></image>
+          </view>
+          </div>
+        </block>
+      </view>      
+  </view>
+</view>
+
+<view style='float: left;width: 98%;padding:10rpx;'>
+    <button class="weui-btn" type="warn">提交申请</button>
+</view>

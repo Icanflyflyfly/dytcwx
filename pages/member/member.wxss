@@ -1,0 +1,55 @@
+.userinfo {
+  display: flex;
+  position: absolute;
+  top: 50rpx;
+  left: 80rpx;
+}
+
+.userinfo-avatar {
+  width: 150rpx;
+  height: 150rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  display: flex;
+  color: #FFF;
+  align-items: center;
+  font-size: 36rpx;
+}
+
+.setting {
+  display: flex;
+  position: absolute;
+  top: 120rpx;
+  right: 20rpx;
+  color: #FFF; 
+  font-size: 36rpx;
+}
+
+.menu_item{
+  height: 120rpx;
+  line-height: 120rpx;
+}
+.menu_item .menu_img{
+  padding:33rpx 20rpx;
+  float: left;
+}
+.menu_item .menu_img image{  
+  height: 50rpx;
+  width: 50rpx;
+  float: left;
+}
+.menu_item text{
+  float: left;
+  color: #0f0f0f;
+  font-size: 36rpx;
+}
+
+
+.menu_text{
+  
+}
+
+

@@ -1,0 +1,73 @@
+<!--pages/member/registmerc/registmerc.wxml-->
+<view class='span_height_30'></view>
+<navigator url="/pages/member/registmerc/certificate/certificate?desc=门头照" hover-class="navigator-hover">
+<view class='menu_item'>              
+    <view class='menu_img'>
+      <image src='/resource/member/door.png'></image>                        
+    </view>  
+    <text>上传门头</text>
+    <image class='arrow' src='/resource/common/right_gray.png'></image>
+    <image class='ava' src='/resource/temp/ava.jpg'></image>          
+</view>  
+</navigator>
+ <view class='span_height'></view>
+
+<navigator url="/pages/member/registmerc/certificate/certificate?desc=上传执照" hover-class="navigator-hover">
+<view class='menu_item'>              
+    <view class='menu_img'>
+      <image src='/resource/member/cer.png'></image>                        
+    </view>  
+    <text>上传执照</text>
+    <image class='arrow' src='/resource/common/right_gray.png'></image>
+    <image class='ava' src='/resource/temp/ava.jpg'></image>          
+</view>  
+</navigator>
+ <view class='span_height'></view>
+
+<view class="section input_view">
+  <input class='input' placeholder="请输入商家名称" auto-focus/>
+</view>
+<view class='span_height'></view>
+
+<view class="section input_view">
+  <input class='input' placeholder="请输入联系电话" auto-focus/>
+</view>
+
+<view class='span_height'></view>
+
+<view class="section" >
+  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+      <text class='select_text' style='width:100%'>商家类型：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}</text>
+    </view>
+  </picker>
+</view>
+
+<view class='span_height' style='float:left'></view>
+
+<view class="section" >
+  <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+    <view class="picker">
+      <text class='select_text' style='width:100%'>地址选择：{{region[0]}}，{{region[1]}}，{{region[2]}}</text>
+    </view>
+  </picker>
+</view>
+
+<view class='span_height' style='float:left'></view>
+
+<view class="section input_view">
+  <input class='input' placeholder="请输入详细地址" auto-focus/>
+</view>
+
+<view class='span_height' style='float:left'></view>
+
+<view class="section input_view">
+  <input class='input' placeholder="请输入服务范围" auto-focus/>
+</view>
+
+<view class='span_height' style='float:left'></view>
+
+
+<view style='float: left;width: 98%;padding:10rpx;'>
+    <button class="weui-btn" type="warn">提交注册</button>
+</view>

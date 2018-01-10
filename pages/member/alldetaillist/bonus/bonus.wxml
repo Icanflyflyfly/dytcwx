@@ -1,0 +1,134 @@
+<!--pages/member/bonus/bonus.wxml-->
+<view class='span_height_20'></view>
+<view style='font-size:30rpx;height:100rpx;width:100%;color: #387ef5;padding: 0rpx 10rpx;'>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>粉丝：张大鹏</text>
+      <text style='display:block;'>消费：1000x0.005=5</text>
+    </view>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>时间：2017-11-30 12:30:30</text>
+      <text style='display:block;'>购买日用品</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;height:100rpx;width:100%;color: #387ef5;padding: 0rpx 10rpx;'>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>商家：福满家超市</text>
+      <text style='display:block;'>收入：1000x0.005=5</text>
+    </view>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>时间：2017-11-30 12:30:30</text>
+      <text style='display:block;'>购买日用品</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;height:100rpx;width:100%;color: #387ef5;padding: 0rpx 10rpx;'>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>粉丝：张大鹏</text>
+      <text style='display:block;'>消费：1000x0.005=5</text>
+    </view>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>时间：2017-11-30 12:30:30</text>
+      <text style='display:block;'>购买日用品</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;height:100rpx;width:100%;color: #387ef5;padding: 0rpx 10rpx;'>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>商家：福满家超市</text>
+      <text style='display:block;'>收入：1000x0.005=5</text>
+    </view>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>时间：2017-11-30 12:30:30</text>
+      <text style='display:block;'>购买日用品</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;height:100rpx;width:100%;color: #387ef5;padding: 0rpx 10rpx;'>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>粉丝：张大鹏</text>
+      <text style='display:block;'>消费：1000x0.005=5</text>
+    </view>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>时间：2017-11-30 12:30:30</text>
+      <text style='display:block;'>购买日用品</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;height:100rpx;width:100%;color: #387ef5;padding: 0rpx 10rpx;'>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>商家：福满家超市</text>
+      <text style='display:block;'>收入：1000x0.005=5</text>
+    </view>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>时间：2017-11-30 12:30:30</text>
+      <text style='display:block;'>购买日用品</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;height:100rpx;width:100%;color: #387ef5;padding: 0rpx 10rpx;'>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>粉丝：张大鹏</text>
+      <text style='display:block;'>消费：1000x0.005=5</text>
+    </view>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>时间：2017-11-30 12:30:30</text>
+      <text style='display:block;'>购买日用品</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;height:100rpx;width:100%;color: #387ef5;padding: 0rpx 10rpx;'>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>商家：福满家超市</text>
+      <text style='display:block;'>收入：1000x0.005=5</text>
+    </view>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>时间：2017-11-30 12:30:30</text>
+      <text style='display:block;'>购买日用品</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;height:100rpx;width:100%;color: #387ef5;padding: 0rpx 10rpx;'>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>粉丝：张大鹏</text>
+      <text style='display:block;'>消费：1000x0.005=5</text>
+    </view>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>时间：2017-11-30 12:30:30</text>
+      <text style='display:block;'>购买日用品</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;height:100rpx;width:100%;color: #387ef5;padding: 0rpx 10rpx;'>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>商家：福满家超市</text>
+      <text style='display:block;'>收入：1000x0.005=5</text>
+    </view>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>时间：2017-11-30 12:30:30</text>
+      <text style='display:block;'>购买日用品</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;height:100rpx;width:100%;color: #387ef5;padding: 0rpx 10rpx;'>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>粉丝：张大鹏</text>
+      <text style='display:block;'>消费：1000x0.005=5</text>
+    </view>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>时间：2017-11-30 12:30:30</text>
+      <text style='display:block;'>购买日用品</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<view style='font-size:30rpx;height:100rpx;width:100%;color: #387ef5;padding: 0rpx 10rpx;'>
+    <view style='width:45%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>商家：福满家超市</text>
+      <text style='display:block;'>收入：1000x0.005=5</text>
+    </view>
+    <view style='width:54%;float:left;line-height:80rpx;'>
+      <text style='display:block;'>时间：2017-11-30 12:30:30</text>
+      <text style='display:block;'>购买日用品</text>
+    </view>
+</view>
+<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>

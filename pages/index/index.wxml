@@ -1,0 +1,181 @@
+<!--index.wxml-->
+<view class="page" style='font-size:28rpx;overflow:hidden;overflow-y:auto;'>
+<!--轮播图片-->
+  <swiper class='swiper' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:key="{{item}}" wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" lazy-load="true" class="slide-image" width="355" height="150"/>
+    </swiper-item>
+  </block>
+</swiper>
+<!--活动内容-->
+<view class='hot_active'>  
+  <image  src='/resource/home/hot.png'></image>
+  <text>热门活动</text>
+</view>
+
+<view class='active_img'>
+  <image  mode='aspectFill' lazy-load="true" src="/resource/temp/a.jpg"></image>
+  <image  mode='aspectFill' lazy-load="true" src="/resource/temp/b.jpg"></image>
+</view>
+
+<!--商家-->
+<view class='hot_merchant'>  
+  <image src='/resource/home/merchant.png'></image>
+  <text>热门商家</text>
+</view>
+
+<view class="section" >
+  <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+    <view class="picker">
+      <text class='select_text' style='width:100%'>当前地区：{{region[0]}}，{{region[1]}}，{{region[2]}}</text>
+    </view>
+  </picker>
+</view>
+<view style='float:left' class='span_height'></view>
+<view class="section" >
+  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+      <text class='select_text' style='width:100%'>商家类型：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}</text>
+    </view>
+  </picker>
+</view>
+
+<!--商品详情-->
+<view>
+  <navigator url="/pages/index/merchantDetail/merchant_detail" hover-class="navigator-hover">
+    <view class='merchant_list'>
+        <view class='span_height'></view>
+          <image mode='aspectFill' lazy-load="true" src="/resource/temp/c.jpg"></image>
+          <view class='merchant_list_text'>
+            <text class='name'>腾利达汽车配件商行(河北承德分公司)</text>
+            <text class='phone'>13933338888</text>
+            <text class='address'>河北省承德市双桥区开发区居然之家傍</text>
+          </view>
+          <text class='distance'>2.1km</text>
+    </view>
+  </navigator>
+
+  <navigator url="/pages/index/merchantDetail/merchant_detail" hover-class="navigator-hover">
+    <view class='merchant_list'>
+        <view class='span_height'></view>
+          <image mode='aspectFill' lazy-load="true" src="/resource/temp/d.jpg"></image>
+          <view class='merchant_list_text'>
+            <text class='name'>顺城建材商行(河北承德分公司)</text>
+            <text class='phone'>13800006666</text>
+            <text class='address'>河北省承德市双桥区老西营腾飞驾校傍</text>
+          </view>
+          <text class='distance'>12km</text>
+    </view>
+  </navigator>
+  
+   <navigator url="/pages/index/merchantDetail/merchant_detail" hover-class="navigator-hover">
+    <view class='merchant_list'>
+        <view class='span_height'></view>
+          <image mode='aspectFill' lazy-load="true" src="/resource/temp/c.jpg"></image>
+          <view class='merchant_list_text'>
+            <text class='name'>腾利达汽车配件商行(河北承德分公司)</text>
+            <text class='phone'>13933338888</text>
+            <text class='address'>河北省承德市双桥区开发区居然之家傍</text>
+          </view>
+          <text class='distance'>2.1km</text>
+    </view>
+  </navigator>
+
+  <navigator url="/pages/index/merchantDetail/merchant_detail" hover-class="navigator-hover">
+    <view class='merchant_list'>
+        <view class='span_height'></view>
+          <image mode='aspectFill' lazy-load="true" src="/resource/temp/d.jpg"></image>
+          <view class='merchant_list_text'>
+            <text class='name'>顺城建材商行(河北承德分公司)</text>
+            <text class='phone'>13800006666</text>
+            <text class='address'>河北省承德市双桥区老西营腾飞驾校傍</text>
+          </view>
+          <text class='distance'>12km</text>
+    </view>
+  </navigator>
+
+   <navigator url="/pages/index/merchantDetail/merchant_detail" hover-class="navigator-hover">
+    <view class='merchant_list'>
+        <view class='span_height'></view>
+          <image mode='aspectFill' lazy-load="true" src="/resource/temp/c.jpg"></image>
+          <view class='merchant_list_text'>
+            <text class='name'>腾利达汽车配件商行(河北承德分公司)</text>
+            <text class='phone'>13933338888</text>
+            <text class='address'>河北省承德市双桥区开发区居然之家傍</text>
+          </view>
+          <text class='distance'>2.1km</text>
+    </view>
+  </navigator>
+
+  <navigator url="/pages/index/merchantDetail/merchant_detail" hover-class="navigator-hover">
+    <view class='merchant_list'>
+        <view class='span_height'></view>
+          <image mode='aspectFill' lazy-load="true" src="/resource/temp/d.jpg"></image>
+          <view class='merchant_list_text'>
+            <text class='name'>顺城建材商行(河北承德分公司)</text>
+            <text class='phone'>13800006666</text>
+            <text class='address'>河北省承德市双桥区老西营腾飞驾校傍</text>
+          </view>
+          <text class='distance'>12km</text>
+    </view>
+  </navigator>
+
+   <navigator url="/pages/index/merchantDetail/merchant_detail" hover-class="navigator-hover">
+    <view class='merchant_list'>
+        <view class='span_height'></view>
+          <image mode='aspectFill' lazy-load="true" src="/resource/temp/c.jpg"></image>
+          <view class='merchant_list_text'>
+            <text class='name'>腾利达汽车配件商行(河北承德分公司)</text>
+            <text class='phone'>13933338888</text>
+            <text class='address'>河北省承德市双桥区开发区居然之家傍</text>
+          </view>
+          <text class='distance'>2.1km</text>
+    </view>
+  </navigator>
+
+  <navigator url="/pages/index/merchantDetail/merchant_detail" hover-class="navigator-hover">
+    <view class='merchant_list'>
+        <view class='span_height'></view>
+          <image mode='aspectFill' lazy-load="true" src="/resource/temp/d.jpg"></image>
+          <view class='merchant_list_text'>
+            <text class='name'>顺城建材商行(河北承德分公司)</text>
+            <text class='phone'>13800006666</text>
+            <text class='address'>河北省承德市双桥区老西营腾飞驾校傍</text>
+          </view>
+          <text class='distance'>12km</text>
+    </view>
+  </navigator>
+
+   <navigator url="/pages/index/merchantDetail/merchant_detail" hover-class="navigator-hover">
+    <view class='merchant_list'>
+        <view class='span_height'></view>
+          <image mode='aspectFill' lazy-load="true" src="/resource/temp/c.jpg"></image>
+          <view class='merchant_list_text'>
+            <text class='name'>腾利达汽车配件商行(河北承德分公司)</text>
+            <text class='phone'>13933338888</text>
+            <text class='address'>河北省承德市双桥区开发区居然之家傍</text>
+          </view>
+          <text class='distance'>2.1km</text>
+    </view>
+  </navigator>
+
+  <navigator url="/pages/index/merchantDetail/merchant_detail" hover-class="navigator-hover">
+    <view class='merchant_list'>
+        <view class='span_height'></view>
+          <image mode='aspectFill' lazy-load="true" src="/resource/temp/d.jpg"></image>
+          <view class='merchant_list_text'>
+            <text class='name'>顺城建材商行(河北承德分公司)</text>
+            <text class='phone'>13800006666</text>
+            <text class='address'>河北省承德市双桥区老西营腾飞驾校傍</text>
+          </view>
+          <text class='distance'>12km</text>
+    </view>
+  </navigator>
+
+</view>
+
+</view>
+
+
+

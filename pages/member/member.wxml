@@ -1,0 +1,120 @@
+<!--logs.wxml-->
+<view class="page">
+  <navigator url="/pages/member/setting/setting" hover-class="navigator-hover">
+    <view>
+      <image style="width: {{imagewidth}}px; height: {{imageheight}}px;"  src="/resource/member/bg.png" bindload="imageLoad"></image> 
+      <view class="userinfo">
+          <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+          <block wx:else>
+            <image lazy-load='true' bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+          </block>
+      </view>
+
+      <text class='setting'>设置 ></text>    
+  </view>
+  </navigator>
+
+  <view>
+        <view class='span_height_30'></view>
+              <view class='menu_item'>              
+          <view class='menu_img'>
+            <image src='/resource/member/cash_point.png'></image>           
+          </view>  
+          <text style='color:#c40000'>奖金积分</text> 
+          <text style='color:#c40000;padding-right: 100rpx;float:right;font-weight: bold;font-size: 40rpx;'>3666</text>          
+      </view>    
+      <view class='span_height'></view>
+      <view class='menu_item'>              
+          <view class='menu_img'>
+            <image src='/resource/member/profit_point.png'></image>           
+          </view>  
+          <text style='color:#387ef5'>分红积分</text> 
+          <text style='color:#387ef5;padding-right: 100rpx;float:right;font-weight: bold;font-size: 40rpx;'>6666</text>          
+      </view>    
+      <view class='span_height'></view>
+      <view class='menu_item'>              
+          <view class='menu_img'>
+            <image src='/resource/member/consume_point.png'></image>           
+          </view>  
+          <text style='color:#33cd5f'>消费积分</text> 
+          <text style='color:#33cd5f;padding-right: 100rpx;float:right;font-weight: bold;font-size: 40rpx;'>8666</text>          
+      </view>    
+      <view class='span_height_30'></view>
+
+        <navigator url="/pages/member/qr/qr" hover-class="navigator-hover">
+          <view class='menu_item'>              
+              <view class='menu_img'>
+                <image src='/resource/member/qr.png'></image>           
+              </view>  
+              <text>推广二维码</text> 
+              <image class='right_arrow' src='/resource/common/right.png'></image> 
+          </view>
+        </navigator>
+
+         <view class='span_height_2_pl'></view>
+
+        <navigator url="/pages/member/wallet/wallet" hover-class="navigator-hover">
+          <view class='menu_item'>              
+              <view class='menu_img'>
+                <image src='/resource/member/wallet.png'></image>           
+              </view>  
+              <text>我的钱包</text> 
+              <image class='right_arrow' src='/resource/common/right.png'></image> 
+          </view>
+        </navigator>
+        
+       
+
+      <view class='span_height_30'></view>
+
+      
+        <view class='span_height_2_pl'></view>
+
+       <navigator url="/pages/member/applymgr/applymgr" hover-class="navigator-hover">
+          <view class='menu_item'>              
+              <view class='menu_img'>
+                <image src='/resource/member/apply.png'></image>           
+              </view>  
+              <text>申请业务经理</text>             
+              <image class='right_arrow' src='/resource/common/right.png'></image>               
+          </view>
+        </navigator>
+
+        <view class='span_height_2_pl'></view>
+
+        <navigator url="/pages/member/registmerc/registmerc" hover-class="navigator-hover">
+          <view class='menu_item'>              
+              <view class='menu_img'>
+                <image src='/resource/member/regist.png'></image>           
+              </view>  
+              <text>注册商家</text>             
+              <image  class='right_arrow' src='/resource/common/right.png'></image> 
+          </view>
+        </navigator>
+<view class='span_height_2_pl'></view>
+        <navigator url="/pages/member/alldetaillist/alldetaillist" hover-class="navigator-hover">
+      <view class='menu_item'>              
+            <view class='menu_img'>
+              <image src='/resource/member/consume.png'></image>           
+            </view>  
+            <text>明细列表</text> 
+            <image class='right_arrow' src='/resource/common/right.png'></image> 
+        </view>
+      </navigator>
+
+              
+        <view class='span_height_30'></view>
+        <view class='menu_item'>              
+            <view class='menu_img'>
+              <image src='/resource/member/about.png'></image>           
+            </view>  
+            <text>关于我们</text> 
+            <image class='right_arrow' src='/resource/common/right.png'></image> 
+        </view>
+        <view class='span_height_30'></view>
+        
+  </view>
+
+
+</view>

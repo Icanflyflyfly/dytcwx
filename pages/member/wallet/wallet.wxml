@@ -1,0 +1,54 @@
+<view class='page'>
+    <view class='span_height_30'></view>
+
+<navigator url="/pages/member/wallet/switch/switch" hover-class="navigator-hover">
+      <view class='menu_item'>              
+          <view class='menu_img'>
+            <image src='/resource/member/tra.png'></image>                        
+          </view>  
+          <text>积分互转</text>
+          <image class='arrow' src='/resource/common/right_gray.png'></image>
+          <text style='float:right;'>会员之间转赠积分</text>          
+      </view>  
+</navigator>
+
+      <view class='span_height'></view>
+
+<navigator url="/pages/member/wallet/repeat/repeat" hover-class="navigator-hover">
+      <view class='menu_item'>              
+          <view class='menu_img'>
+            <image src='/resource/member/rep.png'></image>                      
+          </view>  
+          <text>重复消费</text>
+          <image class='arrow' src='/resource/common/right_gray.png'></image>
+          <text style='float:right;'>会员再次购买</text>          
+      </view>  
+</navigator>
+
+      <view class='span_height'></view>
+
+<navigator url="/pages/member/wallet/guidance/guidance" hover-class="navigator-hover">
+      <view class='menu_item'>              
+          <view class='menu_img'>
+            <image src='/resource/member/imp.png'></image>                        
+          </view>  
+          <text>引流送积分</text>
+          <image class='arrow' src='/resource/common/right_gray.png'></image>
+          <text style='float:right;'>购买平台积分</text>          
+      </view>  
+</navigator>
+
+      <view class='span_height_30'></view>
+
+        <navigator url="/pages/member/wallet/withdraw/withdraw" hover-class="navigator-hover">
+          <view class='menu_item'>              
+              <view class='menu_img'>
+                <image src='/resource/member/cash.png'></image>           
+              </view>  
+              <text>提现申请</text> 
+              <image class='right_arrow' src='/resource/common/right.png'></image> 
+          </view>
+        </navigator>
+
+         <view class='span_height_30'></view>
+      </view>
