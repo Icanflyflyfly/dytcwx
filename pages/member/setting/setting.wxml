@@ -5,27 +5,33 @@
             <image src='/resource/common/tel.png'></image>           
           </view>  
           <text >账号</text> 
-          <text style='float:right' class='menu_text'>135****2222</text>          
+          <text style='float:right' class='menu_text'>{{phone}}</text>          
       </view>    
+<view class='span_height'></view>
 
+<navigator url="/pages/member/setting/bank/bank" hover-class="navigator-hover">
       <view class='menu_item'>              
           <view class='menu_img'>
             <image src='/resource/member/bank.png'></image>                        
           </view>  
           <text>开户行</text>
           <image class='arrow' src='/resource/common/right_gray.png'></image>
-          <text style='float:right;'>建设银行承德分行</text>         
+          <text style='float:right;'>{{userInfo.bank==null?"无":userInfo.bank}}</text>         
       </view>  
-      <view class='span_height'></view>
+</navigator>
 
+      <view class='span_height'></view>
+<navigator url="/pages/member/setting/bank/bank" hover-class="navigator-hover">
       <view class='menu_item'>              
           <view class='menu_img'>
             <image src='/resource/member/card.png'></image>                        
           </view>  
           <text>银行卡号</text>
           <image class='arrow' src='/resource/common/right_gray.png'></image>
-          <text style='float:right;'>3457894357984379****</text>         
+          <text style='float:right;'>{{userInfo.bankCardNo==null?"无":userInfo.bankCardNo}}</text>         
       </view>  
+</navigator>
+
       <view class='span_height'></view>
 
       <view class='span_height_30'></view>
@@ -34,8 +40,7 @@
             <image src='/resource/common/ava.png'></image>                        
           </view>  
           <text>头像</text>
-          <image class='arrow' src='/resource/common/right_gray.png'></image>
-          <image class='ava' src='/resource/temp/ava.jpg'></image>          
+          <image class='ava' src='{{userInfo.avatar}}'></image>          
       </view>  
       <view class='span_height'></view>
 
@@ -44,11 +49,11 @@
             <image src='/resource/common/nic.png'></image>                        
           </view>  
           <text>昵称</text>
-          <image class='arrow' src='/resource/common/right_gray.png'></image>
-          <text style='float:right;'>挑大梁</text>          
+          <text style='float:right;padding-right:50rpx'>{{userInfo.nickName}}</text>          
       </view>  
       <view class='span_height'></view>
 
+<navigator url="/pages/member/setting/password/password" hover-class="navigator-hover">
       <view class='menu_item'>              
           <view class='menu_img'>
             <image src='/resource/common/pwd.png'></image>                        
@@ -57,6 +62,8 @@
           <image class='arrow' src='/resource/common/right_gray.png'></image>
           <text style='float:right;'>******</text>          
       </view>  
+</navigator>
+
       <view class='span_height'></view>
 
       <view class='menu_item'>              
@@ -64,20 +71,9 @@
             <image src='/resource/common/sex.png'></image>                        
           </view>  
           <text>性别</text>
-          <image class='arrow' src='/resource/common/right_gray.png'></image>
-          <text style='float:right;'>男</text>          
+          <text style='float:right;;padding-right:50rpx'>{{userInfo.gender==1?"男":"女"}}</text>          
       </view>  
-      <view class='span_height'></view>
-
-
-      <view class='menu_item'>              
-          <view class='menu_img'>
-            <image src='/resource/common/bir.png'></image>                        
-          </view>  
-          <text>生日</text>
-          <image class='arrow' src='/resource/common/right_gray.png'></image>
-          <text style='float:right;'>1999-09-09</text>          
-      </view>  
+     
       <view class='span_height_30'></view>
       
       <view class='menu_item'>              

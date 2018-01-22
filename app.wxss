@@ -1,4 +1,5 @@
 /**app.wxss**/
+@import "./component/toast/toast.wxss";
 @import 'weui.wxss';
 
 .container {
@@ -47,4 +48,18 @@
   width: 40rpx;
   float: right;
   padding:40rpx 20rpx;
+}
+
+.input_view{
+  font-size:36rpx;
+  margin:0rpx 20rpx;
+  height:80rpx;
+  line-height:80rpx;
+}
+
+.input{
+  font-size:36rpx;
+  margin:0rpx 20rpx;
+  height:80rpx;
+  line-height:80rpx;
 }

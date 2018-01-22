@@ -1,0 +1,39 @@
+<!--pages/login/login.wxml-->
+<import src="../../component/toast/toast.wxml" />
+<template is="toast" data="{{..._toast_}}" />
+<view>
+      <view class="userinfo">            
+            <image lazy-load='true' bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </view>
+ 
+  </view>
+
+   <view>
+  <view class='span_height_30'></view>
+        <view class='span_height'></view>
+        <view class="section input_view">
+          <input class='input' type='number' maxlength='11' bindinput='phoneInput' placeholder="请输入手机号"/> 
+        </view>
+        
+        <view class='span_height'></view>
+        <view class="section input_view">
+          <input class='input' password='true' bindinput='pwd1Input' placeholder="请输入密码"/>
+        </view>
+
+        <view class='span_height'></view>
+        <view class="section input_view">
+          <input class='input' password='true' bindinput='pwd2Input' placeholder="请再次输入密码"/>
+        </view>
+
+        <view class='span_height'></view>
+        <view class="section input_view">
+          <input class='input' type='text' bindinput='userNameInput' placeholder="请输入真实姓名"/>
+        </view>
+        <view class='span_height_30'></view>
+  </view>
+  
+  <text style='padding-left:40rpx;color:#ef473a;font-size:14px;'>*密码至少为6位</text>
+  <view style='margin:0rpx 20rpx'>
+    <button class="weui-btn" type="warn"  bindtap='onRegister'>注册</button>    
+  </view>

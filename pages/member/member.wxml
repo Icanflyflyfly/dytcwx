@@ -6,7 +6,7 @@
       <view class="userinfo">
           <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
           <block wx:else>
-            <image lazy-load='true' bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+            <image lazy-load='true' bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl||userInfo.avatar}}" background-size="cover"></image>
             <text class="userinfo-nickname">{{userInfo.nickName}}</text>
           </block>
       </view>
@@ -22,7 +22,7 @@
             <image src='/resource/member/cash_point.png'></image>           
           </view>  
           <text style='color:#c40000'>奖金积分</text> 
-          <text style='color:#c40000;padding-right: 100rpx;float:right;font-weight: bold;font-size: 40rpx;'>3666</text>          
+          <text style='color:#c40000;padding-right: 100rpx;float:right;font-weight: bold;font-size: 40rpx;'>{{(userInfo.totalBonus == null ? 0 : userInfo.totalBonus) + (userInfo.totalReturned == null ? 0 : userInfo.totalReturned) }}</text>          
       </view>    
       <view class='span_height'></view>
       <view class='menu_item'>              
@@ -30,7 +30,7 @@
             <image src='/resource/member/profit_point.png'></image>           
           </view>  
           <text style='color:#387ef5'>分红积分</text> 
-          <text style='color:#387ef5;padding-right: 100rpx;float:right;font-weight: bold;font-size: 40rpx;'>6666</text>          
+          <text style='color:#387ef5;padding-right: 100rpx;float:right;font-weight: bold;font-size: 40rpx;'>{{userInfo.totalReturn==null?0:userInfo.totalReturn}}</text>          
       </view>    
       <view class='span_height'></view>
       <view class='menu_item'>              
@@ -38,7 +38,7 @@
             <image src='/resource/member/consume_point.png'></image>           
           </view>  
           <text style='color:#33cd5f'>消费积分</text> 
-          <text style='color:#33cd5f;padding-right: 100rpx;float:right;font-weight: bold;font-size: 40rpx;'>8666</text>          
+          <text style='color:#33cd5f;padding-right: 100rpx;float:right;font-weight: bold;font-size: 40rpx;'>{{(userInfo.totalConsume==null?0:userInfo.totalConsume)+(userInfo.changeBonus == null ? 0 : userInfo.changeBonus)}}</text>          
       </view>    
       <view class='span_height_30'></view>
 

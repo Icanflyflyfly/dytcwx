@@ -1,29 +1,31 @@
 <!--pages/member/wallet/switch/switch.wxml-->
+<import src="../../../../component/toast/toast.wxml" />
+<template is="toast" data="{{..._toast_}}" />
 <view class='span_height_30'></view>
 <view class='menu_item'>              
     <view class='menu_img'>
       <image src='/resource/member/cash_point.png'></image>           
     </view>  
     <text style='color: #C40000;'>可转现金积分总额</text> 
-    <text style='float:left;padding-left:80rpx;font-size:36rpx;color: #C40000;'>32432</text> 
+    <text style='float:left;padding-left:80rpx;font-size:36rpx;color: #C40000;'>{{cashInteral}}</text> 
 </view>
 
 <view class='span_height'></view>
 
 <view class="section input_view">
-  <input class='input' value='13677778888' placeholder="请输入转入方账号" auto-focus/>
-  <text>张三</text>
+  <input class='input' style='float:left;' bindinput='toPhoneInput' value='' placeholder="请输入转入方账号" auto-focus/>
+  <text style='float:left;'>{{userName}}</text>
 </view>
 <view class='span_height'></view>
 <view class="section input_view">
-  <input class='input' type='number' placeholder="请输入转赠金额" auto-focus/>
+  <input class='input' type='number' bindinput='toCashInput' placeholder="请输入转赠金额" auto-focus/>
 </view>
 <view class='span_height'></view>
 <view class="section input_view">
-  <input class='input' password='true' placeholder="请输入交易密码" auto-focus/>
+  <input class='input' password='true' bindinput='passwordInput' placeholder="请输入交易密码" auto-focus/>
 </view>
 <view class='span_height'></view>
 
-<view style='float: left;width: 98%;padding:20rpx 10rpx;'>
-    <button class="weui-btn" type="warn">确认转赠</button>
+<view style='float: left;width:98%;margin:20rpx 10rpx;'>
+    <button class="weui-btn" type="warn" bindtap='onConfirmGift'>确认转赠</button>
 </view>

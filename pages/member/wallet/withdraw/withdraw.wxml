@@ -3,21 +3,21 @@
 
   <view>
   <view class='span_height_30'></view>
-  <text style='padding-left:40rpx'>可提现:200元</text>
+  <text style='padding-left:40rpx'>可提现:{{cashInteral}}元</text>
     <view class="section input_view" >
       <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
         <view style='padding-left:20rpx' class="picker">
-          首选建行卡：{{array[index]}}
+          开户行：{{bank}}
         </view>
       </picker>
     </view>
     <view class='span_height'></view>
     <view class="section input_view">
-      <input class='input' type='number' placeholder="请输入提现金额"/> 
+      <input class='input' bindinput='cashInput' type='number' placeholder="请输入提现金额"/> 
     </view>
     <view class='span_height'></view>
     <view class="section input_view">
-      <input class='input' password='true' placeholder="请输入交易密码"/>
+      <input class='input' bindinput='passwordInput' password='true' placeholder="请输入交易密码"/>
     </view>
     <view class='span_height_30'></view>
   </view>

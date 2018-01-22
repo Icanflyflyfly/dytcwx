@@ -1,9 +1,12 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/register/register",
     "pages/index/merchantDetail/merchant_detail",
     "pages/member/member",
     "pages/member/setting/setting",
+    "pages/member/setting/bank/bank",
+    "pages/member/setting/password/password",
     "pages/member/wallet/wallet",    
     "pages/member/wallet/withdraw/withdraw",
     "pages/member/wallet/switch/switch",
@@ -29,8 +32,7 @@
     "pages/merchant/consumeinputlist/consumeinputlist",
     "pages/merchant/recharge/recharge",
     "pages/merchant/rechargelist/rechargelist",
-    "pages/merchant/integral/integral",
-    "pages/logs/logs"
+    "pages/merchant/integral/integral"
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -1,4 +1,4 @@
-// pages/member/withdraw/withdraw.js
+// pages/member/setting/bank/bank.js
 import { ToastPanel } from '../../../../component/toast/toast.js'
 const app = getApp()
 const UTIL = require('../../../../utils/util.js')
@@ -10,26 +10,16 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {    
-    cashInteral: 0,
+  data: {
     bank:'',
-    cash:0
+    bankCardNo:''
   },
-  bindPickerChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
-    this.setData({
-      index: e.detail.value
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var userInfo = app.globalData.userInfo;
-    this.setData({
-      cashInteral:(userInfo.totalBonus == null ? 0 : userInfo.totalBonus) + (userInfo.totalReturned == null ? 0 : userInfo.totalReturned) + (userInfo.giftBonus == null ? 0 : userInfo.giftBonus) - (userInfo.changeBonus == null ? 0 : userInfo.changeBonus),
-      bank: userInfo.bank
-    });
+    new app.ToastPanel(); 
   },
 
   /**
@@ -57,7 +47,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+    
   },
 
   /**
@@ -80,17 +70,50 @@ Page({
   onShareAppMessage: function () {
   
   },
-  /**金额 */
-  cashInput: function (e) {
-    var cash = e.detail.value;
+  /**开户行*/
+  bankInput: function (e) {
     this.setData({
-      cash: cash
-    });    
-  },
-  /**交易密码 */
-  passwordInput: function (e) {
-    this.setData({
-      password: e.detail.value
+      bank: e.detail.value
     });
+  },
+  /**银行卡号 */
+  bankCardNoInput: function (e) {
+    this.setData({
+      bankCardNo: e.detail.value
+    });
+  },
+  onUpdateBank:function () {
+    var thiz = this;
+    var bank = this.data.bank;
+    var bankCardNo = this.data.bankCardNo;
+    
+    if (bank.length == 0) {
+      this.show('请输入开户行');
+    } else if (bankCardNo.length == 0) {
+      this.show('请输入银行卡号');
+    } else {
+      var params = {
+        userId: wx.getStorageSync(constant.USERID),
+        bank: bank,
+        bankCardNo: bankCardNo
+      };
+
+      network.requestLoading(config.updateBank, params, '加载中', function (result) {
+        thiz.show('开户行修改成功');
+        setTimeout(
+          function () {
+            wx.navigateBack({
+              
+            });
+          }
+          , 1500);
+        var userInfo = getApp().globalData.userInfo; 
+        userInfo.bank = bank;
+        userInfo.bankCardNo = bankCardNo;
+      }, function (error) {
+        thiz.show(error.msg);
+      })
+    }
   }
+  
 })

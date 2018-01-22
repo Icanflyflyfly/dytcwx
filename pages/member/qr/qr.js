@@ -1,11 +1,18 @@
 // pages/member/qr/qr.js
+import { ToastPanel } from '../../../component/toast/toast.js'
+const app = getApp()
+const UTIL = require('../../../utils/util.js')
+const constant = require('../../../utils/constant.js')
+const network = require('../../../utils/network.js')
+const config = require('../../../utils/config.js')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    wxQr : ''
   },
 
   /**
@@ -26,7 +33,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var userInfo = getApp().globalData.userInfo;
+    if (userInfo.wxQr == 1){
+      this.setData({
+        wxQr: config.uploadFile + userInfo.phone + ".jpg"
+      });
+    }else{
+      this.getWxQr();
+    }
+    
   },
 
   /**
@@ -62,5 +77,21 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  getWxQr: function () {
+    var userInfo = getApp().globalData.userInfo;
+    var thiz = this;
+    var params = {
+      phone: userInfo.phone,
+      path:'/pages/register/register'
+    }
+    network.requestLoading(config.wxQr, params, '加载中', function (result) {
+      userInfo['wxQr'] = 1;
+      thiz.setData({
+        wxQr: config.uploadFile + userInfo.phone + ".jpg"
+      });
+    }, function (error) {
+      thiz.show(error.msg);
+    })
   }
 })

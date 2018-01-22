@@ -17,6 +17,10 @@
   color: #FFF;
   align-items: center;
   font-size: 36rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  width:200rpx;
 }
 
 .setting {
