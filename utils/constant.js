@@ -3,7 +3,7 @@ module.exports = {
   VERSION: '1.0',
   QRCODE_RRE: 'https://',
   QRCODE_SUF: 'wegoV1.0',
-  BASE_URL: "http://192.168.5.28:8080/",
+  BASE_URL: "http://localhost:8080/",
   USERID: "userId",
   TOKEN: "token",
   USER_IS_LOGIN: 'userIsLogion',

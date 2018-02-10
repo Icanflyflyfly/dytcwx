@@ -1,19 +1,21 @@
 <!--pages/member/wallet/guidance/guidance.wxml-->
-<view class='span_height_30'></view>
+<import src="../../../../component/toast/toast.wxml" />
+<template is="toast" data="{{..._toast_}}" />
 
+<view class='span_height_30'></view>
 <view class="section input_view">
   <text style="float: left;padding-right: 40rpx;">商品明细</text>
-  <input class='input' placeholder="请输入商品明细" auto-focus/>
+  <input class='input' type='text' bindinput='productInput' placeholder="请输入商品明细" auto-focus/>
 </view>
 <view class='span_height'></view>
 <view class="section input_view">
 <text style="float: left;padding-right: 40rpx;">积分金额</text>
-  <input class='input' type='number' placeholder="请输入购买积分金额" auto-focus/>
+  <input class='input' type='number' bindinput='interalInput' placeholder="请输入购买积分金额" auto-focus/>
 </view>
 <view class='span_height'></view>
 <view class="section input_view">
   <text style="float: left;padding-right: 40rpx;">需支付金额</text>
-  <input class='input' disabled='true' value="100" auto-focus/>
+  <input class='input' disabled='true' value="{{needPay}}" auto-focus/>
 </view>
 <view class='span_height'></view>
 <view class="section input_view" style='display: inline-block;'>
@@ -51,5 +53,5 @@
 </view>
 
 <view style='float: left;width: 98%;padding:10rpx;'>
-    <button class="weui-btn" type="warn">确定并支付</button>
+    <button class="weui-btn" bindtap='onConfirmPay' type="warn">确定并支付</button>
 </view>

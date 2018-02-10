@@ -1,4 +1,11 @@
 // pages/member/registmerc/registmerc.js
+import { ToastPanel } from '../../../component/toast/toast.js'
+const app = getApp()
+const UTIL = require('../../../utils/util.js')
+const constant = require('../../../utils/constant.js')
+const network = require('../../../utils/network.js')
+const config = require('../../../utils/config.js')
+
 Page({
 
   /**
@@ -44,7 +51,11 @@ Page({
         }
       ]
     ],
-    multiIndex: [0, 0, 0]
+    multiIndex: [0, 0],
+    merchantName:'',
+    merchantTel: '',
+    address: '',
+    service: '',
   },
   chooseImage: function (event) {
     var that = this;
@@ -111,7 +122,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    new app.ToastPanel();
   },
 
   /**
@@ -161,5 +172,91 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  /**商家名称 */
+  merchantNameInput: function (e) {
+    this.setData({
+      merchantName: e.detail.value
+    });
+  },  
+  /**联系电话 */
+  merchantTelInput: function (e) {
+    this.setData({
+      merchantTel: e.detail.value
+    });
+  }, 
+  /**详细地址 */
+  addressInput: function (e) {
+    this.setData({
+      address: e.detail.value
+    });
+  }, 
+  /**联系电话 */
+  serviceInput: function (e) {
+    this.setData({
+      service: e.detail.value
+    });
+  },
+  onConfirmRegist: function () {
+    var merchantName = this.data.merchantName;
+    var merchantTel = this.data.merchantTel;
+    var address = this.data.address;
+    var service = this.data.service;
+    var region = this.data.region;
+    var multiIndex = this.data.multiIndex;
+    var userInfo = app.globalData.userInfo;
+
+    if (merchantName.length == 0) {
+      this.show('请输入商家名称');
+    } else if (merchantTel.length == 0) {
+      this.show('请输入联系电话');
+    } else if (address.length == 0) {
+      this.show('请输入详细地址');
+    } else if (service.length == 0) {
+      this.show('请输入服务范围');
+    } else {
+      var thiz = this;
+      var params = {
+        merchantName: merchantName,
+        merchantTel: merchantTel,
+        merchantPhone: userInfo.phone,
+        memberName: userInfo.name,
+        address: region[0] + region[1] + region[2] + address,
+        province: region[0],
+        city: region[1],
+        county: region[2],
+        serviceMemo: service,
+        approval:"0",
+        createTime: UTIL.formatTimeYmdhms(new Date())
+      }
+
+      network.requestLoading(config.merchantFindByName, {merchantName: merchantName}, '加载中', function (result) {
+        if (result) {
+          thiz.show("同名商家已经存在");          
+        }else{
+          network.requestLoading(config.merchantRegist, params, '加载中', function (result) {
+            if (result) {
+              thiz.show("商家注册成功");
+              setTimeout(
+                function () {
+                  wx.navigateBack({
+
+                  });
+                }
+                , 1500);
+
+            }
+
+          }, function (error) {
+            thiz.show(error.msg);
+          });
+        }
+
+      }, function (error) {
+        thiz.show(error.msg);
+      });
+
+      
+    }
   }
 })

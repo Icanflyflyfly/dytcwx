@@ -21,6 +21,33 @@ var config = {
   // 得到加密密码
   getEncodePwd: BASE_URL + 'api/usermnt/userbaseinfo/get/encode/pwd',
 
+  // 申请提现
+  applyWithdraw: BASE_URL + 'api/dytcmemberdetail/withdrawdetail/add',
+  // 申请明细
+  applyWithdrawDetail: BASE_URL + 'api/dytcmemberdetail/withdrawdetail/search',
+  // 重复消费明细
+  repeatDetail: BASE_URL + 'api/dytcmemberdetail/repeatdetail/search',
+  // 引流送积分明细
+  guidanceDetail: BASE_URL + 'api/dytcmemberdetail/guidancedetail/search',
+  // 接收明细
+  giftrecieveDetail: BASE_URL + 'api/dytcmemberdetail/giftrecievedetail/search',
+  // 消费明细
+  consumeDetail: BASE_URL + 'api/dytcmemberdetail/consumedetail/search',
+  // 分红明细
+  returnDetail: BASE_URL + 'api/dytcmemberdetail/returndetail/search',
+  // 奖金明细
+  bonusDetail: BASE_URL + 'api/dytcmemberdetail/bonusdetail/search',
+  // 粉丝明细
+  fansDetail: BASE_URL + 'api/usermnt/userbaseinfo/find/fans',
+
+  // 引流送积分
+  guidanceAdd: BASE_URL + 'api/dytcmemberdetail/guidancedetail/add',
+  // 申请业务经理
+  applyMgr: BASE_URL + 'api/dytcapplymgr/applymgr/add',
+  // 注册商家
+  merchantRegist: BASE_URL + 'api/dytcmerchantmnt/merchantmnt/add',
+  // 查找同名商家
+  merchantFindByName: BASE_URL + 'api/dytcmerchantmnt/merchantmnt/find/name',
   // 二维码图片链接
   uploadFile: BASE_URL + 'upload_file/',
 

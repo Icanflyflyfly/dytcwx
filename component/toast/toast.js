@@ -19,6 +19,14 @@ let toastPanel = {
       that.setData({ '_toast_.isHide': false });
       success();
     }, 2000)
+  },
+
+  showToastSeconds: function (data, seconds) {
+    let that = this;
+    this.setData({ '_toast_.isHide': true, '_toast_.content': data });
+    setTimeout(function () {
+      that.setData({ '_toast_.isHide': false });
+    }, seconds)
   }
 }
 

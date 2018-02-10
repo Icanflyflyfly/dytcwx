@@ -1,102 +1,32 @@
 <!--pages/member/consume/consume.wxml-->
+<import src="../../../../component/toast/toast.wxml" />
+<template is="toast" data="{{..._toast_}}" />
+
+<loading hidden="{{hidden}}" bindchange="loadingChange">
+    加载中...
+</loading> 
 <view class='span_height_20'></view>
-<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #886aea;'>
-    <view style='width:54%;float:left;line-height:80rpx;'>
-      <text style='display:block;'>金额：100</text>
-      <text  style='display:block;'>时间：2017-11-30 12:30:30</text>
+
+<scroll-view scroll-y="true" style="height: 100%;" bindscrolltolower="loadMore">
+     
+      <view class='span_height_20'></view>
+
+      <view style='font-size:30rpx;height:100rpx;width:100%;color: #387ef5;'  wx:for="{{list}}" wx:for-item="item" wx:key="time">
+          <view style='padding:10rpx;'>
+            <view style='width:54%;float:left;line-height:80rpx;'>
+              <text style='display:block;'>金额：{{item.money}}</text>
+              <text  style='display:block;'>时间：{{item.time==null?"":item.time}}</text>
+            </view>
+            <view style='width:45%;float:left;line-height:80rpx;'>
+              <text>消费说明：{{item.memo==null?"":item.memo}}</text>
+            </view>                    
+          </view>
+          <view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+      </view>
+
+    <view class="tips1">
+        <view wx:if="{{hasMore}}" style="display: flex;flex-direction: row;align-items: center;align-self: center;justify-content: center;">
+        <icon type="waiting" size="45"/><text>加载中...</text></view>
+        <view wx:else><text>没有更多内容了</text></view>
     </view>
-    <view style='width:45%;float:left;'>
-      <text>消费说明:福满家超市，购买日用品,水果,蔬菜酒水</text>
-    </view>
-</view>
-<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
-<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #387ef5;'>
-    <view style='width:54%;float:left;line-height:80rpx;'>
-      <text style='display:block;'>金额：220</text>
-      <text  style='display:block;'>时间：2017-12-01 12:00:30</text>
-    </view>
-    <view style='width:45%;float:left;'>
-      <text>消费说明:博大手机，购买手机及手机配件</text>
-    </view>
-</view>
-<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
-<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #886aea;'>
-    <view style='width:54%;float:left;line-height:80rpx;'>
-      <text style='display:block;'>金额：100</text>
-      <text  style='display:block;'>时间：2017-11-30 12:30:30</text>
-    </view>
-    <view style='width:45%;float:left;'>
-      <text>消费说明:购买日用品,水果,蔬菜酒水</text>
-    </view>
-</view>
-<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
-<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #387ef5;'>
-    <view style='width:54%;float:left;line-height:80rpx;'>
-      <text style='display:block;'>金额：220</text>
-      <text  style='display:block;'>时间：2017-12-01 12:00:30</text>
-    </view>
-    <view style='width:45%;float:left;'>
-      <text>消费说明:购买手机及手机配件</text>
-    </view>
-</view>
-<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
-<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #886aea;'>
-    <view style='width:54%;float:left;line-height:80rpx;'>
-      <text style='display:block;'>金额：100</text>
-      <text  style='display:block;'>时间：2017-11-30 12:30:30</text>
-    </view>
-    <view style='width:45%;float:left;'>
-      <text>消费说明:购买日用品,水果,蔬菜酒水</text>
-    </view>
-</view>
-<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
-<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #387ef5;'>
-    <view style='width:54%;float:left;line-height:80rpx;'>
-      <text style='display:block;'>金额：220</text>
-      <text  style='display:block;'>时间：2017-12-01 12:00:30</text>
-    </view>
-    <view style='width:45%;float:left;'>
-      <text>消费说明:购买手机及手机配件</text>
-    </view>
-</view>
-<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
-<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #886aea;'>
-    <view style='width:54%;float:left;line-height:80rpx;'>
-      <text style='display:block;'>金额：100</text>
-      <text  style='display:block;'>时间：2017-11-30 12:30:30</text>
-    </view>
-    <view style='width:45%;float:left;'>
-      <text>消费说明:购买日用品,水果,蔬菜酒水</text>
-    </view>
-</view>
-<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
-<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #387ef5;'>
-    <view style='width:54%;float:left;line-height:80rpx;'>
-      <text style='display:block;'>金额：220</text>
-      <text  style='display:block;'>时间：2017-12-01 12:00:30</text>
-    </view>
-    <view style='width:45%;float:left;'>
-      <text>消费说明:购买手机及手机配件</text>
-    </view>
-</view>
-<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
-<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #886aea;'>
-    <view style='width:54%;float:left;line-height:80rpx;'>
-      <text style='display:block;'>金额：100</text>
-      <text  style='display:block;'>时间：2017-11-30 12:30:30</text>
-    </view>
-    <view style='width:45%;float:left;'>
-      <text>消费说明:购买日用品,水果,蔬菜酒水</text>
-    </view>
-</view>
-<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
-<view style='font-size:30rpx;height:100rpx;width:100%;padding:10rpx;color: #387ef5;'>
-    <view style='width:54%;float:left;line-height:80rpx;'>
-      <text style='display:block;'>金额：220</text>
-      <text  style='display:block;'>时间：2017-12-01 12:00:30</text>
-    </view>
-    <view style='width:45%;float:left;'>
-      <text>消费说明:购买手机及手机配件</text>
-    </view>
-</view>
-<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+ </scroll-view>

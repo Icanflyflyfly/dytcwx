@@ -25,8 +25,10 @@ Page({
   onLoad: function (options) {
     new app.ToastPanel(); 
     var userInfo = app.globalData.userInfo;
+    var cashInteral = (userInfo.totalBonus == null ? 0 : userInfo.totalBonus) + (userInfo.totalReturned == null ? 0 : userInfo.totalReturned) + (userInfo.giftBonus == null ? 0 : userInfo.giftBonus) - (userInfo.changeBonus == null ? 0 : userInfo.changeBonus);
     this.setData({
-      cashInteral: (userInfo.totalBonus == null ? 0 : userInfo.totalBonus) + (userInfo.totalReturned == null ? 0 : userInfo.totalReturned) + (userInfo.giftBonus == null ? 0 : userInfo.giftBonus) - (userInfo.changeBonus == null ? 0 : userInfo.changeBonus)
+      cashInteral: cashInteral,
+      giftInteral: cashInteral
     });
   },
 
@@ -145,6 +147,9 @@ Page({
           }
           network.requestLoading(config.interalGift, params, '加载中', function (result) {
             if (result) {
+              //更新缓存
+              var userInfo = app.globalData.userInfo;
+              userInfo.giftBonus = userInfo.giftBonus - giftInteral;
               thiz.show("赠予成功");
             }
             setTimeout(

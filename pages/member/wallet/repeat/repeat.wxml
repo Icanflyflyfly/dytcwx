@@ -2,20 +2,13 @@
 <import src="../../../../component/toast/toast.wxml" />
 <template is="toast" data="{{..._toast_}}" />
 <view class='span_height_30'></view>
-<view class='menu_item'>              
-    <view class='menu_img'>
-      <image src='/resource/member/cash_point.png'></image>           
-    </view>  
-    <text style='color: #C40000;'>可兑换{{cashInteral*10}}</text> 
-     
-</view>
 
 <view class='span_height'></view>
 
 <view class='span_height'></view>
 <view class="section input_view">
   <text style='float:left'>消费金额:</text>
-  <input class='input' style='padding-left:30rpx' value=""  bindinput='interalInput' type='number' placeholder="请输入购买消费积分总额" auto-focus/>
+  <input class='input' style='padding-left:30rpx' value="{{cashInteral*10}}"  bindinput='interalInput' type='number' placeholder="请输入购买消费积分总额" auto-focus/>
 </view>
 <view class='span_height'></view>
 <view class="section input_view">

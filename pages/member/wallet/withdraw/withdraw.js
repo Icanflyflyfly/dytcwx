@@ -12,8 +12,9 @@ Page({
    */
   data: {    
     cashInteral: 0,
-    bank:'',
-    cash:0
+    cash:0,
+    password:'',
+    factCash:0
   },
   bindPickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -25,10 +26,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    new app.ToastPanel();
     var userInfo = app.globalData.userInfo;
+    var cashInteral = (userInfo.totalBonus == null ? 0 : userInfo.totalBonus) + (userInfo.totalReturned == null ? 0 : userInfo.totalReturned) + (userInfo.giftBonus == null ? 0 : userInfo.giftBonus) - (userInfo.changeBonus == null ? 0 : userInfo.changeBonus);
     this.setData({
-      cashInteral:(userInfo.totalBonus == null ? 0 : userInfo.totalBonus) + (userInfo.totalReturned == null ? 0 : userInfo.totalReturned) + (userInfo.giftBonus == null ? 0 : userInfo.giftBonus) - (userInfo.changeBonus == null ? 0 : userInfo.changeBonus),
-      bank: userInfo.bank
+      cashInteral: cashInteral,
+      cash: cashInteral,
+      factCash: (cashInteral*0.9).toFixed(2)
     });
   },
 
@@ -84,7 +88,8 @@ Page({
   cashInput: function (e) {
     var cash = e.detail.value;
     this.setData({
-      cash: cash
+      cash: cash,
+      factCash:(cash*(0.9)).toFixed(2)
     });    
   },
   /**交易密码 */
@@ -92,5 +97,57 @@ Page({
     this.setData({
       password: e.detail.value
     });
+  },
+  /*提交申请*/
+  onConfirmWithdraw: function () {
+    var cash = this.data.cash;
+    var factCash = this.data.factCash;
+    var password = this.data.password;
+
+    if (cash == 0 || UTIL.isNumTest(cash) == false) {
+      this.show('请输入合法提现金额');
+    } else if (password.length == 0) {
+      this.show('请输入交易密码');
+    } else {
+      var thiz = this;
+      network.requestLoading(config.getEncodePwd, { password: password }, '加载中', function (result) {
+        var userInfo = app.globalData.userInfo;
+        if (result == null || userInfo.password != result) {
+          thiz.show("对不起，请输入正确的交易密码");
+        } else {          
+          var params = {
+            phone: userInfo.phone,
+            name: userInfo.name,
+            money: cash,
+            factSum: factCash,
+            charge: (cash - factCash)
+          }
+          network.requestLoading(config.applyWithdraw, params, '加载中', function (result) {
+            if (result) {              
+              thiz.show("提现申请成功");
+              setTimeout(
+                function () {
+                  wx.navigateBack({
+
+                  });
+                }
+                , 1500);
+            }else{
+              thiz.showToastSeconds("您目前已有提现申请并审核中,请等待",3000);
+            }            
+
+
+          }, function (error) {
+            thiz.show(error.msg);
+          })
+        }
+
+      }, function (error) {
+        thiz.show(error.msg);
+      })
+
+
+    }
+
   }
 })

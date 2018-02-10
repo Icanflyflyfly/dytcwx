@@ -1,4 +1,11 @@
 // pages/member/wallet/guidance/guidance.js
+import { ToastPanel } from '../../../../component/toast/toast.js'
+const app = getApp()
+const UTIL = require('../../../../utils/util.js')
+const constant = require('../../../../utils/constant.js')
+const network = require('../../../../utils/network.js')
+const config = require('../../../../utils/config.js')
+
 Page({
 
   /**
@@ -9,10 +16,17 @@ Page({
       { name: 'wx', value: '微信', checked: 'true' },
       { name: 'zfb', value: '支付宝'}
     ],
-    imageList: []
+    imageList: [],
+    product:'',
+    interal: 0,
+    payType:'wx',
+    needPay:0
   },
   radioChange: function (e) {
-    console.log('radio发生change事件，携带value值为：', e.detail.value)
+    console.log('radio发生change事件，携带value值为：', e.detail.value);
+    this.setData({
+      payType: e.detail.value
+    });
   },
   chooseImage: function (event) {
     var that = this;
@@ -41,7 +55,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    new app.ToastPanel();
   },
 
   /**
@@ -91,5 +105,57 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  /**商品明细 */
+  productInput: function (e) {
+    this.setData({
+      product: e.detail.value
+    });
+  },
+  /**积分金额 */
+  interalInput: function (e) {
+    this.setData({
+      interal: e.detail.value,
+      needPay: (e.detail.value)/10
+    });
+  },
+  onConfirmPay: function () {
+    var product = this.data.product;
+    var interal = this.data.interal;
+    var needPay = this.data.needPay;
+    var userInfo = app.globalData.userInfo;
+
+    if (product.length == 0) {
+      this.show('请输入商品明细');
+    } else if (interal == 0 || !UTIL.isNumTest(interal)) {
+      this.show('请输入正确的积分金额');
+    }  else {
+          var thiz = this;      
+          var params = {
+            phone: userInfo.phone,
+            name: userInfo.name,
+            consumeMoney: interal,
+            money: needPay,
+            memo: product
+          }
+          network.requestLoading(config.guidanceAdd, params, '加载中', function (result) {
+            if (result) {
+              //更新缓存              
+              userInfo.totalConsume = userInfo.totalConsume + interal;
+              thiz.show("积分购买成功");
+              setTimeout(
+                function () {
+                  wx.navigateBack({
+
+                  });
+                }
+                , 1500);
+
+            }
+
+          }, function (error) {
+            thiz.show(error.msg);
+          })
+        }    
   }
 })

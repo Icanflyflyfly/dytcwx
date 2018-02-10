@@ -14,6 +14,17 @@ const formatTime = date => {
   return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
 
+const formatTimeYmdhms = date => {
+  const year = date.getFullYear()
+  const month = date.getMonth() + 1
+  const day = date.getDate()
+  const hour = date.getHours()
+  const minute = date.getMinutes()
+  const second = date.getSeconds()
+
+  return year+"-"+month+"-"+day+" "+hour+":"+minute+":"+second;
+}
+
 const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
@@ -143,7 +154,15 @@ function gotoLoginPage() {
 function isPhoneNo(phone) {
   // 验证1开头, 且号码为11位
   var phoneReg = /^1[0-9]{10}$/;
-  return phoneReg.test(phone)
+  return phoneReg.test(phone);
+}
+
+/**
+ * 数字校验
+ */
+function isNumTest(text) {
+  var num = /^[0-9]*$/;
+  return num.test(text);
 }
 
 
@@ -181,6 +200,7 @@ function isShowGuide(){
 
 module.exports = {
   formatTime: formatTime,
+  formatTimeYmdhms: formatTimeYmdhms,
   imageUtil: imageUtil,
   getCurrentUserInfo: getCurrentUserInfo,
   showAlertViewConfirm: showAlertViewConfirm,
@@ -191,5 +211,6 @@ module.exports = {
   getUserInfo: getUserInfo,
   saveUserInfo: saveUserInfo,
   setShowGuide: setShowGuide,
-  isShowGuide: isShowGuide
+  isShowGuide: isShowGuide,
+  isNumTest: isNumTest
 }
