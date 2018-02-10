@@ -46,8 +46,7 @@ var config = {
   applyMgr: BASE_URL + 'api/dytcapplymgr/applymgr/add',
   // 注册商家
   merchantRegist: BASE_URL + 'api/dytcmerchantmnt/merchantmnt/add',
-  // 查找同名商家
-  merchantFindByName: BASE_URL + 'api/dytcmerchantmnt/merchantmnt/find/name',
+  
   // 二维码图片链接
   uploadFile: BASE_URL + 'upload_file/',
 
@@ -63,41 +62,26 @@ var config = {
   // 重复消费
   interalChange: BASE_URL + 'api/usermnt/userbaseinfo/interal/change',
 
-  // 用户扫码开门
-  userScanUrl: BASE_URL + 'api/scanmnt/userscan/scan',
-
-  // 轮询开门状态
-  userScanFindOpenUrl: BASE_URL + 'api/scanmnt/userscan/find',
-
-  // 轮询关门状态
-  userScanFindCloseUrl: BASE_URL + 'api/scanmnt/userclose/find/scanid',
-
-  // 根据扫码ID查询订单
-  findOrderByScanIdUrl: BASE_URL + 'api/ordermnt/baseorder/userscan/find',
-
-  // 根据订单编号查询订单
-  findOrderByorderNoUrl: BASE_URL + 'api/ordermnt/baseorder/orderno/find',
-
   // 微信支付请求参数
   paymentUrl: BASE_URL + 'api/wx/payment',
 
-  // 用户订单列表
-  orderSearchUrl: BASE_URL + 'api/ordermnt/baseorder/dto/search',
-
-  // 查询未支付订单
-  findNoPayOrderUrl: BASE_URL + 'api/ordermnt/baseorder/nopay/find',
-
-  // 用户输入手机号绑定
-  bindPhoneUrl: BASE_URL + 'api/usermnt/userbaseinfo/wechat/bind/phone',
-
-  // 获取短信验证码
-  getAuthCodeUrl: BASE_URL + 'api/usermnt/login/send/code',
-
-  // 展示引导说明页
-  showGuideUrl: BASE_URL + 'api/usermnt/userbaseinfo/show/guide',
-
   // 返回一个ad
-  findOneAdUrl: BASE_URL + 'api/admnt/advertise/findone'
+  findOneAdUrl: BASE_URL + 'api/admnt/advertise/findone',
+
+  // 商家充值
+  chargeMoney: BASE_URL + 'api/dytcmerchantmnt/merchantmnt/charge/money',
+  // 商家充值明细
+  chargeMoneyDetail: BASE_URL + 'api/dytcmerchantdetail/chargedetail/search',
+  // 查找同名商家
+  merchantFindByName: BASE_URL + 'api/dytcmerchantmnt/merchantmnt/find/name',
+  // 根据merchantPhone查询商家
+  merchantFindByPhone: BASE_URL + 'api/dytcmerchantmnt/merchantmnt/find/merchant/phone',
+  // 商家消费录入
+  consumeInput: BASE_URL + 'api/usermnt/userbaseinfo/consume/input',
+  // 商家消费录入明细
+  consumeInputDetail: BASE_URL + 'api/dytcmerchantdetail/cosumeinputdetail/search',
+  // 商家积分兑换
+  merchantInteralChange: BASE_URL + 'api/usermnt/userbaseinfo/merchant/interal/change'
 }
 
 module.exports = config

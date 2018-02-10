@@ -1,4 +1,9 @@
 // pages/merchant/recharge/recharge.js
+const app = getApp()
+const UTIL = require('../../../utils/util.js')
+const constant = require('../../../utils/constant.js')
+const network = require('../../../utils/network.js')
+const config = require('../../../utils/config.js')
 Page({
 
   data: {
@@ -6,40 +11,17 @@ Page({
       { name: 'wx', value: '微信', checked: 'true' },
       { name: 'zfb', value: '支付宝' }
     ],
-    imageList: []
+    imageList: [],
+    charge:0
   },
   radioChange: function (e) {
     console.log('radio发生change事件，携带value值为：', e.detail.value)
-  },
-  chooseImage: function (event) {
-    var that = this;
-    wx.chooseImage({
-      count: 2, // 一次最多可以选择2张图片一起上传
-      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-      success: function (res) {
-        var imgeList = that.data.imageList.concat(res.tempFilePaths);
-        that.setData({
-          imageList: imgeList
-        });
-      }
-    })
-  },
-  previewImage: function (e) {
-    var that = this;
-    var dataid = e.currentTarget.dataset.id;
-    var imageList = that.data.imageList;
-    wx.previewImage({
-      current: imageList[dataid],
-      urls: this.data.imageList
-    });
-  },
-
+  }, 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    new app.ToastPanel();
   },
 
   /**
@@ -89,5 +71,42 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  chargeInput: function (e) {
+    this.setData({
+      charge: e.detail.value
+    });
+  },
+  onConfirmCharge: function () {
+    var charge = this.data.charge;
+    var userInfo = app.globalData.userInfo;
+    var thiz = this;
+
+    if (charge == 0 || !UTIL.isNumTest(charge)) {
+      thiz.show('请输入正确的充值金额');
+    } else {      
+      var params = {
+        merchantPhone: userInfo.phone,
+        money: charge
+      }
+
+      network.requestLoading(config.chargeMoney, params, '加载中', function (result) {
+        if (result) {
+          thiz.show("商家充值成功");
+          setTimeout(
+            function () {
+              wx.navigateBack({
+
+              });
+            }
+            , 1500);
+
+        }
+
+      }, function (error) {
+        thiz.show(error.msg);
+      });
+
+    }
   }
 })

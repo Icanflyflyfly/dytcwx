@@ -48,6 +48,17 @@
 
       <view class='span_height_30'></view>
         
+        <navigator url="/pages/merchant/rechargelist/rechargelist" hover-class="navigator-hover">
+          <view class='menu_item'>              
+              <view class='menu_img'>
+                <image src='/resource/merchant/rech_detail.png'></image>           
+              </view>  
+              <text>商家充值明细</text> 
+              <image class='right_arrow' src='/resource/common/right.png'></image> 
+          </view>
+        </navigator>         
+
+        <view class='span_height_2_pl'></view>
 
         <navigator url="/pages/merchant/consumeinputlist/consumeinputlist" hover-class="navigator-hover">
           <view class='menu_item'>              
@@ -57,19 +68,7 @@
               <text>消费录入明细</text> 
               <image class='right_arrow' src='/resource/common/right.png'></image> 
           </view>
-        </navigator>   
-
-        <view class='span_height_2_pl'></view>
-
-        <navigator url="/pages/merchant/rechargelist/rechargelist" hover-class="navigator-hover">
-          <view class='menu_item'>              
-              <view class='menu_img'>
-                <image src='/resource/merchant/rech_detail.png'></image>           
-              </view>  
-              <text>商家充值明细</text> 
-              <image class='right_arrow' src='/resource/common/right.png'></image> 
-          </view>
-        </navigator>
+        </navigator>  
 
         <view class='span_height_30'></view>
        

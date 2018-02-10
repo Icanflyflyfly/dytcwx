@@ -1,32 +1,36 @@
 <!--pages/merchant/consumeinputlist/consumeinputlist.wxml-->
-<view class='span_height_30'></view>
-<view style='font-size:30rpx;height:100rpx;width:100%;padding:20rpx;color: #886aea;'>
-    <view style='width:50%;float:left;line-height:50rpx;'>
-      <text style='display:block;'>会员:13888889999</text>
-      <text  style='display:block;'>时间:2017-12-01 12:00:30</text>
-    </view>   
-    <view style='width:50%;float:left;line-height:50rpx;'>
-      <text style='display:block;padding-left:5rpx;'>会员姓名:张三古</text>
-      <text style='display:block;padding-left:5rpx;'>消费明细：购买日用品</text>
-    </view> 
-    <view style='width:50%;float:left;line-height:50rpx;'>
-      <text style='display:block;'>金额:100元</text>      
-    </view>
-</view>
-<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+<import src="../../../component/toast/toast.wxml" />
+<template is="toast" data="{{..._toast_}}" />
 
+<loading hidden="{{hidden}}" bindchange="loadingChange">
+    加载中...
+</loading> 
+<view class='span_height_20'></view>
 
-<view style='font-size:30rpx;height:100rpx;width:100%;padding:20rpx;color: #387ef5;'>
-    <view style='width:50%;float:left;line-height:50rpx;'>
-      <text style='display:block;'>会员:13888889999</text>
-      <text  style='display:block;'>时间:2017-12-01 12:00:30</text>
-    </view>   
-    <view style='width:50%;float:left;line-height:50rpx;'>
-      <text style='display:block;padding-left:5rpx;'>会员姓名:张三古</text>
-      <text style='display:block;padding-left:5rpx;'>消费明细：购买日用品</text>
-    </view> 
-    <view style='width:50%;float:left;line-height:50rpx;'>
-      <text style='display:block;'>金额:100元</text>      
+<scroll-view scroll-y="true" style="height: 100%;" bindscrolltolower="loadMore">
+     
+      <view class='span_height_20'></view>
+
+      <view style='font-size:30rpx;height:100rpx;width:100%;color: #387ef5;'  wx:for="{{list}}" wx:for-item="item" wx:key="time">
+          <view style='padding:10rpx;'>
+              <view style='width:50%;float:left;line-height:50rpx;'>
+                <text style='display:block;'>会员:{{item.phone}}</text>
+                <text  style='display:block;'>时间:{{item.time}}</text>
+              </view>   
+              <view style='width:50%;float:left;line-height:50rpx;'>
+                <text style='display:block;padding-left:5rpx;'>会员姓名:{{item.name}}</text>
+                <text style='display:block;padding-left:5rpx;'>消费明细：{{item.memo}}</text>
+              </view> 
+              <view style='width:50%;float:left;line-height:50rpx;'>
+                <text style='display:block;'>金额:{{item.money}}元</text>      
+              </view>                   
+          </view>
+          <view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+      </view>
+
+    <view class="tips1">
+        <view wx:if="{{hasMore}}" style="display: flex;flex-direction: row;align-items: center;align-self: center;justify-content: center;">
+        <icon type="waiting" size="45"/><text>加载中...</text></view>
+        <view wx:else><text>没有更多内容了</text></view>
     </view>
-</view>
-<view style="float: left;height: 10rpx;width: 100%;background-color: #efefef;"></view>
+ </scroll-view>

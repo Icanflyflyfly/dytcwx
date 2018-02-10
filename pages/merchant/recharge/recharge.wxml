@@ -1,23 +1,17 @@
 <!--pages/merchant/recharge/recharge.wxml-->
+<import src="../../../component/toast/toast.wxml" />
+<template is="toast" data="{{..._toast_}}" />
+
 <view class='span_height_30'></view>
 <view class="section input_view">
 <text style="float: left;padding-right: 40rpx;">充值金额</text>
-  <input class='input' type='number' placeholder="请输入充值金额" auto-focus/>
-</view>
-<view class='span_height'></view>
-<view class="section input_view" style='display: inline-block;'>
-  <text style='float: left;padding-right: 20px;'>充值支付方式</text>
-  <radio-group style="float: left;" class="radio-group" bindchange="radioChange">
-  <label class="radio" wx:for="{{items}}">
-    <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
-  </label>
-</radio-group>
+  <input class='input' type='number' bindinput='chargeInput' placeholder="请输入充值金额" auto-focus/>
 </view>
 
 <view class='span_height' style='float:left'></view>
 
 
 <view style='float: left;width: 98%;padding:10rpx;'>
-    <button class="weui-btn" type="warn">确定并支付</button>
+    <button class="weui-btn" type="warn" bindtap='onConfirmCharge' >确定并支付</button>
 </view>
 
