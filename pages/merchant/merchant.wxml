@@ -1,13 +1,19 @@
 <!--logs.wxml-->
 <view class="page">
-  <view>
-    <image style="width: {{imagewidth}}px; height: {{imageheight}}px;"  src="/resource/member/bg.png" bindload="imageLoad"></image> 
-    <view class="userinfo">
-        
-    </view>
+ <navigator url="/pages/member/setting/setting" hover-class="navigator-hover">
+    <view>
+      <image style="width: {{imagewidth}}px; height: {{imageheight}}px;"  src="/resource/member/bg.png" bindload="imageLoad"></image> 
+      <view class="userinfo">
+          <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+          <block wx:else>
+            <image lazy-load='true' bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl||userInfo.avatar}}" background-size="cover"></image>
+            <text class="userinfo-nickname">{{userInfo.merchantInfo.merchantName}}</text>
+          </block>
+      </view>
 
-    <text class='setting'>设置 ></text>
+      <text class='setting'>设置 ></text>    
   </view>
+  </navigator>
 
   <view>
         <view class='span_height_30'></view>

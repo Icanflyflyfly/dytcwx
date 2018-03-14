@@ -5,7 +5,7 @@
             <image src='/resource/member/cash_point.png'></image>           
           </view>  
           <text style='color:#c40000'>奖金积分</text> 
-          <text style='color:#c40000;padding-right: 100rpx;float:right;font-weight: bold;font-size: 40rpx;'>{{(userInfo.totalBonus == null ? 0 : userInfo.totalBonus) + (userInfo.totalReturned == null ? 0 : userInfo.totalReturned) }}</text>          
+          <text style='color:#c40000;padding-right: 100rpx;float:right;font-weight: bold;font-size: 40rpx;'>{{(userInfo.totalBonus == null ? 0 : userInfo.totalBonus)}}</text>          
       </view>    
       <view class='span_height'></view>
       <view class='menu_item'>              

@@ -6,20 +6,22 @@
   <view class='span_height_30'></view>   
     <view class='span_height'></view>
     <view class="section input_view">
-      <input class='input' value="{{cashInteral}}" bindinput='cashInput' type='number' placeholder="请输入提现金额"/> 
+      <text style='float:left'>提现金额：</text>
+      <input class='input' value="{{defaultCash}}" bindinput='cashInput' type='number' placeholder="请输入提现金额"/> 
     </view>
     <view class='span_height'></view>
     <view class="section input_view">
+      <text style='float:left'>交易密码：</text>
       <input class='input' bindinput='passwordInput' password='true' placeholder="请输入交易密码"/>
     </view>
     <view class='span_height'></view>
     <view class="section input_view">
-      <text style='float:left'>实际到帐:</text>
+      <text style='float:left'>实际到帐：</text>
       <input class='input' value="{{factCash}}" disabled='true' type='number'/>
     </view>
     <view class='span_height_30'></view>
   </view>
-  <text style='padding-left:40rpx;color:#ef473a;font-size:14px;'>*金额不小于100元才可提现，并扣除10%手续费</text>
+  <text style='padding-left:20rpx;color:#ef473a;font-size:12px;'>*金额不小于100元才可提现，且为100的整数倍，并扣除10%手续费</text>
   <view style='margin:0rpx 20rpx'>
     <button class="weui-btn" bindtap='onConfirmWithdraw' type="warn">申请提现</button>    
   </view>

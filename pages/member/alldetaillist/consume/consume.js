@@ -122,7 +122,7 @@ Page({
         direction: 'DESC'
       }]
     }
-    network.requestLoading(config.consumeDetail, params, '加载中', function (result) {
+    network.requestLoading(config.consumeInputDetail, params, '加载中', function (result) {
       if (result.totalCount <= ((thiz.data.page) * (thiz.data.size))) {
         thiz.setData({
           list: thiz.data.list.concat(result.data),

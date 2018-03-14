@@ -10,7 +10,7 @@ Page({
     hasUserInfo: false
   },  
   onLoad: function () {
-    var thiz = this;
+      var thiz = this;
     
       // 在没有 open-type=getUserInfo 版本的兼容处理  
       wx.checkSession({

@@ -15,3 +15,8 @@
     <button class="weui-btn" type="warn" bindtap='onConfirmCharge' >确定并支付</button>
 </view>
 
+<view style="float: left;padding-left: 10rpx;">
+<text style="float: left;">超出1万向对公账号打款</text>
+<text style="float: left;">公司开户行:承德建设银行</text>
+<text style="float: left;">银行账号:34547686554899545</text>
+</view>

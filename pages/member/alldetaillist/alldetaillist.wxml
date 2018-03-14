@@ -121,7 +121,7 @@
               </view>  
               <text>我的粉丝</text> 
               <image style='float:right' class='right_arrow' src='/resource/common/right.png'></image> 
-              <text style='float:right;font-size:30rpx;color: #C40000;'>总数:325</text> 
+              <text style='float:right;font-size:30rpx;color: #C40000;'></text> 
           </view>
         </navigator>
         <view class='span_height_30'></view>

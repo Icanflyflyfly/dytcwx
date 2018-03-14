@@ -16,13 +16,18 @@
   display: flex;
   color: #FFF;
   align-items: center;
+  font-size: 36rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  width:200rpx;
 }
 
 .setting {
   display: flex;
   position: absolute;
   top: 120rpx;
-  right: 80rpx;
+  right: 20rpx;
   color: #FFF; 
   font-size: 36rpx;
 }
@@ -45,4 +50,10 @@
   color: #0f0f0f;
   font-size: 36rpx;
 }
+
+
+.menu_text{
+  
+}
+
 

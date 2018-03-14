@@ -24,8 +24,8 @@ Page({
     var cashInteral = (userInfo.totalBonus == null ? 0 : userInfo.totalBonus) + (userInfo.totalReturned == null ? 0 : userInfo.totalReturned) + (userInfo.giftBonus == null ? 0 : userInfo.giftBonus) - (userInfo.changeBonus == null ? 0 : userInfo.changeBonus);
 
     this.setData({
-      consumeInteral: cashInteral*10,
-      consumeInteralInit: cashInteral * 10
+      consumeInteral: cashInteral,
+      consumeInteralInit: cashInteral
     });
   },
 
@@ -112,7 +112,7 @@ Page({
         if (result) {
           //更新缓存
           var userInfo = app.globalData.userInfo;
-          userInfo.changeBonus = userInfo.changeBonus + consumeInteral / 10;
+          userInfo.changeBonus = userInfo.changeBonus + parseInt(consumeInteral);
           thiz.show("兑换积分成功");
           setTimeout(
             function () {

@@ -11,7 +11,7 @@ Page({
    * 页面的初始数据
    */
   data: {    
-    cashInteral: 0,
+    defaultCash: 0,
     cash:0,
     password:'',
     factCash:0
@@ -30,9 +30,9 @@ Page({
     var userInfo = app.globalData.userInfo;
     var cashInteral = (userInfo.totalBonus == null ? 0 : userInfo.totalBonus) + (userInfo.totalReturned == null ? 0 : userInfo.totalReturned) + (userInfo.giftBonus == null ? 0 : userInfo.giftBonus) - (userInfo.changeBonus == null ? 0 : userInfo.changeBonus);
     this.setData({
-      cashInteral: cashInteral,
+      defaultCash: cashInteral,
       cash: cashInteral,
-      factCash: (cashInteral*0.9).toFixed(2)
+      factCash: (cashInteral*0.9).toFixed(0)
     });
   },
 
@@ -89,7 +89,7 @@ Page({
     var cash = e.detail.value;
     this.setData({
       cash: cash,
-      factCash:(cash*(0.9)).toFixed(2)
+      factCash:(cash*(0.9)).toFixed(0)
     });    
   },
   /**交易密码 */
@@ -101,11 +101,16 @@ Page({
   /*提交申请*/
   onConfirmWithdraw: function () {
     var cash = this.data.cash;
+    var defaultCash = this.data.defaultCash;
     var factCash = this.data.factCash;
     var password = this.data.password;
 
     if (cash == 0 || UTIL.isNumTest(cash) == false) {
       this.show('请输入合法提现金额');
+    } else if (cash > defaultCash) {
+      this.show('不能大于可提现金额');
+    } else if (cash%100 != 0) {
+      this.show('提现金额必需为100的倍数');
     } else if (password.length == 0) {
       this.show('请输入交易密码');
     } else {

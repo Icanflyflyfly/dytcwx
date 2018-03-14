@@ -56,6 +56,8 @@ Page({
     merchantTel: '',
     address: '',
     service: '',
+    phone: '',
+    userName: ''
   },
   chooseImage: function (event) {
     var that = this;
@@ -173,6 +175,20 @@ Page({
   onShareAppMessage: function () {
   
   },
+  /**手机号 */
+  toPhoneInput: function (e) {
+    var phone = e.detail.value;
+    this.setData({
+      phone: phone
+    });
+    if (phone.length == 11) {
+      this.findUserByPhone();
+    }else{
+      this.setData({
+        userName: ""
+      });
+    }
+  },
   /**商家名称 */
   merchantNameInput: function (e) {
     this.setData({
@@ -197,18 +213,41 @@ Page({
       service: e.detail.value
     });
   },
+  findUserByPhone: function () {
+    var thiz = this;
+    network.requestLoading(config.findUserByPhone, { phone: this.data.phone }, '加载中', function (result) {
+      if (result == null) {
+        thiz.show("对不起，此用户不存在");
+        thiz.setData({
+          userName:  ""
+        });
+      } else {
+        thiz.setData({
+          userName: result.name == null ? "" : result.name,
+          toUserId: result.id
+        });
+      }
+
+    }, function (error) {
+      thiz.show(error.msg);
+    })
+  },
   onConfirmRegist: function () {
     var merchantName = this.data.merchantName;
     var merchantTel = this.data.merchantTel;
+    var merchantPhone = this.data.phone;
     var address = this.data.address;
     var service = this.data.service;
     var region = this.data.region;
+    var userName = this.data.userName;
     var multiIndex = this.data.multiIndex;
     var userInfo = app.globalData.userInfo;
 
-    if (merchantName.length == 0) {
+    if (userName.length == 0) {
+      this.show('请输入正确的会员账号');
+    } else if (merchantName.length == 0) {
       this.show('请输入商家名称');
-    } else if (merchantTel.length == 0) {
+    }else if (merchantTel.length == 0) {
       this.show('请输入联系电话');
     } else if (address.length == 0) {
       this.show('请输入详细地址');
@@ -219,7 +258,7 @@ Page({
       var params = {
         merchantName: merchantName,
         merchantTel: merchantTel,
-        merchantPhone: userInfo.phone,
+        merchantPhone: merchantPhone,
         memberName: userInfo.name,
         address: region[0] + region[1] + region[2] + address,
         province: region[0],
@@ -227,7 +266,12 @@ Page({
         county: region[2],
         serviceMemo: service,
         approval:"0",
-        createTime: UTIL.formatTimeYmdhms(new Date())
+        createTime: UTIL.formatTimeYmdhms(new Date()),
+        fromUserInfo:{
+          phone: userInfo.phone,
+          name:userInfo.name,
+          time: UTIL.formatTimeYmdhms(new Date())
+        }
       }
 
       network.requestLoading(config.merchantFindByName, {merchantName: merchantName}, '加载中', function (result) {

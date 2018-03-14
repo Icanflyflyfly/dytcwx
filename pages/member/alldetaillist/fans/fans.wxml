@@ -11,14 +11,15 @@
      
       <view class='span_height_20'></view>
 
-      <view style='font-size:30rpx;width:100%;padding:10rpx 0rpx 10rpx 30rpx;color: #444;'  wx:for="{{list}}" wx:for-item="item" wx:key="time">
+      <view style='font-size:30rpx;width:100%;color: #444;'  wx:for="{{list}}" wx:for-item="item" wx:key="time">
         <view style='padding:10rpx;'>
-            <view style='width:45%;float:left;'>
-              <text style='display:block;'>会员名：{{item.fromUserInfo.name}}</text>
-              <text  style='display:block;'>手机号：{{item.fromUserInfo.phone}}</text>
+            <view style='width:42%;float:left;'>
+              <text style='display:block;'>会员名：{{item.name}}</text>
+              <text  style='display:block;'>手机号：{{item.phone}}</text>
             </view>
-            <view style='width:54%;float:left;'>
-              <text  style='display:block;'>注册时间：{{item.fromUserInfo.time}}</text>
+            <view style='width:58%;float:left;'>
+              <text  style='display:block;'>注册时间：{{item.createTime}}</text>
+              <text  style='display:block;'>消费总额：{{item.totalConsume}}</text>
             </view>
           </view>
       </view>

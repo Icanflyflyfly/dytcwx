@@ -18,6 +18,10 @@ Page({
     phone:'',//消费会员电话
     merchantPhone:'',//商家会员电话
     userName:'',
+    fromUserName:'',
+    fromPhone:'',
+    inputUserName: '',
+    inputPhone: '',
     memberValid:false,
     moneyValid: false,
     toUserId:''
@@ -35,7 +39,7 @@ Page({
     network.requestLoading(config.merchantFindByPhone, { merchantPhone: userInfo.phone}, '加载中', function (result) {
       if (result) {
         thiz.setData({
-          totalMoney: result.money
+          totalMoney: result.money == null ? 0 : result.money
         });
       }      
 
@@ -144,6 +148,8 @@ Page({
       } else {
         thiz.setData({
           userName: result.name == null ? "" : result.name,
+          inputUserName: result.fromUserInfo.name,
+          inputPhone: result.fromUserInfo.phone,
           toUserId: result.id,
           memberValid: true
         });
@@ -161,6 +167,8 @@ Page({
 
     var totalMoney = this.data.totalMoney;
     var userName = this.data.userName;
+    var inputPhone = this.data.inputPhone;//录入会员的上级推荐
+    var inputUserName = this.data.inputUserName;//录入会员的上级推荐
     var memberValid = this.data.memberValid;
     var moneyValid = this.data.moneyValid;
     var userInfo = app.globalData.userInfo;
@@ -186,9 +194,14 @@ Page({
             toUserId: toUserId,
             phone: phone,
             name: userName,
-            money: money,
+            inputPhone: inputPhone,                   //录入会员的上级推荐
+            inputUserName: inputUserName,             //录入会员的上级推荐
+            fromPhone: userInfo.fromUserInfo.phone,   //我的上级推荐
+            fromUserName: userInfo.fromUserInfo.name, //我的上级推荐
+            money: parseInt(money),
             memo: memo,
-            merchantPhone: userInfo.phone
+            merchantPhone: userInfo.phone,
+            merchantName: userInfo.merchantInfo.merchantName
           }
           network.requestLoading(config.consumeInput, params, '加载中', function (result) {
             if (result) {              
