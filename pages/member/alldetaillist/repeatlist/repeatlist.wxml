@@ -7,7 +7,7 @@
      
       <view class='span_height_20'></view>
 
-      <view style='font-size:30rpx;height:100rpx;width:100%;color: #387ef5;'  wx:for="{{list}}" wx:for-item="item" wx:key="time">
+      <view style='font-size:30rpx;height:100rpx;width:100%;'  wx:for="{{list}}" wx:for-item="item" wx:key="time">
           <view style='padding:10rpx;'>
               <view style='width:54%;float:left;line-height:80rpx;'>
                 <text style='display:block;'>购买消费积分：{{item.consumeMoney}}</text>

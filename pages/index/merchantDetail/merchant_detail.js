@@ -1,4 +1,10 @@
 // pages/index/merchant_detail.js
+import { ToastPanel } from '../../../component/toast/toast.js'
+const app = getApp()
+const UTIL = require('../../../utils/util.js')
+const constant = require('../../../utils/constant.js')
+const network = require('../../../utils/network.js')
+const config = require('../../../utils/config.js')
 Page({
 
   /**
@@ -13,14 +19,45 @@ Page({
     indicatorDots: true,
     autoplay: true,
     interval: 3000,
-    duration: 1000
+    duration: 1000,
+    merId:'',
+    merchant:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  
+  onLoad: function (options) {   
+    var thiz = this;
+    network.request(config.findMerchantById, { id: options.merId}, function (result) {
+      if (result != null) {
+        var urls = new Array();
+        if (result.titleImage1 != null){
+          urls.push(result.titleImage1);
+        }
+        if (result.titleImage2 != null) {
+          urls.push(result.titleImage2);
+        }
+        if (result.titleImage3 != null) {
+          urls.push(result.titleImage3);
+        }
+        if (result.titleImage4 != null) {
+          urls.push(result.titleImage4);
+        }
+        if (result.titleImage5 != null) {
+          urls.push(result.titleImage5);
+        }
+        
+        thiz.setData({
+          imgUrls: urls,
+          merchant:result
+        });
+      }
+
+    }, function (error) {
+      thiz.show(error.msg);
+    });
+
   },
 
   /**
@@ -70,5 +107,19 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  makePhoneCall:function(){
+    wx.makePhoneCall({
+      phoneNumber: this.data.merchant.merchantTel
+    })
+  },
+  goThere:function(){
+    var thiz = this;
+    wx.openLocation({
+      latitude: parseFloat(thiz.data.merchant.latitude),
+      longitude: parseFloat(thiz.data.merchant.longitude),
+      scale: 28,
+      address: thiz.data.merchant.address
+    })
   }
 })

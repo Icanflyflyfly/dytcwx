@@ -1,3 +1,5 @@
+<import src="../../../../component/toast/toast.wxml" />
+<template is="toast" data="{{..._toast_}}" />
 <view style='display:block;' class="weui">
   <view style="float: left;padding: 40rpx 20rpx;width:50%;text-align:center;">
     <text style='display:block'>点击右侧按钮</text>
@@ -22,5 +24,5 @@
 </view>
 
 <view style='float: left;width: 98%;padding:10rpx;'>
-    <button class="weui-btn" type="warn">上传</button>
+    <button class="weui-btn" type="warn" bindtap='goback'>返回</button>
 </view>

@@ -27,13 +27,7 @@ Page({
    */
   onLoad: function (options) {
     new app.ToastPanel();
-    var userInfo = app.globalData.userInfo;
-    var cashInteral = (userInfo.totalBonus == null ? 0 : userInfo.totalBonus) + (userInfo.totalReturned == null ? 0 : userInfo.totalReturned) + (userInfo.giftBonus == null ? 0 : userInfo.giftBonus) - (userInfo.changeBonus == null ? 0 : userInfo.changeBonus);
-    this.setData({
-      defaultCash: cashInteral,
-      cash: cashInteral,
-      factCash: (cashInteral*0.9).toFixed(0)
-    });
+    
   },
 
   /**
@@ -47,7 +41,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var userInfo = app.globalData.userInfo;
+    var cashInteral = (userInfo.totalBonus == null ? 0 : userInfo.totalBonus) + (userInfo.totalReturned == null ? 0 : userInfo.totalReturned) + (userInfo.giftBonus == null ? 0 : userInfo.giftBonus) - (userInfo.changeBonus == null ? 0 : userInfo.changeBonus);
+    this.setData({
+      defaultCash: cashInteral,
+      cash: cashInteral,
+      factCash: (cashInteral * 0.9).toFixed(0)
+    });
   },
 
   /**
@@ -104,8 +104,23 @@ Page({
     var defaultCash = this.data.defaultCash;
     var factCash = this.data.factCash;
     var password = this.data.password;
+    var userInfo = app.globalData.userInfo;
 
-    if (cash == 0 || UTIL.isNumTest(cash) == false) {
+    if (userInfo.bank == null || userInfo.bankCardNo==null ||
+        userInfo.bank == '' || userInfo.bankCardNo==''){
+        wx.showModal({
+          title: '提示',
+          content: '请设置您的银行账号信息',
+          showCancel: false,
+          success: function (res) {
+            if (res.confirm) {
+              wx.navigateTo({
+                url: '/pages/member/setting/bank/bank',
+              })              
+            }
+          }
+        });
+    } else if (cash == 0 || UTIL.isNumTest(cash) == false) {
       this.show('请输入合法提现金额');
     } else if (cash > defaultCash) {
       this.show('不能大于可提现金额');
@@ -118,7 +133,7 @@ Page({
       network.requestLoading(config.getEncodePwd, { password: password }, '加载中', function (result) {
         var userInfo = app.globalData.userInfo;
         if (result == null || userInfo.password != result) {
-          thiz.show("对不起，请输入正确的交易密码");
+          thiz.show("交易密码错误");
         } else {          
           var params = {
             phone: userInfo.phone,

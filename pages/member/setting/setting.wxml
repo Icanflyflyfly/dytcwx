@@ -76,7 +76,7 @@
      
       <view class='span_height_30'></view>
       
-      <view class='menu_item'>              
+      <!--view class='menu_item'>              
           <view class='menu_img'>
             <image src='/resource/common/help.png'></image>                        
           </view>  
@@ -84,14 +84,14 @@
           <image class='arrow' src='/resource/common/right_gray.png'></image>                    
       </view> 
 
-      <view class='span_height'></view>
+      <view class='span_height'></view-->
 
       <view class='menu_item'>              
           <view class='menu_img'>
             <image src='/resource/common/ver.png'></image>                        
           </view>  
-          <text>版本信息</text>
-          <image class='arrow' src='/resource/common/right_gray.png'></image>                    
+          <text>版本信息  1.0001</text>
+                             
       </view>  
 
       <view class='span_height_30'></view>

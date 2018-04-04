@@ -1,4 +1,10 @@
 // pages/member/registmerc/registmerc.js
+import { ToastPanel } from '../../../../component/toast/toast.js'
+const app = getApp()
+const UTIL = require('../../../../utils/util.js')
+const constant = require('../../../../utils/constant.js')
+const network = require('../../../../utils/network.js')
+const config = require('../../../../utils/config.js')
 Page({
 
   /**
@@ -6,58 +12,68 @@ Page({
    */
   data: {
     desc:"",
-    region: ['河北省', '承德市', '双桥区'],
-    customItem: '全部',
     imageList: [],
-    index: 0,
-    multiArray: [['餐饮', '超市'], ['快餐', '自助', '火锅']],
-    objectMultiArray: [
-      [
-        {
-          id: 0,
-          name: '餐饮'
-        },
-        {
-          id: 1,
-          name: '超市'
-        }
-      ], [
-        {
-          id: 0,
-          name: '快餐'
-        },
-        {
-          id: 1,
-          name: '自助'
-        },
-        {
-          id: 2,
-          name: '火锅'
-        }
-      ], [
-        {
-          id: 0,
-          name: '便利店'
-        },
-        {
-          id: 1,
-          name: '综合超市'
-        }
-      ]
-    ],
-    multiIndex: [0, 0, 0]
+    imageCount: 0,
+    id:'',
+    flag:0
   },
-  chooseImage: function (event) {
+  chooseImage: function (event) {    
     var that = this;
+    var id = this.data.id;
+    var flag = this.data.flag;
+    var userInfo = app.globalData.userInfo;
+
+    if (that.data.imageCount >= 5) {
+      this.show('最多上传5张');
+      return;
+    }
+
     wx.chooseImage({
-      count: 2, // 一次最多可以选择2张图片一起上传
+      count: 5, // 一次最多可以选择2张图片一起上传
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       success: function (res) {
         var imgeList = that.data.imageList.concat(res.tempFilePaths);
         that.setData({
-          imageList: imgeList
+          imageList: imgeList,
+          imageCount: imgeList.length
         });
+        //获取页面栈
+        var pages = getCurrentPages();
+        
+        if (pages.length > 1) {
+          //上一个页面实例对象
+          var prePage = pages[pages.length - 2];
+          //关键在这里
+          // var data = prePage.data;
+          prePage.changeData(flag, imgeList.length);                   
+        }
+        
+        var tempFilePaths = res.tempFilePaths;
+        for (var i = 0; i < tempFilePaths.length;i++){
+          var imageCount = imgeList.length;
+          if (tempFilePaths.length > 1){
+            imageCount = (i+1);
+          }
+            wx.uploadFile({
+              url: config.titleUpload,
+              filePath: tempFilePaths[i],
+              name: 'imageFile',
+              formData: {
+                id: id,
+                images: (imageCount),
+                flag: flag
+              },
+              success: function (res) {
+                var data1 = res.data;
+                data1 = JSON.parse(data1);
+                if (data1.success == true) {
+                  that.show('上传成功');
+                }
+              }
+            })
+        }        
+        
       }
     })
   },
@@ -69,50 +85,16 @@ Page({
       current: imageList[dataid],
       urls: this.data.imageList
     });
-  },
-  bindRegionChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
-    this.setData({
-      region: e.detail.value
-    })
-  },
-  bindMultiPickerChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
-    this.setData({
-      multiIndex: e.detail.value
-    })
-  },
-  bindMultiPickerColumnChange: function (e) {
-    console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
-    var data = {
-      multiArray: this.data.multiArray,
-      multiIndex: this.data.multiIndex
-    };
-    data.multiIndex[e.detail.column] = e.detail.value;
-    switch (e.detail.column) {
-      case 0:
-        switch (data.multiIndex[0]) {
-          case 0:
-            data.multiArray[1] = ['快餐', '自助', '火锅'];
-
-            break;
-          case 1:
-            data.multiArray[1] = ['便利店', '综合超市'];
-
-            break;
-        }
-        data.multiIndex[1] = 0;
-
-        break;
-
-    }
-    this.setData(data);
-  },
+  },  
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    new app.ToastPanel();
+    this.setData({ 
+      id: options.id,
+      flag:options.flag
+    });
   },
 
   /**
@@ -162,5 +144,10 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  goback:function(){
+    wx.navigateBack({
+
+    });
   }
 })

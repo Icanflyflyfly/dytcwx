@@ -114,6 +114,8 @@ Page({
 
       network.requestLoading(config.updatePwd, params, '加载中', function (result) {
         thiz.show('密码修改成功');
+        var userInfo = app.globalData.userInfo;
+        userInfo.password = result;
         setTimeout(
           function(){
             wx.navigateBack({

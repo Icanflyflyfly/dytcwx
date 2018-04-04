@@ -3,6 +3,7 @@ module.exports = {
   VERSION: '1.0',
   QRCODE_RRE: 'https://',
   QRCODE_SUF: 'wegoV1.0',
+  // BASE_URL: "https://cd.dytch588.com/",
   BASE_URL: "http://localhost:8080/",
   USERID: "userId",
   TOKEN: "token",

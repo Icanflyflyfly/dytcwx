@@ -11,10 +11,10 @@
      
       <view class='span_height_20'></view>
 
-      <view style='font-size:30rpx;height:100rpx;width:100%;color: #387ef5;'  wx:for="{{list}}" wx:for-item="item" wx:key="time">
+      <view style='font-size:30rpx;height:100rpx;width:100%;'  wx:for="{{list}}" wx:for-item="item" wx:key="time">
           <view style='padding:10rpx;'>
             <view style='width:54%;float:left;line-height:80rpx;'>
-              <text style='display:block;'>返还金额：{{item.money}}</text>
+              <text style='display:block;'>返还金额：{{item.money}}元</text>
               <text  style='display:block;'>时间：{{item.time==null?"":item.time}}</text>
             </view>
             <view style='width:45%;float:left;line-height:80rpx;'>

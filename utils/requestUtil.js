@@ -17,7 +17,43 @@ function userLogin(invalid,loginSuccess) {
     }
   });
 }
+/**
+ * 重新登录
+ */
+function userReLogin() {
 
+  wx.showLoading({
+    title: '系统加载中...',
+    mask: true
+  })
+  // 在没有 open-type=getUserInfo 版本的兼容处理  
+  wx.checkSession({
+    success: function () {
+      // session未过期
+      userLogin(true, function () {
+        wx.hideLoading();
+    
+      });
+
+
+      console.log('session未过期 ');
+    },
+    fail: function () {
+      // 登录态过期
+      userLogin(true, function () {
+        wx.hideLoading();
+        var userIsBind = wx.getStorageSync(CONSTANT.USER_IS_BIND);
+        console.log('userIsBind = ' + userIsBind);
+        if (userIsBind == false) {
+          wx.redirectTo({
+            url: '/pages/register/register',
+          });
+        } 
+      });
+
+    }
+  })
+}
 /**
  * 获取详情页Ad
  */
@@ -37,5 +73,6 @@ function findOneAd(success, fail) {
 
 module.exports = {
   userLogin: userLogin,
-  findOneAd: findOneAd
+  findOneAd: findOneAd,
+  userReLogin: userReLogin
 }

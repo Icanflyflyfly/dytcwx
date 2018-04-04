@@ -20,6 +20,7 @@ Page({
    */
   onLoad: function (options) {
     new app.ToastPanel(); 
+    
   },
 
   /**
@@ -33,7 +34,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var userInfo = app.globalData.userInfo;
+    this.setData({
+      bank: userInfo.bank == null ? '' : userInfo.bank,
+      bankCardNo: userInfo.bankCardNo == null ? '' : userInfo.bankCardNo
+    });
   },
 
   /**

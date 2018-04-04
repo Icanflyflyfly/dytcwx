@@ -9,14 +9,22 @@ Page({
     userInfo: {},
     hasUserInfo: false
   },  
+  onPullDownRefresh: function () {
+    REQUESTUTIL.userReLogin();
+    wx.stopPullDownRefresh()
+  },
   onLoad: function () {
-      var thiz = this;
-    
+      wx.showLoading({
+        title: '系统登录中...',
+        mask:true
+      })
+      var thiz = this;    
       // 在没有 open-type=getUserInfo 版本的兼容处理  
       wx.checkSession({
         success: function () {         
           // session未过期
           REQUESTUTIL.userLogin(true, function () {
+            wx.hideLoading();
             var userIsBind = wx.getStorageSync(CONSTANT.USER_IS_BIND);
             console.log('userIsBind = ' + userIsBind);
             if (userIsBind == false) {
@@ -37,6 +45,7 @@ Page({
         fail: function () {
           // 登录态过期
           REQUESTUTIL.userLogin(true, function () {
+            wx.hideLoading();
             var userIsBind = wx.getStorageSync(CONSTANT.USER_IS_BIND);
             console.log('userIsBind = ' + userIsBind);
             if (userIsBind == false) {
@@ -63,5 +72,8 @@ Page({
       imagewidth: imageSize.imageWidth,
       imageheight: imageSize.imageHeight
     })
+  },
+  scanTap:function(){
+    wx.scanCode();
   }
 })

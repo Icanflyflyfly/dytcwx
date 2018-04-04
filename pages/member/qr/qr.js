@@ -83,7 +83,7 @@ Page({
     var thiz = this;
     var params = {
       phone: userInfo.phone,
-      path:'/pages/register/register'
+      path:'/pages/register/wxregister/wxregister'
     }
     network.requestLoading(config.wxQr, params, '加载中', function (result) {
       userInfo['wxQr'] = 1;

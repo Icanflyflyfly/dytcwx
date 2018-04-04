@@ -17,13 +17,24 @@ Page({
     phone:'',
     pwd1:'',
     pwd2: '',
-    userName:''
+    userName:'',
+    fromPhone:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {   
+  onLoad: function (options) { 
+    console.log('---------> '+JSON.stringify(options));  
+    if (options.phone != null && options.phone != ''){
+      this.setData({
+        fromPhone: options.phone
+      });
+    }
+    wx.showLoading({
+      title: '系统加载中...',
+      mask: true
+    })
     new app.ToastPanel(); 
     var thiz = this;
     UTIL.getCurrentUserInfo(function (res) {
@@ -35,7 +46,7 @@ Page({
         },
         hasUserInfo: true
       });
-
+      wx.hideLoading();
     });
 
   },
@@ -124,6 +135,8 @@ Page({
     var pwd1 = this.data.pwd1;
     var pwd2 = this.data.pwd2;
     var userName = this.data.userName;
+    var fromPhone = this.data.fromPhone;
+
     if (phone.length == 0) {
       this.show('请输入手机号');     
     } else if (!UTIL.isPhoneNo(phone)) {
@@ -147,7 +160,8 @@ Page({
         avatar: userInfo.avatarUrl,
         nickName: userInfo.nickName,
         gender: userInfo.gender,
-        userName: userName
+        userName: userName,
+        fromPhone: fromPhone
       };
       var thiz = this;
       network.requestLoading(config.findUserByPhone, { phone: this.data.phone }, '加载中', function (result) {
@@ -159,7 +173,7 @@ Page({
               url: '../member/member'
             })
           }, function (error) {
-            this.show(error.msg);
+            thiz.show(error.msg);
           })
         }else{
           thiz.show('对不起，此用户已经存在');

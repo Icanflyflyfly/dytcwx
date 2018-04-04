@@ -5,6 +5,7 @@ const UTIL = require('../../../../utils/util.js')
 const constant = require('../../../../utils/constant.js')
 const network = require('../../../../utils/network.js')
 const config = require('../../../../utils/config.js')
+const REQUESTUTIL = require('../../../../utils/requestUtil.js')
 Page({
 
   /**
@@ -18,18 +19,12 @@ Page({
     userName:'',
     toUserId:''
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     new app.ToastPanel(); 
-    var userInfo = app.globalData.userInfo;
-    var cashInteral = (userInfo.totalBonus == null ? 0 : userInfo.totalBonus) + (userInfo.totalReturned == null ? 0 : userInfo.totalReturned) + (userInfo.giftBonus == null ? 0 : userInfo.giftBonus) - (userInfo.changeBonus == null ? 0 : userInfo.changeBonus);
-    this.setData({
-      cashInteral: cashInteral,
-      giftInteral: cashInteral
-    });
+    
   },
 
   /**
@@ -43,7 +38,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var userInfo = app.globalData.userInfo;
+    var cashInteral = (userInfo.totalBonus == null ? 0 : userInfo.totalBonus) + (userInfo.totalReturned == null ? 0 : userInfo.totalReturned) + (userInfo.giftBonus == null ? 0 : userInfo.giftBonus) - (userInfo.changeBonus == null ? 0 : userInfo.changeBonus);
+    this.setData({
+      cashInteral: cashInteral,
+      giftInteral: cashInteral
+    });
   },
 
   /**
@@ -64,7 +64,9 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    REQUESTUTIL.userReLogin();
+    this.onShow();
+    wx.stopPullDownRefresh();
   },
 
   /**
@@ -125,11 +127,14 @@ Page({
     var password = this.data.password;
     var userInfo = app.globalData.userInfo;
     var toUserId = this.data.toUserId;
+    var userInfo = app.globalData.userInfo;
 
     if (cashInteral == 0) {
       this.show('对不起，您可转现金积分总额为0');
     } else if (phone.length == 0) {
       this.show('请输入转入方账号');
+    } else if (phone == userInfo.phone) {
+      this.show('您输入的账号无效');
     } else if (giftInteral == 0 || giftInteral > cashInteral) {
       this.show('请输入正确的转赠金额');
     } else if (password.length == 0) {
@@ -138,7 +143,7 @@ Page({
       var thiz = this;
       network.requestLoading(config.getEncodePwd, { password: password }, '加载中', function (result) {
         if (result == null || userInfo.password != result) {
-          thiz.show("对不起，请输入正确的交易密码");
+          thiz.show("交易密码错误");
         } else {
           var params = {
             fromUserId: wx.getStorageSync(constant.USERID),
@@ -147,8 +152,7 @@ Page({
           }
           network.requestLoading(config.interalGift, params, '加载中', function (result) {
             if (result) {
-              //更新缓存
-              var userInfo = app.globalData.userInfo;
+              //更新缓存              
               userInfo.giftBonus = userInfo.giftBonus - giftInteral;
               thiz.show("赠予成功");
             }

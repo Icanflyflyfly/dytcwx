@@ -16,14 +16,24 @@
   </navigator>
 
   <view>
-        <view class='span_height_30'></view>       
+        <view class='span_height_30'></view>   
+
+          <view class='menu_item' bindtap='scanTap'>              
+              <view class='menu_img'>
+                <image src='/resource/member/scan.png'></image>           
+              </view>  
+              <text>小程序扫一扫</text> 
+              <image class='right_arrow' src='/resource/common/right.png'></image> 
+          </view>
+
+         <view class='span_height_2_pl'></view>    
 
         <navigator url="/pages/member/qr/qr" hover-class="navigator-hover">
           <view class='menu_item'>              
               <view class='menu_img'>
                 <image src='/resource/member/qr.png'></image>           
               </view>  
-              <text>推广二维码</text> 
+              <text>推广小程序码</text> 
               <image class='right_arrow' src='/resource/common/right.png'></image> 
           </view>
         </navigator>
@@ -40,25 +50,25 @@
           </view>
         </navigator>
         
-       
-
       <view class='span_height_30'></view>
-
       
         <view class='span_height_2_pl'></view>
-
+<view wx:if="{{userInfo.manager != 1 }}">
        <navigator url="/pages/member/applymgr/applymgr" hover-class="navigator-hover">
           <view class='menu_item'>              
               <view class='menu_img'>
                 <image src='/resource/member/apply.png'></image>           
               </view>  
               <text>申请业务经理</text>             
-              <image class='right_arrow' src='/resource/common/right.png'></image>               
+              <image class='right_arrow' src='/resource/common/right.png'></image>       
+              <text style='float:right'>{{userInfo.manager==2?"未通过":""}}</text>        
           </view>
         </navigator>
 
         <view class='span_height_2_pl'></view>
+</view>
 
+<view wx:if="{{userInfo.manager == 1}}">
         <navigator url="/pages/member/registmerc/registmerc" hover-class="navigator-hover">
           <view class='menu_item'>              
               <view class='menu_img'>
@@ -69,6 +79,8 @@
           </view>
         </navigator>
 <view class='span_height_2_pl'></view>
+</view>
+
         <navigator url="/pages/member/alldetaillist/alldetaillist" hover-class="navigator-hover">
       <view class='menu_item'>              
             <view class='menu_img'>

@@ -1,6 +1,7 @@
 <!--pages/member/bonus/bonus.wxml-->
 <import src="../../../../component/toast/toast.wxml" />
 <template is="toast" data="{{..._toast_}}" />
+<wxs module="filters" src="./addmul.wxs"></wxs>
 
 <loading hidden="{{hidden}}" bindchange="loadingChange">
     加载中...
@@ -11,11 +12,11 @@
      
       <view class='span_height_20'></view>
 
-      <view style='font-size:30rpx;height:100rpx;width:100%;color: #387ef5;'  wx:for="{{list}}" wx:for-item="item" wx:key="time">
+      <view style='font-size:30rpx;height:100rpx;width:100%;'  wx:for="{{list}}" wx:for-item="item" wx:key="time">
           <view style='padding:10rpx;'>
             <view style='width:45%;float:left;line-height:80rpx;'>
               <text style='display:block;'>{{item.bonusType=="0"?"粉丝":"商家"}}：{{item.fromName}}</text>
-              <text  style='display:block;'>消费：{{item.money==null?0:item.money}}*0.005={{item.money*0.005}}</text>
+              <text  style='display:block;'>消费：{{item.money==null?0:item.money}}*0.005={{filters.toFix(item.money*0.005)}}</text>
             </view>
             <view style='width:54%;float:left;line-height:80rpx;'>
                <text style='display:block;'>时间：{{item.time}}</text>

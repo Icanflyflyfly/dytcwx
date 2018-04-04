@@ -1,15 +1,17 @@
 <!--index.wxml-->
+<import src="../../component/toast/toast.wxml" />
+<template is="toast" data="{{..._toast_}}" />
 <view class="page" style='font-size:28rpx;overflow:hidden;overflow-y:auto;'>
 <!--轮播图片-->
   <swiper class='swiper' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
   <block wx:key="{{item}}" wx:for="{{imgUrls}}">
     <swiper-item>
-      <image src="{{item}}" lazy-load="true" class="slide-image" width="355" height="150"/>
+      <image src="{{item.adContent}}" lazy-load="true" class="slide-image" width="355" height="150"/>
     </swiper-item>
   </block>
 </swiper>
 <!--活动内容-->
-<view class='hot_active'>  
+<!--view class='hot_active'>  
   <image  src='/resource/home/hot.png'></image>
   <text>热门活动</text>
 </view>
@@ -17,7 +19,7 @@
 <view class='active_img'>
   <image  mode='aspectFill' lazy-load="true" src="/resource/temp/a.jpg"></image>
   <image  mode='aspectFill' lazy-load="true" src="/resource/temp/b.jpg"></image>
-</view>
+</view-->
 
 <!--商家-->
 <view class='hot_merchant'>  
@@ -41,141 +43,34 @@
   </picker>
 </view>
 
-<!--商品详情-->
-<view>
-  <navigator url="/pages/index/merchantDetail/merchant_detail" hover-class="navigator-hover">
-    <view class='merchant_list'>
-        <view class='span_height'></view>
-          <image mode='aspectFill' lazy-load="true" src="/resource/temp/c.jpg"></image>
-          <view class='merchant_list_text'>
-            <text class='name'>腾利达汽车配件商行(河北承德分公司)</text>
-            <text class='phone'>13933338888</text>
-            <text class='address'>河北省承德市双桥区开发区居然之家傍</text>
-          </view>
-          <text class='distance'>2.1km</text>
-    </view>
-  </navigator>
-
-  <navigator url="/pages/index/merchantDetail/merchant_detail" hover-class="navigator-hover">
-    <view class='merchant_list'>
-        <view class='span_height'></view>
-          <image mode='aspectFill' lazy-load="true" src="/resource/temp/d.jpg"></image>
-          <view class='merchant_list_text'>
-            <text class='name'>顺城建材商行(河北承德分公司)</text>
-            <text class='phone'>13800006666</text>
-            <text class='address'>河北省承德市双桥区老西营腾飞驾校傍</text>
-          </view>
-          <text class='distance'>12km</text>
-    </view>
-  </navigator>
-  
-   <navigator url="/pages/index/merchantDetail/merchant_detail" hover-class="navigator-hover">
-    <view class='merchant_list'>
-        <view class='span_height'></view>
-          <image mode='aspectFill' lazy-load="true" src="/resource/temp/c.jpg"></image>
-          <view class='merchant_list_text'>
-            <text class='name'>腾利达汽车配件商行(河北承德分公司)</text>
-            <text class='phone'>13933338888</text>
-            <text class='address'>河北省承德市双桥区开发区居然之家傍</text>
-          </view>
-          <text class='distance'>2.1km</text>
-    </view>
-  </navigator>
-
-  <navigator url="/pages/index/merchantDetail/merchant_detail" hover-class="navigator-hover">
-    <view class='merchant_list'>
-        <view class='span_height'></view>
-          <image mode='aspectFill' lazy-load="true" src="/resource/temp/d.jpg"></image>
-          <view class='merchant_list_text'>
-            <text class='name'>顺城建材商行(河北承德分公司)</text>
-            <text class='phone'>13800006666</text>
-            <text class='address'>河北省承德市双桥区老西营腾飞驾校傍</text>
-          </view>
-          <text class='distance'>12km</text>
-    </view>
-  </navigator>
-
-   <navigator url="/pages/index/merchantDetail/merchant_detail" hover-class="navigator-hover">
-    <view class='merchant_list'>
-        <view class='span_height'></view>
-          <image mode='aspectFill' lazy-load="true" src="/resource/temp/c.jpg"></image>
-          <view class='merchant_list_text'>
-            <text class='name'>腾利达汽车配件商行(河北承德分公司)</text>
-            <text class='phone'>13933338888</text>
-            <text class='address'>河北省承德市双桥区开发区居然之家傍</text>
-          </view>
-          <text class='distance'>2.1km</text>
-    </view>
-  </navigator>
-
-  <navigator url="/pages/index/merchantDetail/merchant_detail" hover-class="navigator-hover">
-    <view class='merchant_list'>
-        <view class='span_height'></view>
-          <image mode='aspectFill' lazy-load="true" src="/resource/temp/d.jpg"></image>
-          <view class='merchant_list_text'>
-            <text class='name'>顺城建材商行(河北承德分公司)</text>
-            <text class='phone'>13800006666</text>
-            <text class='address'>河北省承德市双桥区老西营腾飞驾校傍</text>
-          </view>
-          <text class='distance'>12km</text>
-    </view>
-  </navigator>
-
-   <navigator url="/pages/index/merchantDetail/merchant_detail" hover-class="navigator-hover">
-    <view class='merchant_list'>
-        <view class='span_height'></view>
-          <image mode='aspectFill' lazy-load="true" src="/resource/temp/c.jpg"></image>
-          <view class='merchant_list_text'>
-            <text class='name'>腾利达汽车配件商行(河北承德分公司)</text>
-            <text class='phone'>13933338888</text>
-            <text class='address'>河北省承德市双桥区开发区居然之家傍</text>
-          </view>
-          <text class='distance'>2.1km</text>
-    </view>
-  </navigator>
-
-  <navigator url="/pages/index/merchantDetail/merchant_detail" hover-class="navigator-hover">
-    <view class='merchant_list'>
-        <view class='span_height'></view>
-          <image mode='aspectFill' lazy-load="true" src="/resource/temp/d.jpg"></image>
-          <view class='merchant_list_text'>
-            <text class='name'>顺城建材商行(河北承德分公司)</text>
-            <text class='phone'>13800006666</text>
-            <text class='address'>河北省承德市双桥区老西营腾飞驾校傍</text>
-          </view>
-          <text class='distance'>12km</text>
-    </view>
-  </navigator>
-
-   <navigator url="/pages/index/merchantDetail/merchant_detail" hover-class="navigator-hover">
-    <view class='merchant_list'>
-        <view class='span_height'></view>
-          <image mode='aspectFill' lazy-load="true" src="/resource/temp/c.jpg"></image>
-          <view class='merchant_list_text'>
-            <text class='name'>腾利达汽车配件商行(河北承德分公司)</text>
-            <text class='phone'>13933338888</text>
-            <text class='address'>河北省承德市双桥区开发区居然之家傍</text>
-          </view>
-          <text class='distance'>2.1km</text>
-    </view>
-  </navigator>
-
-  <navigator url="/pages/index/merchantDetail/merchant_detail" hover-class="navigator-hover">
-    <view class='merchant_list'>
-        <view class='span_height'></view>
-          <image mode='aspectFill' lazy-load="true" src="/resource/temp/d.jpg"></image>
-          <view class='merchant_list_text'>
-            <text class='name'>顺城建材商行(河北承德分公司)</text>
-            <text class='phone'>13800006666</text>
-            <text class='address'>河北省承德市双桥区老西营腾飞驾校傍</text>
-          </view>
-          <text class='distance'>12km</text>
-    </view>
-  </navigator>
-
 </view>
 
-</view>
+<scroll-view scroll-y="true"  bindscrolltolower="loadMore">
+    <view  wx:for="{{list}}" wx:for-item="item" wx:key="createTime">  
+        <navigator url="/pages/index/merchantDetail/merchant_detail?merId={{item.id}}" hover-class="navigator-hover">
+          <view class='merchant_list'>
+              <view class='span_height'></view>
+                <image mode='aspectFill' lazy-load="true" src="{{item.titleImage1}}"></image>
+                <view class='merchant_list_text'>
+                  <text class='name'>{{item.merchantName==null?"":item.merchantName}}</text>
+                  <text class='phone'>{{item.merchantTel==null?"":item.merchantTel}}</text>
+                  <text class='address'>{{item.address==null?"":item.address}}</text>
+                </view>
+                <text class='distance'></text>
+          </view>
+        </navigator>
 
+    </view>
 
+    <view class="tips1">
+        <view wx:if="{{hasMore}}" style="display: flex;flex-direction: row;align-items: center;align-self: center;justify-content: center;">
+        <icon type="waiting" size="45"/><text>加载中...</text></view>
+        <view wx:else><text></text></view>
+    </view>
+    
+    <view wx:if="{{list.length == 0}}" style='text-align:center;color:red;'>
+    <view class='span_height'></view>
+        无相应数据
+    </view>
+ </scroll-view>
 

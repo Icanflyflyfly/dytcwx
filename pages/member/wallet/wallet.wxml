@@ -5,7 +5,7 @@
             <image src='/resource/member/cash_point.png'></image>           
           </view>  
           <text style='color:#c40000'>奖金积分</text> 
-          <text style='color:#c40000;padding-right: 100rpx;float:right;font-weight: bold;font-size: 40rpx;'>{{(userInfo.totalBonus == null ? 0 : userInfo.totalBonus)}}</text>          
+          <text style='color:#c40000;padding-right: 100rpx;float:right;font-weight: bold;font-size: 40rpx;'>{{totalBonus}}</text>          
       </view>    
       <view class='span_height'></view>
       <view class='menu_item'>              
@@ -13,7 +13,7 @@
             <image src='/resource/member/profit_point.png'></image>           
           </view>  
           <text style='color:#387ef5'>分红积分</text> 
-          <text style='color:#387ef5;padding-right: 100rpx;float:right;font-weight: bold;font-size: 40rpx;'>{{userInfo.totalReturned==null?0:userInfo.totalReturned}}</text>          
+          <text style='color:#387ef5;padding-right: 100rpx;float:right;font-weight: bold;font-size: 40rpx;'>{{totalReturned}}</text>          
       </view>    
       <view class='span_height'></view>
       <view class='menu_item'>              
@@ -21,7 +21,7 @@
             <image src='/resource/member/consume_point.png'></image>           
           </view>  
           <text style='color:#33cd5f'>消费积分</text> 
-          <text style='color:#33cd5f;padding-right: 100rpx;float:right;font-weight: bold;font-size: 40rpx;'>{{(userInfo.totalConsume==null?0:userInfo.totalConsume)+(userInfo.changeBonus == null ? 0 : userInfo.changeBonus)}}</text>          
+          <text style='color:#33cd5f;padding-right: 100rpx;float:right;font-weight: bold;font-size: 40rpx;'>{{totalConsume}}</text>          
       </view>    
       <view class='span_height_30'></view>
       

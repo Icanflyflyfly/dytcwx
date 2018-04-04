@@ -1,6 +1,6 @@
 <!--logs.wxml-->
 <view class="page">
- <navigator url="/pages/member/setting/setting" hover-class="navigator-hover">
+ <navigator url="/pages/merchant/setting/setting" hover-class="navigator-hover">
     <view>
       <image style="width: {{imagewidth}}px; height: {{imageheight}}px;"  src="/resource/member/bg.png" bindload="imageLoad"></image> 
       <view class="userinfo">

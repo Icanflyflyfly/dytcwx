@@ -2,6 +2,7 @@
   "pages":[
     "pages/index/index",
     "pages/register/register",
+    "pages/register/wxregister/wxregister",
     "pages/index/merchantDetail/merchant_detail",
     "pages/member/member",
     "pages/member/setting/setting",
@@ -32,7 +33,9 @@
     "pages/merchant/consumeinputlist/consumeinputlist",
     "pages/merchant/recharge/recharge",
     "pages/merchant/rechargelist/rechargelist",
-    "pages/merchant/integral/integral"
+    "pages/merchant/integral/integral",
+    "pages/merchant/setting/setting",
+    "pages/shopping/shopping"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -63,7 +66,7 @@
         "selectedIconPath": "resource/home/merchant2.png"
       },
       {
-        "pagePath": "pages/merchant/merchant",
+        "pagePath": "pages/shopping/shopping",
         "text": "购物商城",
         "iconPath": "resource/home/mall1.png",
         "selectedIconPath": "resource/home/mall2.png"

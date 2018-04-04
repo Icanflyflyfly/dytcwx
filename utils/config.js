@@ -6,6 +6,16 @@ var config = {
   // 根据code获取session_key和openid
   wxQr: BASE_URL + 'api/wx/qr',
 
+  // 轮播图片
+  imageUrls: BASE_URL + 'api/dytcadcontent/adcontent/list',
+
+  // 上传身分证
+  idCardUpload: BASE_URL + 'api/dytcapplymgr/applymgr/add?apiKey=79a225c51c6d412b8f7b50d22ae5f32c&version=1.0',
+  // 上传商家门头
+  titleUpload: BASE_URL + 'api/dytcmerchantmnt/merchantmnt/upload/title?apiKey=79a225c51c6d412b8f7b50d22ae5f32c&version=1.0',
+  // 上传消费凭证
+  guidanceUpload: BASE_URL + 'api/dytcmemberdetail/guidancedetail/upload/images?apiKey=79a225c51c6d412b8f7b50d22ae5f32c&version=1.0',
+
   // 查找用户信息
   findUserById: BASE_URL + 'api/usermnt/userbaseinfo/findById',
 
@@ -21,6 +31,9 @@ var config = {
   // 得到加密密码
   getEncodePwd: BASE_URL + 'api/usermnt/userbaseinfo/get/encode/pwd',
 
+  // 查询用户申请业务经理记录
+  findMgrByPhone: BASE_URL + 'api/dytcapplymgr/applymgr/find/by/phone',
+
   // 申请提现
   applyWithdraw: BASE_URL + 'api/dytcmemberdetail/withdrawdetail/add',
   // 申请明细
@@ -29,6 +42,8 @@ var config = {
   repeatDetail: BASE_URL + 'api/dytcmemberdetail/repeatdetail/search',
   // 引流送积分明细
   guidanceDetail: BASE_URL + 'api/dytcmemberdetail/guidancedetail/search',
+  // 引流送积分更新
+  guidanceUpdate: BASE_URL + 'api/dytcmemberdetail/guidancedetail/update/special',
   // 接收明细
   giftrecieveDetail: BASE_URL + 'api/dytcmemberdetail/giftrecievedetail/search',
   // 消费明细
@@ -39,13 +54,18 @@ var config = {
   bonusDetail: BASE_URL + 'api/dytcmemberdetail/bonusdetail/search',
   // 粉丝明细
   fansDetail: BASE_URL + 'api/usermnt/userbaseinfo/find/fans',
-
+  //绑定url
+  bindPhoneUrl: BASE_URL + 'api/usermnt/userbaseinfo/wechat/bind/phone',
   // 引流送积分
   guidanceAdd: BASE_URL + 'api/dytcmemberdetail/guidancedetail/add',
   // 申请业务经理
   applyMgr: BASE_URL + 'api/dytcapplymgr/applymgr/add',
+  // 申请业务经理
+  applyMgrUpdate: BASE_URL + 'api/dytcapplymgr/applymgr/update/special',
   // 注册商家
   merchantRegist: BASE_URL + 'api/dytcmerchantmnt/merchantmnt/add',
+  // 更新商家信息
+  merchantUpdate: BASE_URL + 'api/dytcmerchantmnt/merchantmnt/update/special',
   
   // 二维码图片链接
   uploadFile: BASE_URL + 'upload_file/',
@@ -64,10 +84,8 @@ var config = {
 
   // 微信支付请求参数
   paymentUrl: BASE_URL + 'api/wx/payment',
-
   // 返回一个ad
   findOneAdUrl: BASE_URL + 'api/admnt/advertise/findone',
-
   // 商家充值
   chargeMoney: BASE_URL + 'api/dytcmerchantmnt/merchantmnt/charge/money',
   // 商家充值明细
@@ -76,12 +94,21 @@ var config = {
   merchantFindByName: BASE_URL + 'api/dytcmerchantmnt/merchantmnt/find/name',
   // 根据merchantPhone查询商家
   merchantFindByPhone: BASE_URL + 'api/dytcmerchantmnt/merchantmnt/find/merchant/phone',
+  // 商家类型列表
+  merchantTypeList: BASE_URL + 'api/dytcmerchanttype/merchanttype/list',
   // 商家消费录入
   consumeInput: BASE_URL + 'api/usermnt/userbaseinfo/consume/input',
   // 商家消费录入明细
   consumeInputDetail: BASE_URL + 'api/dytcmerchantdetail/cosumeinputdetail/search',
   // 商家积分兑换
-  merchantInteralChange: BASE_URL + 'api/usermnt/userbaseinfo/merchant/interal/change'
+  merchantInteralChange: BASE_URL + 'api/usermnt/userbaseinfo/merchant/interal/change',
+  // 商家明细
+  merchantDetail: BASE_URL + 'api/dytcmerchantmnt/merchantmnt/search',
+  // 根据ID查找商家
+  findMerchantById: BASE_URL + 'api/dytcmerchantmnt/merchantmnt/find',
+  // 提交订单
+  submitOrder: BASE_URL + 'api/ordermnt/baseorder/add',
+
 }
 
 module.exports = config

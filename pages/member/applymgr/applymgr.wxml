@@ -1,8 +1,18 @@
 <!--pages/member/applymgr/applymgr.wxml-->
 <import src="../../../component/toast/toast.wxml" />
 <template is="toast" data="{{..._toast_}}" />
-
+<view wx:if="{{applyMgrInfo != null}}" style='color:red;text-align:center'>
+  <text wx:if="{{applyMgrInfo.approval == '0'}}">
+    您提交的申请正在审核中
+    请耐心等待...
+  </text>
+  <text wx:if="{{applyMgrInfo.approval == '2'}}">
+    您提交的申请审核未通过
+    原因:{{applyMgrInfo.approvalResult}}
+  </text>
+</view>
 <view class='span_height_30'></view>
+
 <view class='span_height'></view>
 <view class="section" style='padding-left:20rpx'>
   <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
@@ -14,29 +24,29 @@
 
 <view class='span_height' style='float:left'></view>
 <view class="section input_view">
-  <input class='input' bindinput='addressInput' placeholder="请输入家庭住址" auto-focus/>
+  <input class='input' bindinput='addressInput' value='{{applyMgrInfo==null?"":applyMgrInfo.address}}' placeholder="请输入家庭住址" auto-focus/>
 </view>
 
 <view class='span_height' style='float:left'></view>
 <view class="section input_view">
-  <input class='input' bindinput='idcardInput' placeholder="请输入身份证号" auto-focus/>
+  <input type='number' class='input' bindinput='idcardInput'  value='{{applyMgrInfo==null?"":applyMgrInfo.idcard}}' placeholder="请输入身份证号" auto-focus/>
 </view>
 
 <view class='span_height' style='float:left'></view>
 
 <view style='display:block;' class="weui">
-  <view style="float: left;padding: 40rpx 20rpx;width:50%;text-align:center;">
+  <view  wx:if="{{applyMgrInfo==null||applyMgrInfo.approval=='2'}}" style="float: left;padding: 40rpx 20rpx;width:50%;text-align:center;">
     <text style='display:block'>点击右侧按钮</text>
     <text style='display:block'>上传身份证正反面</text>
   </view>
   
-  <view class="weui-uploader__input-box" style='margin:20rpx;'>    
+  <view  wx:if="{{applyMgrInfo==null||applyMgrInfo.approval=='2'}}" class="weui-uploader__input-box" style='margin:20rpx;'>    
     <view class="weui-uploader__input" bindtap="chooseImage"></view>
   </view>
 
   <view class="weui-uploader">
       <view class="weui-uploader__files">
-        <block wx:for="{{imageList}}" wx:for-item="image" wx:for-index='idx'>
+        <block wx:for="{{imageList}}" wx:for-item="image" wx:key="time">
         <div style="text-align:center">
           <view class="weui-uploader__file" style='width:100%;text-align:center;'>
             <image style='margin:0 auto;width:300px;height:200px;'  class="weui-uploader__img" src="{{image}}" data-id="{{idx}}" data-src="{{image}}" bindtap="previewImage"></image>
@@ -47,6 +57,6 @@
   </view>
 </view>
 
-<view style='float: left;width: 98%;padding:10rpx;'>
-    <button class="weui-btn" type="warn" bindtap='onConfirmApply'>提交申请</button>
+<view wx:if="{{applyMgrInfo==null||applyMgrInfo.approval=='2'}}" style='float: left;width: 98%;padding:10rpx;'>
+    <button class="weui-btn"  type="warn" bindtap='onConfirmApply'>提交申请</button>
 </view>

@@ -4,10 +4,25 @@
 
 <view class='span_height_30'></view>
 
-<view class="section input_view">
-  <input class='input' style='float:left;' bindinput='toPhoneInput' value='' placeholder="请输入会员账号" auto-focus/>
-  <text style='float:left;'>{{userName}}</text>
-</view>
+<view class='menu_item' bindtap='uploadTitleClick'>              
+    <view class='menu_img'>
+      <image src='/resource/member/door.png'></image>                        
+    </view>  
+    <text>上传门头({{certificateImages}})张</text>
+    <image class='arrow' src='/resource/common/right_gray.png'></image>
+    <image class='ava' src='/resource/temp/ava.jpg'></image>          
+</view>  
+
+ <view class='span_height'></view>
+
+<view class='menu_item' bindtap='uploadTitleClick2'>              
+    <view class='menu_img'>
+      <image src='/resource/member/cer.png'></image>                        
+    </view>  
+    <text>上传执照({{titleImages}})张</text>
+    <image class='arrow' src='/resource/common/right_gray.png'></image>
+    <image class='ava' src='/resource/temp/ava.jpg'></image>          
+</view>  
 
  <view class='span_height'></view>
 
@@ -49,30 +64,8 @@
 <view class='span_height' style='float:left'></view>
 
 <view class="section input_view">
-  <input class='input' bindinput='serviceInput' value="{{service}}" placeholder="请输入服务范围" auto-focus/>
+  <input class='input' bindinput='serviceInput'  value="{{service}}" placeholder="请输入服务范围" auto-focus/>
 </view>
-
-<view class='span_height' style='float:left'></view>
-
-<view class='menu_item' bindtap='uploadTitleClickTitle'>              
-    <view class='menu_img'>
-      <image src='/resource/member/door.png'></image>                        
-    </view>  
-    <text class='menu_text'>上传门头 ({{titleImages}})张</text>
-    <image class='arrow' src='/resource/common/right_gray.png'></image>
-    <image class='ava' src='/resource/temp/ava.jpg'></image>          
-</view>  
-
- <view class='span_height' style='float:left'></view>
-
-<view class='menu_item' bindtap='uploadTitleClickCer'>              
-    <view class='menu_img'>
-      <image src='/resource/member/cer.png'></image>                        
-    </view>  
-    <text class='menu_text'>上传执照 ({{certificateImages}})张</text>
-    <image class='arrow' src='/resource/common/right_gray.png'></image>
-    <image class='ava' src='/resource/temp/ava.jpg'></image>          
-</view>  
 
 <view class='span_height' style='float:left'></view>
 
@@ -83,3 +76,4 @@
 <view style='float: left;width: 98%;padding:10rpx;'>
     <button class="weui-btn" bindtap='onConfirmRegist' type="warn">提交注册</button>
 </view>
+
