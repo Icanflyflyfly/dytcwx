@@ -18,7 +18,10 @@ Page({
     pwd1:'',
     pwd2: '',
     userName:'',
-    fromPhone:''
+    fromPhone:'',
+    memberValid:false,
+    fromName:'',
+    createTime: ''
   },
 
   /**
@@ -30,6 +33,7 @@ Page({
       this.setData({
         fromPhone: options.phone
       });
+      this.findUserByPhone();
     }
     wx.showLoading({
       title: '系统加载中...',
@@ -112,6 +116,20 @@ Page({
       phone: e.detail.value
     });
   },
+  /**来自手机号 */
+  fromPhoneInput: function (e) {
+    var fromPhone = e.detail.value;
+    this.setData({
+      fromPhone: fromPhone
+    });
+    if (fromPhone.length == 11) {
+      this.findUserByPhone();
+    } else {
+      this.setData({
+        memberValid: false
+      });
+    }
+  },
   /**密码1 */
   pwd1Input: function (e) {
     this.setData({
@@ -130,12 +148,36 @@ Page({
       userName: e.detail.value
     });
   },   
+  findUserByPhone: function () {
+    var thiz = this;
+    network.requestLoading(config.findUserByPhone, { phone: this.data.fromPhone }, '加载中', function (result) {
+      if (result == null) {
+        thiz.setData({
+          memberValid: false
+        });
+        thiz.show("对不起，此会员不存在");
+      } else {
+        thiz.setData({
+          fromName: result.name == null ? "" : result.name,
+          fromPhone: result.phone,
+          createTime: result.createTime,
+          memberValid: true
+        });
+      }
+
+    }, function (error) {
+      thiz.show(error.msg);
+    })
+  },
   onRegister:function(){
     var phone = this.data.phone;
     var pwd1 = this.data.pwd1;
     var pwd2 = this.data.pwd2;
     var userName = this.data.userName;
     var fromPhone = this.data.fromPhone;
+    var fromName = this.data.fromName;
+    var createTime = this.data.createTime;
+    var memberValid = this.data.memberValid;
 
     if (phone.length == 0) {
       this.show('请输入手机号');     
@@ -151,6 +193,10 @@ Page({
       this.show('两次输入密码不一致');
     } else if (userName.length == 0) {
       this.show('请输入真实姓名');
+    } else if (fromPhone != '' && !UTIL.isPhoneNo(fromPhone) && fromName == '' && fromPhone == phone) {
+      this.show('请输入正确的推荐会员');
+    } else if (fromPhone != '' && memberValid == false) {
+      this.show('此会员不存在');
     } else {
       var userInfo = this.data.userInfo;
       var params = {
@@ -161,7 +207,9 @@ Page({
         nickName: userInfo.nickName,
         gender: userInfo.gender,
         userName: userName,
-        fromPhone: fromPhone
+        fromPhone: fromPhone,
+        fromName: fromName,
+        createTime: createTime
       };
       var thiz = this;
       network.requestLoading(config.findUserByPhone, { phone: this.data.phone }, '加载中', function (result) {

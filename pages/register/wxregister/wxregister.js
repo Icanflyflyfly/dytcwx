@@ -1,17 +1,29 @@
 // pages/register/wxregister.js
+import { ToastPanel } from '../../../component/toast/toast.js'
+const app = getApp()
+const UTIL = require('../../../utils/util.js')
+const REQUESTUTIL = require('../../../utils/requestUtil.js')
+const CONSTANT = require('../../../utils/constant.js')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    phone:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log('---------> ' + JSON.stringify(options));
+    if (options.phone != null && options.phone != '') {
+      this.setData({
+        phone: options.phone
+      });
+    }
     wx.showLoading({
       title: '系统加载中...',
       mask: true
@@ -27,13 +39,16 @@ Page({
           console.log('userIsBind = ' + userIsBind);
           if (userIsBind == false) {
             wx.redirectTo({
-              url: '/pages/register/register',
+              url: '/pages/register/register?phone='+(thiz.data.phone),
             });
           } else {
             thiz.setData({
               userInfo: getApp().globalData.userInfo,
               hasUserInfo: true
             });
+            wx.switchTab({
+              url: '/pages/member/member',
+            })            
           }
         });
 
@@ -48,13 +63,16 @@ Page({
           console.log('userIsBind = ' + userIsBind);
           if (userIsBind == false) {
             wx.redirectTo({
-              url: '/pages/register/register',
+              url: '/pages/register/register?phone=' + (thiz.data.phone),
             });
           } else {
             thiz.setData({
               userInfo: getApp().globalData.userInfo,
               hasUserInfo: true
             });
+            wx.switchTab({
+              url: '/pages/member/member',
+            })
           }
 
         });

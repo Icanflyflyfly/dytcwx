@@ -20,13 +20,7 @@ Page({
    */
   onLoad: function (options) {
     new app.ToastPanel();
-    var userInfo = app.globalData.userInfo;
-    var cashInteral = (userInfo.totalBonus == null ? 0 : userInfo.totalBonus) + (userInfo.totalReturned == null ? 0 : userInfo.totalReturned) + (userInfo.giftBonus == null ? 0 : userInfo.giftBonus) - (userInfo.changeBonus == null ? 0 : userInfo.changeBonus);
-
-    this.setData({
-      consumeInteral: cashInteral,
-      consumeInteralInit: cashInteral
-    });
+    
   },
 
   /**
@@ -40,7 +34,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var userInfo = app.globalData.userInfo;
+    var cashInteral = (userInfo.totalBonus == null ? 0 : userInfo.totalBonus) + (userInfo.totalReturned == null ? 0 : userInfo.totalReturned) + (userInfo.giftBonus == null ? 0 : userInfo.giftBonus) - (userInfo.changeBonus == null ? 0 : userInfo.changeBonus);
+
+    this.setData({
+      consumeInteral: cashInteral,
+      consumeInteralInit: cashInteral
+    });
   },
 
   /**

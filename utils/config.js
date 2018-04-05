@@ -54,6 +54,8 @@ var config = {
   bonusDetail: BASE_URL + 'api/dytcmemberdetail/bonusdetail/search',
   // 粉丝明细
   fansDetail: BASE_URL + 'api/usermnt/userbaseinfo/find/fans',
+  // 推荐商家
+  recommendDetail: BASE_URL + 'api/dytcmemberdetail/bonusdetail/search',
   //绑定url
   bindPhoneUrl: BASE_URL + 'api/usermnt/userbaseinfo/wechat/bind/phone',
   // 引流送积分

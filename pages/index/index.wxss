@@ -77,23 +77,31 @@
 
 .merchant_list_text .name{
   float: left;
-  height: 90rpx;
+  height: 100rpx;
   padding-top: 10rpx;
   width:100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 } 
 .merchant_list_text .phone{
   float: left;
-  height: 80rpx;
-  line-height: 80rpx;
+  height: 60rpx;
+  line-height: 60rpx;
   color: #c40000;
   font-size: 36rpx;
   width:100%;
 } 
 .merchant_list_text .address{
   float: left;
-  height: 80rpx;
+  height: 100rpx;
   color: #8a8a8a;
   width:100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 } 
 
 .distance{

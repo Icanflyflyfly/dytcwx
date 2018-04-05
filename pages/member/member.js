@@ -12,6 +12,9 @@ Page({
   onPullDownRefresh: function () {
     REQUESTUTIL.userReLogin();
     wx.stopPullDownRefresh()
+    this.setData({
+      userInfo: getApp().globalData.userInfo
+    });
   },
   onLoad: function () {
       wx.showLoading({

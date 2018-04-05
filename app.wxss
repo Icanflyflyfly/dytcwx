@@ -62,4 +62,12 @@
   margin:0rpx 20rpx;
   height:80rpx;
   line-height:80rpx;
+  float:left;
+}
+
+.textFormat{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
 }

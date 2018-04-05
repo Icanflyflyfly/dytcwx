@@ -32,20 +32,7 @@ Page({
    */
   onLoad: function (options) {
     new app.ToastPanel();
-
-    var userInfo = getApp().globalData.userInfo;
-    var thiz = this;
     
-    network.requestLoading(config.merchantFindByPhone, { merchantPhone: userInfo.phone}, '加载中', function (result) {
-      if (result) {
-        thiz.setData({
-          totalMoney: result.money == null ? 0 : result.money
-        });
-      }      
-
-    }, function (error) {
-      thiz.show(error.msg);
-    });
   },
 
   /**
@@ -59,7 +46,19 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var userInfo = getApp().globalData.userInfo;
+    var thiz = this;
+
+    network.requestLoading(config.merchantFindByPhone, { merchantPhone: userInfo.phone }, '加载中', function (result) {
+      if (result) {
+        thiz.setData({
+          totalMoney: result.money == null ? 0 : result.money
+        });
+      }
+
+    }, function (error) {
+      thiz.show(error.msg);
+    });
   },
 
   /**
@@ -195,9 +194,7 @@ Page({
             phone: phone,
             name: userName,
             inputPhone: inputPhone,                   //录入会员的上级推荐
-            inputUserName: inputUserName,             //录入会员的上级推荐
-            fromPhone: userInfo.fromUserInfo.phone,   //我的上级推荐
-            fromUserName: userInfo.fromUserInfo.name, //我的上级推荐
+            inputUserName: inputUserName,             //录入会员的上级推荐          
             money: parseInt(money),
             memo: memo,
             merchantPhone: userInfo.phone,

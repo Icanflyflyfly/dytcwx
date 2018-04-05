@@ -77,7 +77,8 @@
         </navigator>  
 
         <view class='span_height_30'></view>
-       
+        
+       <navigator url="/pages/about/about" hover-class="navigator-hover">
         <view class='menu_item'>              
             <view class='menu_img'>
               <image src='/resource/member/about.png'></image>           
@@ -85,6 +86,7 @@
             <text>关于我们</text> 
             <image class='right_arrow' src='/resource/common/right.png'></image> 
         </view>
+        </navigator>
         <view class='span_height_30'></view>
         
   </view>

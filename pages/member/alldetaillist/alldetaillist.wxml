@@ -101,14 +101,14 @@
   
       <view class='span_height_30'></view>  
 
-        <navigator url="/pages/member/recommend/recommend" hover-class="navigator-hover">
+        <navigator url="/pages/member/alldetaillist/recommend/recommend" hover-class="navigator-hover">
           <view class='menu_item'>              
               <view class='menu_img'>
                 <image src='/resource/member/recommend.png'></image>           
               </view>  
               <text>推荐商家</text>             
               <image  style='float:right' class='right_arrow' src='/resource/common/right.png'></image> 
-              <text style='float:right;font-size:30rpx;color: #C40000;'>消费总额:324325</text> 
+              <text style='float:right;font-size:30rpx;color: #C40000;'></text> 
           </view>
         </navigator>
 

@@ -12,7 +12,9 @@ Page({
   },
   onLoad: function () {    
     var thiz = this;    
-    
+    thiz.setData({
+      flag: 1
+    });
     var userInfo = app.globalData.userInfo;
     if(userInfo != null){
       if (thiz.showModalMerchant() == false) return;
@@ -36,8 +38,7 @@ Page({
           } else {            
             thiz.setData({
               userInfo: getApp().globalData.userInfo,
-              hasUserInfo: true,
-              flag:1
+              hasUserInfo: true
             });
             if (thiz.showModalMerchant() == false) return;
           }
@@ -59,8 +60,7 @@ Page({
           } else {                        
             thiz.setData({
               userInfo: getApp().globalData.userInfo,
-              hasUserInfo: true,
-              flag: 1
+              hasUserInfo: true
             });
             if (thiz.showModalMerchant() == false) return;
           }
@@ -69,7 +69,7 @@ Page({
 
       }
     });
-    thiz.data.flag = 0;
+    
   }, 
   imageLoad: function (e) {
     var imageSize = UTIL.imageUtil(e)

@@ -35,7 +35,8 @@
     "pages/merchant/rechargelist/rechargelist",
     "pages/merchant/integral/integral",
     "pages/merchant/setting/setting",
-    "pages/shopping/shopping"
+    "pages/shopping/shopping",
+    "pages/about/about"
   ],
   "window":{
     "backgroundTextStyle":"light",

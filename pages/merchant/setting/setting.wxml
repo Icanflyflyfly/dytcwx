@@ -74,6 +74,6 @@
 </view>
 
 <view style='float: left;width: 98%;padding:10rpx;'>
-    <button class="weui-btn" bindtap='onConfirmRegist' type="warn">提交注册</button>
+    <button class="weui-btn" bindtap='onConfirmRegist' type="warn">提交修改</button>
 </view>
 

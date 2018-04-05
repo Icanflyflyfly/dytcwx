@@ -17,7 +17,8 @@ Page({
     hidden: false,
     page: 1,
     size: 20,
-    hasMore: true
+    hasMore: true,
+    scrollHeight: 500
   },
 
   /**
@@ -56,6 +57,13 @@ Page({
 
     }, function (error) {
       thiz.show(error.msg);
+    });
+    wx.getSystemInfo({
+      success: function (res) {
+        thiz.setData({
+          scrollHeight: res.windowHeight
+        });
+      }
     });
   },
 

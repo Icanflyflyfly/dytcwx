@@ -16,7 +16,8 @@ Page({
     hidden: false,
     page: 1,
     size: 20,
-    hasMore: true
+    hasMore: true,
+    scrollHeight:500
   },
 
   /**
@@ -30,12 +31,13 @@ Page({
     var page = this.data.page;
     var params = {
       page: page,
+      phone: userInfo.phone,
       sort: [{
         property: 'time',
         direction: 'DESC'
       }]
     }
-    network.requestLoading(config.consumeDetail, params, '加载中', function (result) {
+    network.requestLoading(config.consumeDetail, params, '加载中', function (result) {      
       if (result.data) {
         thiz.setData({
           list: result.data,
@@ -58,6 +60,14 @@ Page({
 
     }, function (error) {
       thiz.show(error.msg);
+    });
+
+    wx.getSystemInfo({
+      success: function (res) {
+        thiz.setData({
+          scrollHeight: res.windowHeight
+        });
+      }
     });
   },
 
@@ -117,12 +127,13 @@ Page({
     var page = ++(this.data.page);
     var params = {
       page: page,
+      phone: userInfo.phone,
       sort: [{
         property: 'time',
         direction: 'DESC'
       }]
     }
-    network.requestLoading(config.consumeInputDetail, params, '加载中', function (result) {
+    network.requestLoading(config.consumeDetail, params, '加载中', function (result) {    
       if (result.totalCount <= ((thiz.data.page) * (thiz.data.size))) {
         thiz.setData({
           list: thiz.data.list.concat(result.data),
