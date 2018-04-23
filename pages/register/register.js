@@ -21,17 +21,19 @@ Page({
     fromPhone:'',
     memberValid:false,
     fromName:'',
-    createTime: ''
+    createTime: '',
+    disabled: 'n'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) { 
-    console.log('---------> '+JSON.stringify(options));  
+    console.log('register onLoad options---------> '+JSON.stringify(options));  
     if (options.phone != null && options.phone != ''){
       this.setData({
-        fromPhone: options.phone
+        fromPhone: options.phone,
+        disabled: options.disabled
       });
       this.findUserByPhone();
     }
@@ -183,14 +185,6 @@ Page({
       this.show('请输入手机号');     
     } else if (!UTIL.isPhoneNo(phone)) {
       this.show('请输入正确的手机号');
-    } else if (pwd1.length == 0) {
-      this.show('请输入密码');
-    } else if (pwd1.length < 6) {
-      this.show('请至少输入6位密码');
-    } else if (pwd2.length == 0) {
-      this.show('请再次输入密码');
-    } else if (pwd1 != pwd2) {
-      this.show('两次输入密码不一致');
     } else if (userName.length == 0) {
       this.show('请输入真实姓名');
     } else if (fromPhone != '' && !UTIL.isPhoneNo(fromPhone) && fromName == '' && fromPhone == phone) {
@@ -202,7 +196,7 @@ Page({
       var params = {
         userId: wx.getStorageSync(constant.USERID),
         phone: phone,
-        pwd:pwd1,
+        pwd:'123456',
         avatar: userInfo.avatarUrl,
         nickName: userInfo.nickName,
         gender: userInfo.gender,

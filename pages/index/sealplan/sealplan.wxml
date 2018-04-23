@@ -1,0 +1,26 @@
+<!--pages/index/sealplan/sealplan.wxml-->
+<view class="section" >
+  <picker bindchange="bindBankChange"  value='{{index}}' range="{{banks}}">
+    <view class="picker">        
+        <text style="width: 100%;text-align: center;padding: 100rpx 0rpx;" class='select_text'>待交付印章：{{seals[index]}}</text>
+    </view>
+</picker>
+</view>
+
+<view class='order_process'>
+  <view class='process_wrap' wx:for="{{processData}}" wx:key="">
+    <view class='process'>
+      <view class='process_line' style="background:{{item.start}}"></view>
+      <image class='process_icon' src="{{item.icon}}"></image>
+      <view class='process_line' style="background:{{item.end}}"></view>
+    </view>
+    <text class='process_name'>{{item.name}}</text>
+  </view>
+</view>
+
+<view>
+   <text style="text-align: center;display: block;padding-top: 100rpx;color: #33cd5f;">目前印章状态：审核中...</text>
+   <text class='content'>
+      您提交的印章申刻材料，已到达我公司双滦店，工作人员将马上审核，并尽快通知您最终审核结果。请耐心等待...
+   </text>
+</view>

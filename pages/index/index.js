@@ -29,7 +29,10 @@ Page({
     hidden: false,
     page: 1,
     size: 20,
-    hasMore: true
+    hasMore: true,
+    userInfo: {},
+    hasUserInfo: false,
+    flag: 0
   },  
   onPullDownRefresh: function () {   
     this.onLoad();
@@ -74,110 +77,92 @@ Page({
   },
   onLoad: function () {
     new app.ToastPanel();
-
-    var thiz = this;
-    network.request(config.merchantTypeList, {}, function (result) {
-      if (result != null) {
-        thiz.setData({
-          merchantDataBig: result.bigtype,
-          merchantDataSmall: result.smalltype,
-          multiArray: [result.bigtype, result.smalltype[0]]
-        });
-      }
-
-    }, function (error) {
-      thiz.show(error.msg);
-    });
     
-    network.request(config.imageUrls, {},  function (result) {
-      if (result != null) {
-        
-        thiz.setData({
-          imgUrls: result
-        });
-      }
-
-    }, function (error) {
-      thiz.show(error.msg);
+    wx.showLoading({
+      title: '系统加载中...',
+      mask: true
     });
+    this.data.flag = 1;
+    var thiz = this;
+    // 在没有 open-type=getUserInfo 版本的兼容处理  
+    wx.checkSession({
+      success: function () {
+        // session未过期
+        REQUESTUTIL.userLogin(true, function () {
+          wx.hideLoading();
+          var userInfo = getApp().globalData.userInfo;
+          if (userInfo != null && userInfo.status == false) {
+            wx.showModal({
+              title: '提示',
+              content: '此会员已被注销',
+              showCancel: false,
+              success: function (res) {
+                wx.switchTab({
+                  url: '/pages/index/index'
+                })
+              }
+            });
+          } else {
+            var userIsBind = wx.getStorageSync(CONSTANT.USER_IS_BIND);
+            if (userIsBind == false) {
+              wx.redirectTo({
+                url: '/pages/register/register',
+              });
+            } else {
+              thiz.setData({
+                userInfo: getApp().globalData.userInfo,
+                hasUserInfo: true
+              });
+            }
+          }
 
-    thiz.findMerchant();
+        });
+
+
+        console.log('session未过期 ');
+      },
+      fail: function () {
+        // 登录态过期
+        REQUESTUTIL.userLogin(true, function () {
+          wx.hideLoading();
+          var userIsBind = wx.getStorageSync(CONSTANT.USER_IS_BIND);
+          console.log('userIsBind = ' + userIsBind);
+          if (userIsBind == false) {
+            wx.redirectTo({
+              url: '/pages/register/register',
+            });
+          } else {
+            thiz.setData({
+              userInfo: getApp().globalData.userInfo,
+              hasUserInfo: true
+            });
+          }
+
+        });
+
+      }
+    })    
+    
+    // network.request(config.imageUrls, {},  function (result) {
+    //   if (result != null) {
+        
+    //     thiz.setData({
+    //       imgUrls: result
+    //     });
+    //   }
+
+    // }, function (error) {
+    //   thiz.show(error.msg);
+    // });
+
         
   },
-  findMerchant:function(para,value){
-    var thiz = this;
-    var page = this.data.page;
-    var params = {
-      page: page,
-      sort: [{
-        property: 'createTime',
-        direction: 'DESC'
-      }]
-    }
-    if(para)
-      params[para] = value;
 
-    network.requestLoading(config.merchantDetail, params, '加载中', function (result) {
-      if (result.data) {
-        thiz.setData({
-          list: result.data,
-          hidden: true,
-        });
-      }else{
-        thiz.setData({
-          list: [],
-          hidden: true,
-        });
-      }
-      if (result.totalCount <= ((thiz.data.page) * (thiz.data.size))) {
-        thiz.setData({
-          list: result.data,
-          hidden: true,
-          hasMore: false
-        });
-      } else {
-        thiz.setData({
-          list: result.data,
-          hidden: true,
-          hasMore: true
-        });
-      }
-
-    }, function (error) {
-      thiz.show(error.msg);
-    });
-  },
-  loadMore: function (e) {
-    var userInfo = getApp().globalData.userInfo;
-    var thiz = this;
-
-    if (!thiz.data.hasMore) return;
-    var page = ++(this.data.page);
-    var params = {
-      page: page,
-      sort: [{
-        property: 'time',
-        direction: 'DESC'
-      }]
-    }
-    network.requestLoading(config.consumeInputDetail, params, '加载中', function (result) {
-      if (result.totalCount <= ((thiz.data.page) * (thiz.data.size))) {
-        thiz.setData({
-          list: thiz.data.list.concat(result.data),
-          hidden: true,
-          hasMore: false
-        });
-      } else {
-        thiz.setData({
-          list: thiz.data.list.concat(result.data),
-          hidden: true,
-          hasMore: true
-        });
-      }
-
-    }, function (error) {
-      thiz.show(error.msg);
-    });
+  imageLoad: function (e) {
+    var imageSize = UTIL.imageUtil(e)
+    this.setData({
+      imagewidth: imageSize.imageWidth,
+      imageheight: imageSize.imageHeight
+    })
   }
-  
 })

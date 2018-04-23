@@ -55,7 +55,7 @@ var config = {
   // 粉丝明细
   fansDetail: BASE_URL + 'api/usermnt/userbaseinfo/find/fans',
   // 推荐商家
-  recommendDetail: BASE_URL + 'api/dytcmemberdetail/bonusdetail/search',
+  recommendDetail: BASE_URL + 'api/dytcmerchantmnt/merchantmnt/sum/merchant/consume',
   //绑定url
   bindPhoneUrl: BASE_URL + 'api/usermnt/userbaseinfo/wechat/bind/phone',
   // 引流送积分
@@ -104,13 +104,16 @@ var config = {
   consumeInputDetail: BASE_URL + 'api/dytcmerchantdetail/cosumeinputdetail/search',
   // 商家积分兑换
   merchantInteralChange: BASE_URL + 'api/usermnt/userbaseinfo/merchant/interal/change',
+  // 商家积分兑换明细
+  merchantInteralChangeList: BASE_URL + 'api/dytcmerchantdetail/interalchangedetail/search',
   // 商家明细
   merchantDetail: BASE_URL + 'api/dytcmerchantmnt/merchantmnt/search',
   // 根据ID查找商家
   findMerchantById: BASE_URL + 'api/dytcmerchantmnt/merchantmnt/find',
   // 提交订单
   submitOrder: BASE_URL + 'api/ordermnt/baseorder/add',
-
+  // 查询大类
+  findByBigtype: BASE_URL + 'api/dytcsyssetting/syssetting/find/bigtype',
 }
 
 module.exports = config

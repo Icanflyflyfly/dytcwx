@@ -26,89 +26,7 @@ function userLogin(code, invalid, success) {
   })
 }
 
-/**
- * 发送用户信息到服务器
- */
-function sendCurrentUserInfoToServer(encryptedData, iv) {
-  var params = {
-    encryptedData: encryptedData,
-    iv: iv
-  }
-  network.request(config.decodeUserInfoUrl, params, function(result){
-    console.log('解密用户信息成功');
-  }, function(error){
 
-  })
-}
-
-/**
- * 获取用户手机号
- */
-function getUserPhoneNum(encryptedData, iv, systemInfo, success, fail) {
-  var params = {
-    encryptedData: encryptedData,
-    iv: iv,
-    systemInfo: systemInfo
-  }
-  network.requestLoading(config.decodePhoneUrl, params, '登录中', function (result) {
-    console.log("用户的手机号为: " + result);
-    if(result != null){
-      wx.setStorageSync(constant.USERPHONE, result);
-      wx.setStorageSync(constant.USER_IS_LOGIN, true);
-      success()
-    }else{
-      fail({msg:"解密手机号失败"});
-    }
-    
-  }, function (error) {
-    console.log("获取用户手机号失败: " + error);
-    fail(error)
-  })
-}
-
-/**
- * 用户扫码开门
- */
-function userScan(qrCode, success, fail){
-  var params = {
-    scanType:"0", // 微信扫码
-    machineQr: qrCode
-  }
-  network.requestLoading(config.userScanUrl, params, '加载中', function (result) {
-    success(result)
-  }, function (error) {
-    fail(error);
-  })
-}
-
-
-/**
- * 轮询开门状态
- */
-function mechineOpenStatus(scanId, success, fail){
-  var params = {
-    scanId: scanId
-  }
-  network.request(config.userScanFindOpenUrl, params, function (result) {
-    success(result)
-  }, function (error) {
-    fail(error)
-  })
-}
-
-/**
- * 轮询关门状态
- */
-function mechineCloseStatus(scanId, success, fail){
-  var params = {
-    scanId: scanId
-  }
-  network.request(config.userScanFindCloseUrl, params, function (result) {
-    success(result)
-  }, function (error) {
-    fail(error)
-  })
-}
 
 /**
  *  微信支付请求参数
@@ -141,45 +59,6 @@ function userOrders(page, success, fail){
   })
 }
 
-/**
- * 根据扫码ID查询订单
- */
-function findOrderByScanId(userScanId, success, fail){
-  var params = {
-    userScanId: userScanId
-  }
-  network.request(config.findOrderByScanIdUrl, params, function (result) {
-    success(result)
-  }, function (error) {
-    fail(error)
-  })
-}
-
-/**
- * 根据订单编号查询订单
- */
-function findOrderByOrderNo(orderNo, success, fail){
-  var params = {
-    orderNo: orderNo
-  }
-  network.requestLoading(config.findOrderByorderNoUrl, params, '加载中', function (result) {
-    success(result)
-  }, function (error) {
-    fail(error)
-  })
-}
-
-/**
- * 查询未支付订单
- */
-function findNoPayOrder(success, fail){
-  var params = {}
-  network.request(config.findNoPayOrderUrl, params, function(result){
-    success(result)
-  }, function(error){
-    fail(error)
-  })
-}
 
 
 /**
@@ -199,62 +78,25 @@ function bindPhone(phone, systemInfo, success, fail){
   })
 }
 
-
 /**
- * 获取短信验证码
+ * 查询大类值
  */
-function getCode(phone, success, fail){
+function findByBigtype(bigTypeName,success, fail) {
   var params = {
-    phone: phone
+    bigTypeName: bigTypeName
   }
-  network.requestLoading(config.getAuthCodeUrl, params, '发送中', function (result) {
-    success(result)
+  network.requestLoading(config.findByBigtype, params, '', function (result) {
+      success(result)
   }, function (error) {
     fail(error)
   })
 }
-
-
-/**
- * 展示引导说明页
- */
-function showGuide(success, fail){
-  var params = {}
-  network.request(config.showGuideUrl, params, function (result) {
-    success(result)
-  }, function (error) {
-    fail(error)
-  })
-}
-
-
-/**
- * 订单详情页Ad
- */
-function findOneAd(success, fail) {
-  var params = {}
-  network.request(config.findOneAdUrl, params, function (result) {
-    success(result)
-  }, function (error) {
-    fail(error)
-  })
-} 
 
 
 module.exports = {
-  userLogin: userLogin,
-  getUserPhoneNum: getUserPhoneNum,
-  userScan: userScan,
-  mechineOpenStatus: mechineOpenStatus,
-  mechineCloseStatus: mechineCloseStatus,
-  findOrderByScanId: findOrderByScanId,
+  userLogin: userLogin,  
   payment: payment,
   userOrders: userOrders,
-  sendCurrentUserInfoToServer: sendCurrentUserInfoToServer,
-  findOrderByOrderNo: findOrderByOrderNo,
-  findNoPayOrder: findNoPayOrder,
   bindPhone: bindPhone,
-  getCode: getCode,
-  showGuide: showGuide,
-  findOneAd: findOneAd
+  findByBigtype: findByBigtype
 }

@@ -1,0 +1,47 @@
+<!--index.wxml-->
+<view class="page" style='font-size:28rpx;overflow:hidden;overflow-y:auto;'>
+<!--轮播图片-->
+  <swiper class='swiper' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:key="{{item}}" wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" lazy-load="true" class="slide-image" width="355" height="200"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+<!--商家信息-->
+<view class='merchant_info'>  
+  <text style='' class='merchant_name'>{{merchant.merchantName}}</text>
+  <!--text>营业时间：{{merchant.businessTime==null?"8点 - 18点":merchant.businessTime}}</text-->
+  <view class='phone'>
+      <text class='phone_num'>电话：{{merchant.merchantTel}}</text>
+      <image class='imagePhone' bindtap='makePhoneCall'  src='/resource/common/phone.png'></image>
+  </view>  
+
+  <view class='span_height'></view>
+  <view>
+    <text class='address'>地址：{{merchant.address}}</text>
+    <button style='width:28%;margin:10rpx 0rpx;;float:left;font-size:24rpx;' bindtap='goThere' class="weui-btn" type="warn">去这里</button>
+  </view>
+
+
+  <view>
+    <view class='title'>
+      <text class='titleDesc'>经营范围</text>
+      <text class='titleBlank'></text>
+    </view>
+    <view class='content'>
+      <text>
+      {{merchant.serviceMemo==null?"":merchant.serviceMemo}}
+      </text>
+    </view>
+  </view>
+
+  
+
+</view>
+
+</view>
+
+
+

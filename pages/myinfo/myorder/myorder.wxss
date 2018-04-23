@@ -1,0 +1,12 @@
+/* pages/myinfo/myorder/myorder.wxss */
+.tips1{
+    font-size: 14px;
+    padding-top: 10px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: #969696;
+    text-align: center;
+}
+

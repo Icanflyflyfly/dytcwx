@@ -1,0 +1,16 @@
+/* pages/about/about.wxss */
+.about{
+  float:left;
+  text-align:justify;
+  padding:20rpx;
+  font-size:32rpx;
+
+}
+
+.content{
+  float:left;
+  text-align:justify;
+  padding:10rpx;
+  font-size:32rpx;
+  width: 100%;
+}

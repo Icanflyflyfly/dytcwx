@@ -1,0 +1,10 @@
+<!--pages/about/about.wxml-->
+<text  decode="{{true}}" class="about">
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;承德印诺系统集成有限公司承德印诺系统集成有限公司承德印诺系统集成有限公司承德印诺系统集成有限公司
+</text>
+<text class='content' style='display:block;text-align:center'>
+业务联系电话：
+</text>
+<text decode="{{true}}" style='display:block;padding:20rpx;color:red;text-align:center'>
+189 9999 8888 <br/>
+</text>

@@ -13,7 +13,7 @@
 } 
 
 .span_height{
-  height: 2rpx;
+  height: 3rpx;
   width: 100%;
   background-color: #efefef;
 }
@@ -52,22 +52,61 @@
 
 .input_view{
   font-size:36rpx;
-  margin:0rpx 20rpx;
-  height:80rpx;
-  line-height:80rpx;
+  margin:10rpx;
+  height:90rpx;
+  line-height:90rpx;
+}
+
+.input_view text{
+  float:left;
+  padding-right: 20rpx;
 }
 
 .input{
   font-size:36rpx;
-  margin:0rpx 20rpx;
-  height:80rpx;
-  line-height:80rpx;
+  height:90rpx;
+  line-height:90rpx;
   float:left;
+  min-width:60%;
+  max-width:60%;
 }
 
+.input_fiveper{
+  font-size:36rpx;
+  height:90rpx;
+  line-height:90rpx;
+  float:left;
+  min-width:50%;
+  max-width:50%;
+}
+.select_text{
+   padding: 10rpx;
+   display: block;
+   float: left;
+   font-size: 36rpx;
+}
 .textFormat{
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   display: block;
+}
+
+.menu_item{
+  height: 120rpx;
+  line-height: 120rpx;
+}
+.menu_item .menu_img{
+  padding:33rpx 20rpx;
+  float: left;
+}
+.menu_item .menu_img image{  
+  height: 50rpx;
+  width: 50rpx;
+  float: left;
+}
+.menu_item text{
+  float: left;
+  color: #0f0f0f;
+  font-size: 36rpx;
 }

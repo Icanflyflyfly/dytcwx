@@ -1,0 +1,15 @@
+<!--pages/validate/validate.wxml-->
+<view class='span_height_30'></view>
+
+<view class="section input_view">
+  <image style='width:50rpx;height:50rpx;float:left;padding:20rpx;' src='/resource/home/check1.png'></image>
+  <input class='input' bindinput='merchantNameInput' value="{{merchantName}}" placeholder="请输入印章编码" auto-focus/>
+  <button style='margin-top:10px' size='mini' class="weui-btn" bindtap='onConfirmRegist' type="warn">查询</button>
+</view>
+
+<view class='span_height'></view>
+
+<view style='display:block;text-align:center;padding-top:200rpx;'>
+<image style='width:300rpx;height:300rpx' src='/resource/home/search.png'></image>
+</view>
+

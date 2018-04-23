@@ -11,17 +11,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-    phone:''
+    phone:'',
+    disabled:'n'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log('---------> ' + JSON.stringify(options));
+    console.log('wxregister onLoad options ---------> ' + JSON.stringify(options));
     if (options.phone != null && options.phone != '') {
       this.setData({
-        phone: options.phone
+        phone: options.phone,
+        disabled: options.disabled
       });
     }
     wx.showLoading({
@@ -39,7 +41,7 @@ Page({
           console.log('userIsBind = ' + userIsBind);
           if (userIsBind == false) {
             wx.redirectTo({
-              url: '/pages/register/register?phone='+(thiz.data.phone),
+              url: '/pages/register/register?phone=' + (thiz.data.phone) + '&disabled=' + (thiz.data.disabled),
             });
           } else {
             thiz.setData({

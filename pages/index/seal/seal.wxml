@@ -1,0 +1,82 @@
+<!--pages/member/registmerc/registmerc.wxml-->
+<import src="../../../component/toast/toast.wxml" />
+<template is="toast" data="{{..._toast_}}" />
+
+<view class='span_height_30'></view>
+
+
+<view class='span_height' style='float:left'></view>
+
+<view class='menu_item' bindtap='uploadTitleClickTitle'>              
+    <view class='menu_img'>
+      <image  style="width: 70rpx;height: 60rpx;" src='/resource/home/card.png'></image>                        
+    </view>  
+    <text class='menu_text'>上传身份证照片 ({{titleImages}})张</text>
+    <image class='arrow' src='/resource/common/right_gray.png'></image>          
+</view>  
+
+ <view class='span_height' style='float:left'></view>
+
+<view class='menu_item' bindtap='uploadTitleClickCer'>              
+    <view class='menu_img'>
+      <image style="padding-left: 8rpx;" src='/resource/home/cer.png'></image>                        
+    </view>  
+    <text style="padding-left: 10rpx;" class='menu_text'>上传营业执照照片 ({{certificateImages}})张</text>
+    <image class='arrow' src='/resource/common/right_gray.png'></image>          
+</view>  
+
+ <view class='span_height' style='float:left'></view>
+
+<view class='menu_item'>              
+    <view class='menu_img'>
+      <image style="padding-left: 8rpx;" src='/resource/home/seal.png'></image>                        
+    </view>  
+    <picker bindchange="bindSealChange"  value='{{index}}' range="{{sealTypes}}">
+    <view class="picker">        
+        <text class='select_text' style="height: 100rpx;line-height: 100rpx;">选择刻章类型：{{sealTypes[index]}}</text>
+    </view>
+</picker>      
+</view>  
+
+<view class='span_height'></view>
+
+<view class="section input_view">
+<text>需支付金额</text>
+  <input type='number' class='input' bindinput='merchantNameInput' value="{{merchantName}}" placeholder="请输入支付金额"/>
+</view>
+<view class='span_height'></view>
+
+<view class="section input_view">
+<text>申刻人电话</text>
+  <input class='input' bindinput='merchantNameInput' value="{{merchantName}}" placeholder="请输入申刻人电话"/>
+</view>
+<view class='span_height'></view>
+
+<view class="section input_view">
+<text>申刻人姓名</text>
+  <input class='input' bindinput='merchantTelInput' value="{{merchantTel}}" placeholder="请输入申刻人姓名"/>
+</view>
+<view class='span_height' style='float:left'></view>
+
+<view class="section input_view">
+  <text>公司电话</text>
+  <input class='input_fiveper' bindinput='toPhoneInput' value='' placeholder="请输入公司电话" auto-focus/>
+  <text style='float:left;'>{{userName}}</text>
+</view>
+
+ <view class='span_height'></view>
+
+<view class="section input_view">
+<text>公司地址</text>
+  <input class='input' style="min-width: 50%;font-size:26rpx" bindinput='addressInput' value="{{address}}" placeholder="请输入详细地址" auto-focus/>
+  <view style='float: left;width: 180rpx;'>
+    <button class="weui-btn" style="margin-top: 10px;" size='mini' bindtap='chooseLocationTap' type="primary">选择地图</button>
+</view>
+</view>
+
+
+<view class='span_height' style='float:left'></view>
+
+<view style='float: left;width: 98%;padding:10rpx;'>
+    <button class="weui-btn" bindtap='onConfirmRegist' type="warn">提交审核并支付</button>
+</view>
