@@ -1,0 +1,22 @@
+<!--pages/member/wallet/repeat/repeat.wxml-->
+<import src="../../../../component/toast/toast.wxml" />
+<template is="toast" data="{{..._toast_}}" />
+<view class='span_height_30'></view>
+
+<view class='span_height'></view>
+
+<view class='span_height'></view>
+<view class="section input_view">
+  <text style='float:left'>消费金额:</text>
+  <input class='input' style='padding-left:30rpx' value="{{cashInteral*10}}"  bindinput='interalInput' type='number' placeholder="请输入购买消费积分总额" auto-focus/>
+</view>
+<view class='span_height'></view>
+<view class="section input_view">
+  <text style='float:left'>交易密码:</text>
+  <input class='input' password='true' bindinput='passwordInput' style='padding-left:30rpx' value="" placeholder="请输入交易密码" />
+</view>
+<view class='span_height'></view>
+
+<view style='float: left;width: 98%;padding:20rpx 10rpx;'>
+    <button class="weui-btn" type="warn" bindtap='onConfirmPay'>确认购买</button>
+</view>

@@ -11,3 +11,24 @@
   margin: 20rpx;
   border-radius: 50%;
 }
+
+.userinfo-nickname {
+  
+}
+
+.input_view{
+  font-size:36rpx;
+  margin:0rpx 20rpx;
+  height:80rpx;
+  line-height:80rpx;  
+  display: block;
+}
+
+.input{
+  font-size:36rpx;
+  margin:0rpx 20rpx;
+  height:80rpx;
+  line-height:80rpx;
+  width:200px;
+  float:left;
+}

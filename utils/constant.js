@@ -3,8 +3,8 @@ module.exports = {
   VERSION: '1.0',
   QRCODE_RRE: 'https://',
   QRCODE_SUF: 'dytcV1.0',
-  // BASE_URL: "https://cd.hengyefuyang.com/",
-  BASE_URL: "http://localhost:8080/",
+  BASE_URL: "https://cd.dytch588.com/",
+  // BASE_URL: "http://localhost:8080/",
   USERID: "userId",
   TOKEN: "token",
   USER_IS_LOGIN: 'userIsLogion',
@@ -12,9 +12,5 @@ module.exports = {
   USERPHONE: 'userPhone',
   IS_SHOW_GUID: 'isShowGuid',
   USERINFO: 'userInfo',
-  USER_IS_BIND:'userIsBind',
-  YINLIU_VAL: 'yinLiuVal',
-  BANKS: 'banks',
-  TIXIAN: 'TiXian',
-  JIFENHUZHUAN: 'JiFenHuZhuan'
+  USER_IS_BIND:'userIsBind'
 }

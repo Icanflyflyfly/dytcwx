@@ -1,0 +1,22 @@
+<!--pages/member/wallet/switch/switch.wxml-->
+<import src="../../../../component/toast/toast.wxml" />
+<template is="toast" data="{{..._toast_}}" />
+<view class='span_height_30'></view>
+
+<view class="section input_view">
+  <input class='input' style='float:left;' bindinput='toPhoneInput' value='' placeholder="请输入转入方账号" auto-focus/>
+  <text style='float:left;'>{{userName}}</text>
+</view>
+<view class='span_height'></view>
+<view class="section input_view">
+  <input class='input' type='number' bindinput='toCashInput'  value='{{cashInteral}}' placeholder="请输入转赠金额" auto-focus/>
+</view>
+<view class='span_height'></view>
+<view class="section input_view">
+  <input class='input' password='true' bindinput='passwordInput' placeholder="请输入交易密码" auto-focus/>
+</view>
+<view class='span_height'></view>
+
+<view style='float: left;width:98%;margin:20rpx 10rpx;'>
+    <button class="weui-btn" type="warn" bindtap='onConfirmGift'>确认转赠</button>
+</view>

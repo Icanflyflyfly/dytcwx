@@ -1,0 +1,48 @@
+<!--pages/member/wallet/guidance/guidance.wxml-->
+<import src="../../../../component/toast/toast.wxml" />
+<template is="toast" data="{{..._toast_}}" />
+
+<view class='span_height_30'></view>
+<view class="section input_view">
+  <text style="float: left;padding-right: 40rpx;">商品明细</text>
+  <input class='input' type='text' bindinput='productInput' placeholder="请输入商品明细" auto-focus/>
+</view>
+<view class='span_height'></view>
+<view class="section input_view">
+<text style="float: left;padding-right: 40rpx;">积分金额</text>
+  <input class='input' type='number' bindinput='interalInput' placeholder="请输入购买积分金额" auto-focus/>
+</view>
+<view class='span_height'></view>
+<view class="section input_view">
+  <text style="float: left;padding-right: 40rpx;">需支付金额</text>
+  <input class='input' disabled='true' value="{{needPay}}" auto-focus/>
+</view>
+
+<view class='span_height' style='float:left'></view>
+
+<view style='display:block;' class="weui">
+  <view style="float: left;padding: 40rpx 20rpx;width:50%;text-align:center;">
+    <text style='display:block'>点击右侧按钮</text>
+    <text style='display:block'>上传凭证</text>
+  </view>
+  
+  <view class="weui-uploader__input-box" style='margin:20rpx;'>    
+    <view class="weui-uploader__input" bindtap="chooseImage"></view>
+  </view>
+
+  <view class="weui-uploader">
+      <view class="weui-uploader__files">
+        <block wx:for="{{imageList}}" wx:for-item="image" wx:for-index='idx'>
+        <div style="text-align:center">
+          <view class="weui-uploader__file" style='width:100%;text-align:center;'>
+            <image style='margin:0 auto;width:300px;height:200px;'  class="weui-uploader__img" src="{{image}}" data-id="{{idx}}" data-src="{{image}}" bindtap="previewImage"></image>
+          </view>
+          </div>
+        </block>
+      </view>      
+  </view>
+</view>
+
+<view style='float: left;width: 98%;padding:10rpx;'>
+    <button class="weui-btn" bindtap='onConfirmPay' disabled='{{payDisabled}}' type="warn">确定并支付</button>
+</view>

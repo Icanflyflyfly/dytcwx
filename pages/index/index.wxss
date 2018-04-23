@@ -25,15 +25,15 @@
   float: left;
 }
 .hot_merchant {
+  margin-top: 10rpx;
   height: 70rpx;
   width: 100%;
   padding-left: 5rpx;
-  color: #FFF; 
+  color: #c40000; 
   line-height: 70rpx;
   border-bottom: 1px solid #efefef;
+  float: left;
   font-size: 36rpx;
-  background-color: #c40000
-
 }
 .hot_merchant image{
  width:50rpx;
@@ -121,35 +121,4 @@
     bottom: 0;
     color: #969696;
     text-align: center;
-}
-.welcomeText{
-  color:#FFF;
-  line-height:60px;
-  font-size: 32rpx;
-  padding-top: 8rpx;
-}
-.userinfo {
-  display: flex;
-  position: absolute;
-  top: 390rpx;
-  left: 20rpx;
-  width: 100%;
-}
-
-.userinfo-avatar {
-  width: 80rpx;
-  height: 80rpx;
-  margin: 20rpx;  
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  display: flex;
-  color: #ffc900;
-  align-items: center;
-  font-size: 36rpx;
-  overflow: hidden;
-  text-overflow:ellipsis;
-  white-space: nowrap;
-  width:250rpx;
 }

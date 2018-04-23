@@ -1,25 +1,47 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/index/seal/seal",
-    "pages/index/seal/certificate/certificate",
-    "pages/index/sealplan/sealplan",
-    "pages/index/shop/shop",
-    "pages/index/shop/merchantDetail/merchant_detail",
-    "pages/validate/validate",
-    "pages/guidance/guidance",
-    "pages/myinfo/myinfo",
-    "pages/myinfo/setting/setting",
-    "pages/myinfo/myseal/myseal",
-    "pages/myinfo/myorder/myorder",
     "pages/register/register",
-    "pages/register/wxregister/wxregister",         
-    "pages/index/about/about"
+    "pages/register/wxregister/wxregister",
+    "pages/index/merchantDetail/merchant_detail",
+    "pages/member/member",
+    "pages/member/setting/setting",
+    "pages/member/setting/bank/bank",
+    "pages/member/setting/password/password",
+    "pages/member/wallet/wallet",    
+    "pages/member/wallet/withdraw/withdraw",
+    "pages/member/wallet/switch/switch",
+    "pages/member/wallet/repeat/repeat",
+    "pages/member/wallet/guidance/guidance",
+    "pages/member/alldetaillist/alldetaillist",
+    "pages/member/alldetaillist/bonus/bonus",
+    "pages/member/alldetaillist/consume/consume",
+    "pages/member/alldetaillist/giftlist/giftlist",
+    "pages/member/alldetaillist/guidancelist/guidancelist",
+    "pages/member/alldetaillist/recievelist/recievelist",
+    "pages/member/alldetaillist/repeatlist/repeatlist",
+    "pages/member/alldetaillist/return/return",
+    "pages/member/alldetaillist/withdrawlist/withdrawlist",
+    "pages/member/alldetaillist/fans/fans",    
+    "pages/member/alldetaillist/recommend/recommend",
+    "pages/member/qr/qr",
+    "pages/member/applymgr/applymgr",
+    "pages/member/registmerc/registmerc",
+    "pages/member/registmerc/certificate/certificate",
+    "pages/merchant/merchant",
+    "pages/merchant/consumeinput/consumeinput",
+    "pages/merchant/consumeinputlist/consumeinputlist",
+    "pages/merchant/recharge/recharge",
+    "pages/merchant/rechargelist/rechargelist",
+    "pages/merchant/integral/integral",
+    "pages/merchant/setting/setting",
+    "pages/shopping/shopping",
+    "pages/about/about"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#000",
-    "navigationBarTitleText": "印诺印章",
+    "navigationBarTitleText": "益德天成",
     "navigationBarTextStyle":"white"
   },
   "tabBar": {
@@ -28,21 +50,27 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "网上刻章",
-        "iconPath":"resource/home/seal1.png",
-        "selectedIconPath":"resource/home/seal2.png"
+        "text": "首页",
+        "iconPath":"resource/home/main1.png",
+        "selectedIconPath":"resource/home/main2.png"
       },
       {
-        "pagePath": "pages/validate/validate",
-        "text": "印章核验",
-        "iconPath": "resource/home/check1.png",
-        "selectedIconPath": "resource/home/check2.png"
-      },      
+        "pagePath": "pages/member/member",
+        "text": "会员中心",
+        "iconPath": "resource/home/member1.png",
+        "selectedIconPath": "resource/home/member2.png"
+      },
       {
-        "pagePath": "pages/myinfo/myinfo",
-        "text": "我的信息",
-        "iconPath": "resource/home/main1.png",
-        "selectedIconPath": "resource/home/main2.png"
+        "pagePath": "pages/merchant/merchant",
+        "text": "商家中心",
+        "iconPath": "resource/home/merchant1.png",
+        "selectedIconPath": "resource/home/merchant2.png"
+      },
+      {
+        "pagePath": "pages/shopping/shopping",
+        "text": "购物商城",
+        "iconPath": "resource/home/mall1.png",
+        "selectedIconPath": "resource/home/mall2.png"
       }
     ]
   },

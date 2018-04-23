@@ -1,0 +1,22 @@
+<!--pages/member/setting/bank/bank.wxml-->
+<import src="../../../../component/toast/toast.wxml" />
+<template is="toast" data="{{..._toast_}}" />
+ <view>
+        <view class='span_height_30'></view>
+
+        <view class="section input_view">
+          <input class='input' type='text' value='{{bank}}' bindinput='bankInput' placeholder="请输入开户行"/> 
+        </view>
+
+        <view class='span_height'></view>
+        <view class="section input_view">
+          <input class='input' type='number' value='{{bankCardNo}}' bindinput='bankCardNoInput' placeholder="请输入银行卡号"/>
+        </view>
+
+        <view class='span_height_30'></view>
+  </view>
+
+  <view style='margin:0rpx 20rpx'>
+    <button class="weui-btn" type="warn"  bindtap='onUpdateBank'>设置</button>    
+  </view>
+

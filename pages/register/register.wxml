@@ -13,33 +13,39 @@
   <view class='span_height_30'></view>
         <view class='span_height'></view>
         <view class="section input_view">
-          <text style='padding-right:30rpx'>手  机  号</text>
+          <text style='float:left'>手机号</text>
           <input class='input' type='number' maxlength='11' bindinput='phoneInput' placeholder="请输入手机号"/> 
         </view>
         
-        <text hidden='true'>会员密码</text>
-          <input hidden='true' class='input' password='true' value="123456" bindinput='pwd1Input' placeholder="请输入密码"/>
-        
-        <text hidden='true'>重复密码</text>
-          <input hidden='true' class='input' password='true'  value="123456" bindinput='pwd2Input' placeholder="请再次输入密码"/>
         <view class='span_height'></view>
         <view class="section input_view">
-        <text>真实姓名</text>
+        <text style='float:left'>会员密码</text>
+          <input class='input' password='true' bindinput='pwd1Input' placeholder="请输入密码"/>
+        </view>
+
+        <view class='span_height'></view>
+        <view class="section input_view">
+        <text style='float:left'>重复密码</text>
+          <input class='input' password='true' bindinput='pwd2Input' placeholder="请再次输入密码"/>
+        </view>
+
+        <view class='span_height'></view>
+        <view class="section input_view">
+        <text style='float:left'>真实姓名</text>
           <input class='input' type='text' bindinput='userNameInput' placeholder="请输入真实姓名"/>
         </view>
 
          <view class='span_height'></view>
         <view class="section input_view">
-          <text>来自推荐</text>
-          <input class='input_fiveper' disabled="{{disabled=='y'?true:false}}" type='text' bindinput='fromPhoneInput' value='{{fromPhone}}' placeholder="来自推荐会员"/>
+        <text style='float:left'>来自推荐</text>
+          <input class='input' type='text' bindinput='fromPhoneInput' value='{{fromPhone}}' placeholder="来自推荐会员"/>
           <text style='float:left;'>{{fromName}}</text>
         </view>
 
         <view class='span_height_30'></view>
   </view>
   
-  <text style='display:block;padding-left:40rpx;color:#ef473a;font-size:14px;'>* 会员注册默认密码是 123456,在用户设置中修改密码</text>
-  <text style='display:block;padding-left:40rpx;color:#ef473a;font-size:14px;'>* 如无 [来自推荐] 可为空</text>
+  <text style='padding-left:40rpx;color:#ef473a;font-size:14px;'>*密码至少为6位</text>
   <view style='margin:0rpx 20rpx'>
     <button class="weui-btn" type="warn"  bindtap='onRegister'>注册</button>    
   </view>

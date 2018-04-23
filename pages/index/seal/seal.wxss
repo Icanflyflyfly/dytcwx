@@ -1,7 +1,0 @@
-/* pages/index/seal/seal.wxss */
-.arrow{
-  float:right;
-  height:60rpx;
-  width:60rpx;
-  padding:30rpx 20rpx;
-}

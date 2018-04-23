@@ -1,0 +1,55 @@
+<!--pages/merchant/consumeinput/consumeinput.wxml-->
+<import src="../../../component/toast/toast.wxml" />
+<template is="toast" data="{{..._toast_}}" />
+<view class='span_height_30'></view>
+<view class='menu_item'>              
+    <view class='menu_img'>
+      <image src='/resource/member/cash_point.png'></image>           
+    </view>  
+    <text style='color: #C40000;'>现金积分总额</text> 
+    <text style='float:left;padding-left:80rpx;font-size:36rpx;color: #C40000;'>{{totalMoney}}</text> 
+</view>
+
+<view class='span_height'></view>
+
+<view class="section input_view">
+<!--text style='float:left;'>消费会员</text-->
+  <input class='input' value='' bindinput='phoneInput' placeholder="请输入消费会员手机号" auto-focus/>
+  <text style='float:left;'>{{userName}}</text>
+</view>
+
+<view class='span_height'></view>
+
+<view class="section input_view">
+  <!--text style='float:left;'>推荐会员</text-->
+  <input class='input' value='{{inputPhone}}' disabled='true' placeholder="来源推荐会员手机号" auto-focus/>
+  <text style='float:left;'>{{inputUserName}}</text>
+</view>
+
+<view class='span_height'></view>
+
+<view class="section input_view">
+  <!--text style='float:left;'>消费金额</text-->
+  <input class='input' type='number' bindinput='moneyInput' placeholder="请输入消费金额" auto-focus/>
+</view>
+
+<view class='span_height'></view>
+
+<view class="section input_view">
+  <!--text style='float:left;'>商品明细</text-->
+  <input class='input' type='number' bindinput='memoInput' placeholder="请输入商品明细" auto-focus/>
+</view>
+
+<view class='span_height'></view>
+
+<view class="section input_view">
+  <!--text style='float:left;'>交易密码</text-->
+  <input class='input' password='true' bindinput='passwordInput' placeholder="请输入交易密码" auto-focus/>
+</view>
+<view class='span_height'></view>
+
+
+<view style='float: left;width: 98%;padding:20rpx 10rpx;'>
+    <button class="weui-btn" type="warn" bindtap='onConfirmInput'>消费录入</button>
+</view>
+
